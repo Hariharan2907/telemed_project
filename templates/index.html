@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+    <head>    
+        <style>
+            ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: rgb(80, 0, 0);
+            }
+
+            li {
+            float: right;
+            }
+
+            li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            }
+
+            li a:hover:not(.active) {
+            background-color: #111;
+            }
+
+            .active {
+            background-color: #04AA6D;
+            }
+            body {
+                background-color: rgb(167,167,167);
+            }
+        </style>
+
+        <title>Cost Effective Analysis Tool</title>
+        <link href="{{ url_for('static', filename='album.css') }}" rel="stylesheet">
+        
+    </head>
+
+
+    <body>  
+        <ul id="menu-main-nav" class="navbar-nav nav-fill w-100">
+            <li class="nav-item"><a href="#region" class="nav-link">Region </a></li> 
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                  
+                        
+            
+        </ul>
+        <center><h1 style="font-family: Roboto, sans-serif ">Cost Effectiveness Analysis Tool </h1></center>
+        <center><u><h2 style="font-family: Roboto, sans-serif ">Study perpective: MCO</h2></u></center>
+        <p></p>
+        
+        <form method = "POST">
+            <center><h3> Select Intervention: </h3></center>
+            <div class ="form-group">
+               <center><input type="text" name = "intervention"></center> 
+            </div>
+            
+            <center><h3> Select Intervention Period: </h3></center>
+            <div class ="form-group">
+               <center><input type="text" name = "intervention_period"></center> 
+            </div>
+            
+            <center><h3> Select Intervention Cost Type: </h3></center>
+            <div class ="form-group">
+                <center>
+                <select name="intervention_cost" method="GET">
+                    <option>Medical</option>
+                    <option>Non Medical</option>
+                </select>
+                </center>
+            </div>
+
+            <center><u><h2 style="font-family: Roboto, sans-serif ">CE RATIO: </h2></u></center>
+            <center><h3> Enter Net Cost (change in cost):</h3></center>
+            <div class = "form-group">
+                <center><input type="number" name ="net_cost"> </center>
+            </div>
+            <center><h3> Enter the Change in Outcome:</h3></center>
+            <div class = "form-group">
+                <center><input type="number" name ="outcome_change"> </center>
+            </div>
+            <center><input class = "btn btn-primary" type = "submit" value = "Submit" target="_blank"></center>
+        </form>
+    </body>
+</html>
+
+  
