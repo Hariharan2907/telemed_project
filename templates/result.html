@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+    <head>    
+        <style>
+            ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: rgb(80, 0, 0);
+            }
+
+            li {
+            float: right;
+            }
+
+            li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            }
+
+            li a:hover:not(.active) {
+            background-color: #111;
+            }
+
+            .active {
+            background-color: #04AA6D;
+            }
+            body {
+                background-color: rgb(167,167,167);
+            }
+        </style>
+
+    <body>  
+        <ul id="menu-main-nav" class="navbar-nav nav-fill w-100">
+            <li class="nav-item"><a href="#region" class="nav-link">Region </a></li>
+            <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                   
+                        
+            
+        </ul>
+        <center><h1 style="font-family: Roboto, sans-serif" >Cost Effectiveness Analysis Tool </h1></center>
+        <center><u><h2 style="font-family: Roboto, sans-serif ">Study perpective: MCO</h2></u></center>
+        <p></p>
+        <center><h3> Intervention: {{intervention}} </h3></center>
+        <center><h3> Intervention Period: {{intervention_period}}</h3></center>
+        <center><h3> Intervention Cost Type: {{intervention_cost}}</h3></center>
+        <center><h3> Net Cost: {{net_cost}}</h3></center>
+        <center><h3> Change in Outcome: {{outcome_change}}</h3></center>
+        <center><h3> CE Ratio: {{net_cost/outcome_change}}</h3></center>
+    </body>
+</html>
