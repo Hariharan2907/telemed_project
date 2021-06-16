@@ -1,55 +1,57 @@
 <!doctype html>
 <html lang="en">
     <head>    
-        <style>
-            ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: rgb(80, 0, 0);
-            }
-
-            li {
-            float: right;
-            }
-
-            li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            }
-
-            li a:hover:not(.active) {
-            background-color: #111;
-            }
-
-            .active {
-            background-color: #04AA6D;
-            }
-            body {
-                background-color: rgb(167,167,167);
-            }
-        </style>
-
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/main.css') }}">
         <title>Cost Effective Analysis Tool</title>
-        <link href="{{ url_for('static', filename='album.css') }}" rel="stylesheet">
         
     </head>
 
 
     <body>  
-        <ul id="menu-main-nav" class="navbar-nav nav-fill w-100">
-            <li class="nav-item"><a href="#region" class="nav-link">Region </a></li> 
-            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                  
-                        
+      <div class="topnav">
+            <a href="#region">Region</a>
+            <a class="active" href="#home">Home</a>
+        </div>
+    
+        <div class="sidenav">
+            <a href="#about">CEA</a>
+            <button class="dropdown-btn">Cost Study 
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-container">
+                <a href="#">Demographics</a>
+                <a href="#">Medical Cost</a>
+                <a href="#">Inpatient Care Cost</a>
+                <a href="#">ED Cost</a>
+                <a href="#">Outpatient Care Cost</a>
+              </div>
+            <a href="#services">Hospitilization Cost Lookup</a>
+            <a href="#clients">Other Data Resources</a>
+            <a href="#contact">Documents</a>
+           
             
-        </ul>
-        <center><h1 style="font-family: Roboto, sans-serif ">Cost Effectiveness Analysis Tool </h1></center>
-        <center><u><h2 style="font-family: Roboto, sans-serif ">Study perpective: MCO</h2></u></center>
+          </div>
+          <script>
+            /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+            var dropdown = document.getElementsByClassName("dropdown-btn");
+            var i;
+            
+            for (i = 0; i < dropdown.length; i++) {
+              dropdown[i].addEventListener("click", function() {
+              this.classList.toggle("active");
+              var dropdownContent = this.nextElementSibling;
+              if (dropdownContent.style.display === "block") {
+              dropdownContent.style.display = "none";
+              } else {
+              dropdownContent.style.display = "block";
+              }
+              });
+            }
+            </script>
+
+        <center><h1>Cost Effectiveness Analysis Tool </h1></center>
+        <center><u><h2>Study perpective: MCO</h2></u></center>
         <p></p>
         
         <form method = "POST">
@@ -73,7 +75,7 @@
                 </center>
             </div>
 
-            <center><u><h2 style="font-family: Roboto, sans-serif ">CE RATIO: </h2></u></center>
+            <center><u><h2>CE RATIO: </h2></u></center>
             <center><h3> Enter Net Cost (change in cost):</h3></center>
             <div class = "form-group">
                 <center><input type="number" name ="net_cost"> </center>
