@@ -53,6 +53,7 @@
         <center><u><h2>Medical Cost</h2></u></center>
         <center>
         <form name="Item_1" action="/medcost" method="POST">
+            <div class = "fixed">
             <label for="exampleFormControlFile2">Choose SDA</label>
               <select name="sda">
                 {% for district in sda %}
@@ -60,6 +61,7 @@
                 {% endfor %}     
               </select>
               <input type ="submit" value="Submit">
+            </div>
         </form>
         <div id="result">
             {% if sda_name is defined %}
