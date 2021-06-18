@@ -4,3 +4,4 @@ gunicorn
 jsonschema
 Datetime
 pandas
+numpy
