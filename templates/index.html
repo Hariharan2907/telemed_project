@@ -9,45 +9,29 @@
 
 
     <body>  
-      <div class="topnav">
-            <a href="#region">Region</a>
-            <a href="home">Home</a>
+
+    <div class="navbar">
+      <a href="#contact">Documents</a>
+      <a href="#clients">Other Data Resources</a>
+      <a href="#services">Hospitilization Cost Lookup</a>
+      
+      <div class="dropdown">
+        <button class="dropbtn">Cost Study 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Demographics</a>
+          <a href="medcost">Medical Cost</a>
+          <a href="#">Inpatient Care Cost</a>
+          <a href="#">ED Cost</a>
+          <a href="#">Outpatient Care Cost</a>
         </div>
-    
-        <div class="sidenav">
-            <a href="#about">CEA</a>
-            <button class="dropdown-btn">Cost Study<i class="fa fa-caret-down"></i>
-              </button>
-              <div class="dropdown-container">
-                <a href="#">Demographics</a>
-                <a href="medcost">Medical Cost</a>
-                <a href="#">Inpatient Care Cost</a>
-                <a href="#">ED Cost</a>
-                <a href="#">Outpatient Care Cost</a>
-              </div>
-            <a href="#services">Hospitilization Cost Lookup</a>
-            <a href="#clients">Other Data Resources</a>
-            <a href="#contact">Documents</a>
-           
-            
-          </div>
-          <script>
-            /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
-            var dropdown = document.getElementsByClassName("dropdown-btn");
-            var i;
-            
-            for (i = 0; i < dropdown.length; i++) {
-              dropdown[i].addEventListener("click", function() {
-              this.classList.toggle("active");
-              var dropdownContent = this.nextElementSibling;
-              if (dropdownContent.style.display === "block") {
-              dropdownContent.style.display = "none";
-              } else {
-              dropdownContent.style.display = "block";
-              }
-              });
-            }
-            </script>
+      </div>          
+      <a href="home">CEA</a>
+ 
+      </div>
+
+          
 
         <center><h1>Cost Effectiveness Analysis Tool </h1></center>
         <center><u><h2>Study perpective: MCO</h2></u></center>
