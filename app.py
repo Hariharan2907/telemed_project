@@ -13,15 +13,17 @@ sda = []
 df = pd.read_csv(url,error_bad_lines=False)
 df = df.dropna()
 df = df.rename(columns={'rgrp3':'Child', 'rgrp4': 'Blind/Disabled','rgrp6':'Telemonitoring','sfy':'Year'})
+
 sda = (df['SDA'].unique())
 
 
 
-print(sda)
+
 
 
 nclients = df[df['meas']=='nclient']
 med_df = df[df['type']=='med']
+
 #pre cost
 med_df_precost = med_df[med_df['post']==0]
 #post cost
@@ -32,6 +34,7 @@ texas_nclient=texas_nclient.drop(['type','post','meas','tot_tvst'],axis=1)
 texas_nclient['Blind/Disabled'] = texas_nclient['Blind/Disabled'].astype('int64')
 texas_nclient['Child'] = texas_nclient['Child'].astype('int64')
 texas_nclient['Telemonitoring'] = texas_nclient['Telemonitoring'].astype('int64')
+texas_nclient = texas_nclient.sort_values(by=['treat'])
 
 texas_precost = med_df_precost[med_df_precost['SDA']=='Texas']
 texas_precost=texas_precost.drop(['type','post','meas','tot_tvst'],axis=1)
@@ -41,6 +44,7 @@ texas_precost['Child'] = texas_precost['Child'].apply(np.ceil)
 texas_precost['Child'] = texas_precost['Child'].astype('int64')
 texas_precost['Telemonitoring'] = texas_precost['Telemonitoring'].apply(np.ceil)
 texas_precost['Telemonitoring'] = texas_precost['Telemonitoring'].astype('int64')
+texas_precost = texas_precost.sort_values(by=['treat'])
 
 texas_postcost = med_df_postcost[med_df_postcost['SDA']=='Texas']
 texas_postcost=texas_postcost.drop(['type','post','meas','tot_tvst'],axis=1)
@@ -50,6 +54,7 @@ texas_postcost['Child'] = texas_postcost['Child'].apply(np.ceil)
 texas_postcost['Child'] = texas_postcost['Child'].astype('int64')
 texas_postcost['Telemonitoring'] = texas_postcost['Telemonitoring'].apply(np.ceil)
 texas_postcost['Telemonitoring'] = texas_postcost['Telemonitoring'].astype('int64')
+texas_postcost = texas_postcost.sort_values(by=['treat'])
 
 
 
@@ -89,6 +94,7 @@ def medcost():
         df_precost['Telemonitoring'] = df_precost['Telemonitoring'].apply(np.ceil)
         df_precost['Telemonitoring'] = df_precost['Telemonitoring'].astype('int64')
 
+
         df_postcost = med_df_postcost[med_df_postcost['SDA']==sda_name]
         df_postcost = df_postcost.sort_values(by=['treat'])
         df_postcost=df_postcost.drop(['type','post','meas','tot_tvst'],axis=1)
@@ -101,7 +107,7 @@ def medcost():
 
         if sda_name != None:
             return render_template("medcost.html", sda_name=sda_name, sda=sda, num_client=[num_client.to_html(classes='data')], df_precost=[df_precost.to_html(classes='data')], df_postcost=[df_postcost.to_html(classes='data')],  header = "true")
-    return render_template('medcost1.html',sda=sda, texas_nclient=[texas_nclient.to_html(classes='data')], texas_precost=[texas_precost.to_html(classes='data')], texas_postcost=[texas_postcost.to_html(classes='data')])
+    return render_template('medcost1.html',sda=sda, texas_nclient=[texas_nclient.to_html(classes='table table-striped')], texas_precost=[texas_precost.to_html(classes='data')], texas_postcost=[texas_postcost.to_html(classes='data')])
     #return render_template('medcost.html', med_df_precost = [med_df_precost.to_html(classes='data')], header="true", med_df_postcost = [med_df_postcost.to_html(classes='data')])
     
 if __name__ == "__main__":
