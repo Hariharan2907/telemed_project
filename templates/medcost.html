@@ -52,22 +52,45 @@
         </div>
         </center>
         <center><u><h2>Number of Clients for {{sda_name}}</h2></u></center>
+        <center><caption>Teleservices</caption></center>
         <center>
-        {% for table in num_client %}
+        {% for table in numclient_tele %}
+            {{table|safe}}
+        {% endfor %}</center> 
+        <br><br>
+        <center><caption>Non-Teleservices</caption></center>
+        <center>
+        {% for table in numclient_nontele %}
             {{table|safe}}
         {% endfor %}</center> 
 
         <center><u><h2>Pre Cost Table for {{sda_name}}</h2></u></center>
+        <center><caption>Teleservices</caption></center>
         <center>
-        {% for table in df_precost %}
+        {% for table in precost_tele %}
             {{table|safe}}
         {% endfor %}</center>
+        <br><br>
+        <center><caption>Non-Teleservices</caption></center>
+        <center>
+        {% for table in precost_nontele %}
+            {{table|safe}}
+        {% endfor %}</center>       
         
         <center><u><h2>Post Cost Table for {{sda_name}}</h2></u></center>
+        <center><caption>Teleservices</caption></center>
         <center>
-        {% for table in df_postcost %}
+        {% for table in postcost_tele %}
             {{table|safe}}
         {% endfor %}</center> 
+        <br><br>
+        <center><caption>Non-Teleservices</caption></center>
+        <center>
+        {% for table in postcost_nontele %}
+            {{table|safe}}
+        {% endfor %}</center> 
+
+        <br><br>
 
     </body>
 </html>
