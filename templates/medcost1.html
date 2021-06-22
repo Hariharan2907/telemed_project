@@ -2,7 +2,7 @@
 <html lang="en">
     <head>    
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/main.css') }}">
+        <link rel="stylesheet" type = text/css href="{{ url_for('static', filename= 'css/main.css') }}">
         <title>Cost Effective Analysis Tool</title>
         
     </head>
@@ -35,7 +35,7 @@
         <center>
         <form name="Item_1" action="/medcost" method="POST">
             <div class = "fixed">
-            <label for="exampleFormControlFile2">Choose SDA</label>
+            <label for="exampleFormControlFile2">Choose Region</label>
               <select name="sda">
                 {% for district in sda %}
                   <option value="{{district}}" SELECTED>{{ district }}</option>
@@ -50,21 +50,45 @@
             {% endif %}
         </div>
         </center>
+
+        
         <center><u><h2>Number of Clients for Texas</h2></u></center>
+        <center><caption>Teleservices</caption></center>
         <center>
-        {% for table in texas_nclient %}
-            {{table|safe}}
+        {% for table in texas_nclient_tele %}
+        <center> {{table|safe}}</center>           
+        {% endfor %}</center> 
+        <br><br>
+        <center><caption>Non-Teleservices</caption></center>
+        <center>
+        {% for table in texas_nclient_nontele %}
+        <center> {{table|safe}}</center>           
         {% endfor %}</center> 
 
         <center><u><h2>Pre Cost Table for Texas</h2></u></center>
         <center>
-        {% for table in texas_precost %}
+        <center><caption>Teleservices</caption></center>
+        {% for table in texas_precost_tele %}
             {{table|safe}}
         {% endfor %}</center>
+
+        <br><br>
+        <center><caption>Non-Teleservices</caption></center>        
+        <center>
+            {% for table in texas_precost_nontele %}
+                {{table|safe}}
+            {% endfor %}</center>
         
         <center><u><h2>Post Cost Table for Texas</h2></u></center>
         <center>
-        {% for table in texas_postcost %}
+        <center><caption>Teleservices</caption></center>
+        {% for table in texas_postcost_tele %}
+            {{table|safe}}
+        {% endfor %}</center> 
+        <br><br>
+        <center><caption>Non-Teleservices</caption></center>
+        <center>
+        {% for table in texas_postcost_nontele %}
             {{table|safe}}
         {% endfor %}</center> 
 
