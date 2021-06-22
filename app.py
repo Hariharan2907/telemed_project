@@ -12,16 +12,12 @@ sda = []
 
 df = pd.read_csv(url,error_bad_lines=False)
 df = df.rename(columns={'rgrp3':'Child', 'rgrp4': 'Blind/Disabled','rgrp6':'Telemonitoring','sfy':'Year','SDA' : 'Region','tot_tvst':'Televisits'})
-df = df.dropna()
+df = df.fillna(0)
 df = df[["Region","Year","Televisits","Blind/Disabled","Child","Telemonitoring","treat","meas","type","post"]]
 
 sda = (df['Region'].unique())
-
-
-
-
-
-
+sda = np.roll(sda,1)
+sda = sda[sda!=0]
 nclients = df[df['meas']=='nclient']
 med_df = df[df['type']=='med']
 
@@ -39,6 +35,8 @@ texas_nclient['Telemonitoring'] = texas_nclient['Telemonitoring'].map('{:,.0f}'.
 texas_nclient['Televisits'] = texas_nclient['Televisits'].map('{:,.0f}'.format)
 texas_nclient_tele = texas_nclient[texas_nclient['treat']==1]
 texas_nclient_nontele = texas_nclient[texas_nclient['treat']==0]
+texas_nclient_tele=texas_nclient_tele.drop(['treat'],axis=1)
+texas_nclient_nontele=texas_nclient_nontele.drop(['treat'],axis=1)
 
 texas_precost = med_df_precost[med_df_precost['Region']=='Texas']
 texas_precost=texas_precost.drop(['type','post','meas'],axis=1)
@@ -52,6 +50,8 @@ texas_precost['Telemonitoring'] = texas_precost['Telemonitoring'].map('${:,.0f}'
 texas_precost['Televisits'] = texas_precost['Televisits'].map('${:,.0f}'.format)
 texas_precost_tele = texas_precost[texas_precost['treat']==1]
 texas_precost_nontele = texas_precost[texas_precost['treat']==0]
+texas_precost_tele=texas_precost_tele.drop(['treat'],axis=1)
+texas_precost_nontele=texas_precost_nontele.drop(['treat'],axis=1)
 
 
 
@@ -68,6 +68,8 @@ texas_postcost['Telemonitoring'] = texas_postcost['Telemonitoring'].map('${:,.0f
 texas_postcost['Televisits'] = texas_postcost['Televisits'].map('${:,.0f}'.format)
 texas_postcost_tele = texas_postcost[texas_postcost['treat']==1]
 texas_postcost_nontele = texas_postcost[texas_postcost['treat']==0]
+texas_postcost_tele=texas_postcost_tele.drop(['treat'],axis=1)
+texas_postcost_nontele=texas_postcost_nontele.drop(['treat'],axis=1)
 
 @app.route('/', methods=["GET","POST"])
 @app.route('/home', methods=["GET","POST"])
@@ -95,13 +97,10 @@ def medcost():
         num_client['Blind/Disabled'] = num_client['Blind/Disabled'].map('{:,.0f}'.format)
         num_client['Telemonitoring'] = num_client['Telemonitoring'].map('{:,.0f}'.format)
         num_client['Televisits'] = num_client['Televisits'].map('{:,.0f}'.format)
-        
-        style1=num_client.style.hide_index()
-
-        html = style1.render()
-        with open('templates/style.html', 'w') as f:
-            f.write(html)
-
+        numclient_tele = num_client[num_client['treat']==1]
+        numclient_nontele = num_client[num_client['treat']==0]
+        numclient_tele=numclient_tele.drop(['treat'],axis=1)
+        numclient_nontele=numclient_nontele.drop(['treat'],axis=1)
 
         df_precost = med_df_precost[med_df_precost['Region']==sda_name]
         df_precost = df_precost.sort_values(by=['treat'])
@@ -113,6 +112,10 @@ def medcost():
         df_precost['Blind/Disabled'] = df_precost['Blind/Disabled'].map('${:,.0f}'.format)
         df_precost['Telemonitoring'] = df_precost['Telemonitoring'].map('${:,.0f}'.format)
         df_precost['Televisits'] = df_precost['Televisits'].map('${:,.0f}'.format)
+        precost_tele = df_precost[df_precost['treat']==1]
+        precost_nontele = df_precost[df_precost['treat']==0]
+        precost_tele=precost_tele.drop(['treat'],axis=1)
+        precost_nontele=precost_nontele.drop(['treat'],axis=1)
 
         df_postcost = med_df_postcost[med_df_postcost['Region']==sda_name]
         df_postcost = df_postcost.sort_values(by=['treat'])
@@ -124,9 +127,15 @@ def medcost():
         df_postcost['Blind/Disabled'] = df_postcost['Blind/Disabled'].map('${:,.0f}'.format)
         df_postcost['Telemonitoring'] = df_postcost['Telemonitoring'].map('${:,.0f}'.format)     
         df_postcost['Televisits'] = df_postcost['Televisits'].map('${:,.0f}'.format)
+        postcost_tele = df_postcost[df_postcost['treat']==1]
+        postcost_nontele = df_postcost[df_postcost['treat']==0]
+        postcost_tele=postcost_tele.drop(['treat'],axis=1)
+        postcost_nontele=postcost_nontele.drop(['treat'],axis=1)
 
         if sda_name != None:
-            return render_template("medcost.html", sda_name=sda_name, sda=sda, num_client=[num_client.to_html(index = False)], df_precost=[df_precost.to_html(index = False)], df_postcost=[df_postcost.to_html(index = False)])
+            return render_template("medcost.html", sda_name=sda_name, sda=sda, numclient_tele=[numclient_tele.to_html(index = False)],numclient_nontele=[numclient_nontele.to_html(index = False)],
+                                    precost_tele=[precost_tele.to_html(index = False)], precost_nontele=[precost_nontele.to_html(index = False)],postcost_tele=[postcost_tele.to_html(index = False)], postcost_nontele=[postcost_nontele.to_html(index = False)])
+    
     return render_template('medcost1.html',sda=sda, texas_nclient_tele=[texas_nclient_tele.to_html(index=False)], texas_nclient_nontele=[texas_nclient_nontele.to_html(index=False)], texas_precost_tele=[texas_precost_tele.to_html(index=False)], 
                             texas_precost_nontele=[texas_precost_nontele.to_html(index=False)], texas_postcost_tele=[texas_postcost_tele.to_html(index = False)],  texas_postcost_nontele=[texas_postcost_nontele.to_html(index = False)])
     
