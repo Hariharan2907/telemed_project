@@ -27,9 +27,15 @@
                 <a href="#">Outpatient Care Cost</a>
               </div>
             </div>          
-            <a href="home">CEA</a>
-       
+            <a href="home">CEA</a>       
             </div>
+        
+        <div class="sidenav">
+            <a href="#Clients">Number of Clients</a>
+            <a href="#Pre_Cost">Pre Cost Table</a>
+            <a href="#Post_Cost">Post Cost Table</a>            
+        </div>
+    
         <center><h1>Cost Study</h1></center>
         <center><u><h2>Medical Cost</h2></u></center>
         <center>
@@ -53,7 +59,7 @@
         </center>
 
         
-        <center><u><h2>Number of Clients for Texas</h2></u></center>
+        <center><u><h2 id="Clients">Number of Clients for Texas</h2></u></center>
         <center><caption>Teleservices</caption></center>
         <center>
 
@@ -70,7 +76,7 @@
         <center> {{table|safe}}</center>           
         {% endfor %}</center> 
 
-        <center><u><h2>Pre Cost Table for Texas</h2></u></center>
+        <center><u><h2 id="Pre_Cost">Pre Cost Table for Texas</h2></u></center>
         <center>
         <center><caption>Teleservices</caption></center>
         {% for table in texas_precost_tele %}
@@ -84,7 +90,7 @@
                 {{table|safe}}
             {% endfor %}</center>
         
-        <center><u><h2>Post Cost Table for Texas</h2></u></center>
+        <center><u><h2 id="Post_Cost">Post Cost Table for Texas</h2></u></center>
         <center>
         <center><caption>Teleservices</caption></center>
         {% for table in texas_postcost_tele %}

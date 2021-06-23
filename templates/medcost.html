@@ -30,6 +30,12 @@
             <a href="home">CEA</a>
        
             </div>
+        
+            <div class="sidenav">
+                <a href="#Clients">Number of Clients</a>
+                <a href="#Pre_Cost">Pre Cost Table</a>
+                <a href="#Post_Cost">Post Cost Table</a>            
+            </div>
 
         <center><h1>Cost Study</h1></center>
         <center><u><h2>Medical Cost</h2></u></center>
@@ -48,7 +54,7 @@
         </form>
  
         </center>
-        <center><u><h2>Number of Clients for {{sda_name}}</h2></u></center>
+        <center><u><h2 id="Clients">Number of Clients for {{sda_name}}</h2></u></center>
         <center><caption>Teleservices</caption></center>
         <center>
         
@@ -62,7 +68,7 @@
             {{table|safe}}
         {% endfor %}</center> 
 
-        <center><u><h2>Pre Cost Table for {{sda_name}}</h2></u></center>
+        <center><u><h2 id="Pre_Cost">Pre Cost Table for {{sda_name}}</h2></u></center>
         <center><caption>Teleservices</caption></center>
         <center>
         {% for table in precost_tele %}
@@ -75,7 +81,7 @@
             {{table|safe}}
         {% endfor %}</center>       
         
-        <center><u><h2>Post Cost Table for {{sda_name}}</h2></u></center>
+        <center><u><h2 id="Post_Cost">Post Cost Table for {{sda_name}}</h2></u></center>
         <center><caption>Teleservices</caption></center>
         <center>
         {% for table in postcost_tele %}
@@ -87,6 +93,7 @@
         {% for table in postcost_nontele %}
             {{table|safe}}
         {% endfor %}</center> 
+
 
         <br><br>
 
