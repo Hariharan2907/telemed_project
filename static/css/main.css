@@ -105,3 +105,31 @@ caption {
   height: 10px !important; /* overwrites any other rules */
   background-color: #FFFFFF;
 }
+
+.sidenav {
+  width: 275px;
+  position: fixed;
+  z-index: 1;
+  top: 100px;
+  left: 10px;
+  background: #eee;  
+  padding: 20px 0;
+}
+
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #000000;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #580000;
+}
