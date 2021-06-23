@@ -37,8 +37,9 @@
             <div class = "fixed">
             <label for="exampleFormControlFile2">Choose Region</label>
               <select name="sda">
+                  <option value = ""></option>
                 {% for district in sda %}
-                  <option value="{{district}}" SELECTED>{{ district }}</option>
+                  <option value="{{district}}">{{ district }}</option>
                 {% endfor %}     
               </select>
               <input type ="submit" value="Submit">
@@ -55,8 +56,12 @@
         <center><u><h2>Number of Clients for Texas</h2></u></center>
         <center><caption>Teleservices</caption></center>
         <center>
+
+       
         {% for table in texas_nclient_tele %}
-        <center> {{table|safe}}</center>           
+        
+        <center> {{table|safe}}</center>        
+
         {% endfor %}</center> 
         <br><br>
         <center><caption>Non-Teleservices</caption></center>

@@ -38,22 +38,20 @@
             <div class = "fixed">
             <label for="exampleFormControlFile2">Choose Region</label>
               <select name="sda">
+                <option value = ""></option>
                 {% for district in sda %}
-                  <option value="{{ district}}" selected>{{ district }}</option>
+                  <option value="{{ district}}">{{ district }}</option>
                 {% endfor %}     
               </select>
               <input type ="submit" value="Submit">
             </div>
         </form>
-        <div id="result">
-            {% if sda_name is defined %}
-                You have selected : {{sda_name}}
-            {% endif %}
-        </div>
+ 
         </center>
         <center><u><h2>Number of Clients for {{sda_name}}</h2></u></center>
         <center><caption>Teleservices</caption></center>
         <center>
+        
         {% for table in numclient_tele %}
             {{table|safe}}
         {% endfor %}</center> 
