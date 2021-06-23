@@ -16,7 +16,8 @@ df = df.fillna(0)
 df = df[["Region","Year","Televisits","Blind/Disabled","Child","Telemonitoring","treat","meas","type","post"]]
 
 sda = (df['Region'].unique())
-sda = np.roll(sda,1)
+
+sda = np.roll(sda,2)
 sda = sda[sda!=0]
 nclients = df[df['meas']=='nclient']
 med_df = df[df['type']=='med']
@@ -37,6 +38,7 @@ texas_nclient_tele = texas_nclient[texas_nclient['treat']==1]
 texas_nclient_nontele = texas_nclient[texas_nclient['treat']==0]
 texas_nclient_tele=texas_nclient_tele.drop(['treat'],axis=1)
 texas_nclient_nontele=texas_nclient_nontele.drop(['treat'],axis=1)
+
 
 texas_precost = med_df_precost[med_df_precost['Region']=='Texas']
 texas_precost=texas_precost.drop(['type','post','meas'],axis=1)
