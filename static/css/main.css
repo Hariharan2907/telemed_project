@@ -69,7 +69,7 @@ div.fixed{
 
 }
 table.dataframe {
-  border: 2px solid black;
+  border: 3px solid black;
   border-collapse: collapse;
   text-align:center;
   padding: 10px;
@@ -83,8 +83,25 @@ table.dataframe {
   text-align:center;
   padding: 10px;
 }
+.dataframe td:nth-child(3), .dataframe th:nth-child(3) {
+  border-left: solid 3px rgb(0, 0, 0);
+ }
+
+
+ .dataframe td:nth-child(6), .dataframe th:nth-child(6) {
+  border-left: solid 3px rgb(0, 0, 0);
+ }
+ 
 
 caption {
   text-align: left;
   font-size: 16px;
+}
+
+.blank_row
+{
+  border: 1px solid black;
+  border-collapse: collapse;
+  height: 10px !important; /* overwrites any other rules */
+  background-color: #FFFFFF;
 }
