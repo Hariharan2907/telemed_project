@@ -142,5 +142,10 @@ def medcost():
                             texas_precost_nontele=[texas_precost_nontele.to_html(index=False)], texas_postcost_tele=[texas_postcost_tele.to_html(index = False)],  texas_postcost_nontele=[texas_postcost_nontele.to_html(index = False)])
     
     
+
+@app.route('/documents', methods = ["GET","POST"])
+def documents(): 
+    return render_template('documents.html')
+
 if __name__ == "__main__":
     app.run(debug=True) 
