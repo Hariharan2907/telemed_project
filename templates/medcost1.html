@@ -92,9 +92,19 @@
         <div class = "solid" >
         <center><u><h2 id="Clients">Number of Clients for Texas</h2></u></center>
 
-        <center><p style="text-decoration: overline underline;"><b>Treatment Group: Teleservices</b></p></center> 
-        
-        <p style="margin-left: 320px;margin-bottom: 0%"><b>Tele Services <span style="display:inline-block; width: 190px ;"></span>Telemonitoring</b></p>
+        <center><p class="text-border"><b>Treatment Group: Teleservices</b></p></center> 
+        <center>
+        <table class='mytable'>
+ 
+            <tr>
+            <td>&nbsp;</td>
+
+            <td colspan="4"><b>Tele Services</b></td>               
+            <td style = "text-align: left;"><b>Telemonitoring</b></td>
+            
+            </tr>
+           </table>
+        </center>
         <center>
         
         {% for table in texas_nclient_tele %}
@@ -103,8 +113,19 @@
 
         </center> 
         <br><br>    
-        <center><p style="text-decoration: overline underline;"><b>Comparison Group: Non-Teleservices</b></p></center>
-        <p style="margin-left: 320px;margin-bottom: 0%"><b>Tele Services <span style="display:inline-block; width: 190px ;"></span>Telemonitoring</b></p>
+        <center><p class="text-border"><b>Comparison Group: Non-Teleservices</b></p></center>
+        <center>
+            <table class='mytable'>
+     
+                <tr>
+                <td>&nbsp;</td>
+    
+                <td colspan="4"><b>Tele Services</b></td>               
+                <td style = "text-align: left;"><b>Telemonitoring</b></td>
+                
+                </tr>
+               </table>
+            </center>
         
         <center>
         {% for table in texas_nclient_nontele %}
@@ -117,14 +138,36 @@
         <div class = "solid" >
         <center><u><h2 id="Pre_Cost">Pre Cost Table for Texas</h2></u></center>
         <center>
-        <center><p style="text-decoration: overline underline;"><b>Treatment Group: Teleservices</b></p></center>
-        <p style="margin-left: 320px;margin-bottom: 0%"><b>Tele Services <span style="display:inline-block; width: 190px ;"></span>Telemonitoring</b></p>
+        <center><p class="text-border"><b>Treatment Group: Teleservices</b></p></center>
+        <center>
+            <table class='mytable'>
+     
+                <tr>
+                <td>&nbsp;</td>
+    
+                <td colspan="4"><b>Tele Services</b></td>               
+                <td style = "text-align: left;"><b>Telemonitoring</b></td>
+                
+                </tr>
+               </table>
+            </center>
         {% for table in texas_precost_tele %}
             {{table|safe}}
         {% endfor %}</center>
         <br><br>
-        <center><p style="text-decoration: overline underline;"><b>Comparison Group: Non-Teleservices</b></p></center>
-        <p style="margin-left: 320px;margin-bottom: 0%"><b>Tele Services <span style="display:inline-block; width: 190px ;"></span>Telemonitoring</b></p>
+        <center><p class="text-border"><b>Comparison Group: Non-Teleservices</b></p></center>
+        <center>
+            <table class='mytable'>
+     
+                <tr>
+                <td>&nbsp;</td>
+    
+                <td colspan="4"><b>Tele Services</b></td>               
+                <td style = "text-align: left;"><b>Telemonitoring</b></td>
+                
+                </tr>
+               </table>
+            </center>
         <center>
             {% for table in texas_precost_nontele %}
                 {{table|safe}}
@@ -135,14 +178,36 @@
         <div class = "solid" >
         <center><u><h2 id="Post_Cost">Post Cost Table for Texas</h2></u></center>
         <center>
-        <center><p style="text-decoration: overline underline;"><b>Treatment Group: Teleservices</p></b></center>
-        <p style="margin-left: 320px;margin-bottom: 0%"><b>Tele Services <span style="display:inline-block; width: 190px ;"></span>Telemonitoring</b></p>
+        <center><p class="text-border"><b>Treatment Group: Teleservices</p></b></center>
+        <center>
+            <table class='mytable'>
+     
+                <tr>
+                <td>&nbsp;</td>
+    
+                <td colspan="4"><b>Tele Services</b></td>               
+                <td style = "text-align: left;"><b>Telemonitoring</b></td>
+                
+                </tr>
+               </table>
+            </center>
         {% for table in texas_postcost_tele %}
             {{table|safe}}
         {% endfor %}</center> 
         <br><br>
-        <center><p style="text-decoration: overline underline;"><b>Comparison Group: Non-Teleservices</p></b></center>
-        <p style="margin-left: 320px;margin-bottom: 0%"><b>Tele Services <span style="display:inline-block; width: 190px ;"></span>Telemonitoring</b></p>
+        <center><p class="text-border"><b>Comparison Group: Non-Teleservices</p></b></center>
+        <center>
+            <table class='mytable'>
+     
+                <tr>
+                <td>&nbsp;</td>
+    
+                <td colspan="4"><b>Tele Services</b></td>               
+                <td style = "text-align: left;"><b>Telemonitoring</b></td>
+                
+                </tr>
+               </table>
+            </center>
         <center>
         {% for table in texas_postcost_nontele %}
             {{table|safe}}
