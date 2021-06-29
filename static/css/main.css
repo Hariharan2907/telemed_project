@@ -68,6 +68,42 @@ div.fixed{
   right: 15px;
 
 }
+table.mytable{
+  
+  border-collapse: collapse;
+  padding: 20px;  
+  font-size: 16px;
+  padding: 10px 20px 10px 20px;
+  table-layout: fixed;
+  text-align:center;
+  width: 100%;
+}
+.mytable th,.mytable td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align:center;
+    padding: 10px 20px 10px 20px;
+    
+}
+
+.mytable td:nth-child(1), .mytable th:nth-child(1) {
+  
+  width: 53.5px;
+ }
+ .mytable td:nth-child(2), .mytable th:nth-child(2) {
+  
+  width: 460px;
+ }
+.mytable td:nth-child(3), .mytable th:nth-child(3) {
+  border-left: double rgb(0, 0, 0);
+  width: 88.5px;
+  padding-right:0.75cm;
+  
+ }
+.mytable tr:first-child {
+  border-top: solid 1px rgb(0, 0, 0);
+ }
+
 table.dataframe {
   /*border: 3px solid black;*/
   border-collapse: collapse;
@@ -76,7 +112,7 @@ table.dataframe {
   font-size: 16px;
   border:none;
   table-layout: fixed;
-  width: 95%;
+  width: 100%;
 }
 
 .dataframe th, .dataframe td {
@@ -89,21 +125,26 @@ table.dataframe {
 }
 .dataframe td:nth-child(1), .dataframe th:nth-child(1) {
   border-left: solid 1px rgb(0, 0, 0);
+  width: 75px;
  }
 
 .dataframe td:nth-child(2), .dataframe th:nth-child(2) {
   border-left: solid 1px rgb(0, 0, 0);
+  min-width: min-content;
  }
 
 .dataframe td:nth-child(5), .dataframe th:nth-child(5) {
-  border-left: solid 0.5px rgb(0, 0, 0);
+  border-left: solid 1px rgb(0, 0, 0);
  }
 
 .dataframe td:nth-child(6), .dataframe th:nth-child(6) {
   border-left: double rgb(0, 0, 0);
+  width: 100px;
  }
 .dataframe td:nth-child(6), .dataframe th:nth-child(6) {
   border-right: solid 1px rgb(0, 0, 0);
+  width: 120px;
+  
  }
 
  
@@ -112,7 +153,7 @@ table.dataframe {
  }
  
 .dataframe tr:last-child{
-  border-bottom: solid 1px rgb(0, 0, 0);
+  border-bottom: solid 2px rgb(0, 0, 0);
  }
  
 caption {
@@ -166,11 +207,9 @@ caption {
    
 }
 
-.tab {
-  display: inline-block;
-  margin-left: 180px;
-}
-
-caption{
-  text-align:left;
+.text-border{
+  border-top: solid 2px black; 
+  padding:10px;
+  width:300px;
+  border-bottom: solid 2px black;
 }
