@@ -11,7 +11,7 @@
     <body>  
 
         <div class="navbar">
-            <a href="#documents">Documents</a>
+            <a href="documents">Documents</a>
             <a href="#">Other Data Resources</a>
             <a href="#">Hospitilization Cost Lookup</a>
             
@@ -88,47 +88,57 @@
             
             </div>
         </div>
- 
+        
+        <br>
+        
         </center>
+        <div class="solid">
         <center><u><h2 id="Clients">Number of Clients for {{sda_name}}</h2></u></center>
-        <center><caption>Treatment Group: Teleservices</caption></center><br>
+        <center><p style="text-decoration: overline underline;"><b>Treatment Group: Teleservices</b></p></center> <br>
         <center>
         
         {% for table in numclient_tele %}
             {{table|safe}}
         {% endfor %}</center> 
         <br><br>
-        <center><caption>Comparison Group: Non-Teleservices</caption></center><br>
+        <center><p style="text-decoration: overline underline;"><b>Comparison Group: Non-Teleservices</b></p></center><br>
         <center>
         {% for table in numclient_nontele %}
             {{table|safe}}
         {% endfor %}</center> 
-
+      </div>
+      <br>
+      
+      <div class="solid">
         <center><u><h2 id="Pre_Cost">Pre Cost Table for {{sda_name}}</h2></u></center>
-        <center><caption>Treatment Group: Teleservices</caption></center><br>
+        <center><p style="text-decoration: overline underline;"><b>Treatment Group: Teleservices</b></p></center> <br>
         <center>
         {% for table in precost_tele %}
             {{table|safe}}
         {% endfor %}</center>
         <br><br>
-        <center><caption>Comparison Group: Non-Teleservices</caption></center><br>
+        <center><p style="text-decoration: overline underline;"><b>Comparison Group: Non-Teleservices</b></p></center><br>
         <center>
         {% for table in precost_nontele %}
             {{table|safe}}
-        {% endfor %}</center>       
-        
+        {% endfor %}</center>     
+      </div>
+      <br>
+      
+      <div class="solid">
         <center><u><h2 id="Post_Cost">Post Cost Table for {{sda_name}}</h2></u></center>
-        <center><caption>Treatment Group: Teleservices</caption></center><br>
+        <center><p style="text-decoration: overline underline;"><b>Treatment Group: Teleservices</b></p></center> <br>
         <center>
         {% for table in postcost_tele %}
             {{table|safe}}
         {% endfor %}</center> 
         <br><br>
-        <center><caption>Comparison Group: Non-Teleservices</caption></center><br>
+        <center><p style="text-decoration: overline underline;"><b>Comparison Group: Non-Teleservices</b></p></center><br>
         <center>
         {% for table in postcost_nontele %}
             {{table|safe}}
         {% endfor %}</center> 
+      </div>
 
 
         <br><br>

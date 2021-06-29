@@ -87,52 +87,61 @@
             
             </div>
         </div>
+        <br>
 
-        
+        <div class = "solid" >
         <center><u><h2 id="Clients">Number of Clients for Texas</h2></u></center>
-        <center><caption>Treatment Group: Teleservices</caption></center> <br>
+
+        <center><p style="text-decoration: overline underline;"><b>Treatment Group: Teleservices</b></p></center> <br>
           
         <center>
-        
+  
         {% for table in texas_nclient_tele %}
 
         <center> {{table|safe}}</center>        
         {% endfor %}</center> 
         <br><br>
-        <center><caption>Comparison Group: Non-Teleservices</caption></center><br>
+        <center><p style="text-decoration: overline underline;"><b>Comparison Group: Non-Teleservices</b></p></center><br>
         <center>
         {% for table in texas_nclient_nontele %}
         <center> {{table|safe}}</center>           
         {% endfor %}</center> 
+        <br>
+        </div>    
+        <br>
 
+        <div class = "solid" >
         <center><u><h2 id="Pre_Cost">Pre Cost Table for Texas</h2></u></center>
         <center>
-        <center><caption>Treatment Group: Teleservices</caption></center><br>
+        <center><p style="text-decoration: overline underline;"><b>Treatment Group: Teleservices</b></p></center><br>
         {% for table in texas_precost_tele %}
             {{table|safe}}
         {% endfor %}</center>
-
         <br><br>
-        <center><caption>Comparison Group: Non-Teleservices</caption></center><br> 
+        <center><p style="text-decoration: overline underline;"><b>Comparison Group: Non-Teleservices</b></p></center><br> 
         <center>
             {% for table in texas_precost_nontele %}
                 {{table|safe}}
             {% endfor %}</center>
-        
+        </div>
+        <br>
+
+        <div class = "solid" >
         <center><u><h2 id="Post_Cost">Post Cost Table for Texas</h2></u></center>
         <center>
-        <center><caption>Treatment Group: Teleservices</caption></center><br>
+        <center><p style="text-decoration: overline underline;"><b>Treatment Group: Teleservices</p></b></center><br>
         {% for table in texas_postcost_tele %}
             {{table|safe}}
         {% endfor %}</center> 
         <br><br>
-        <center><caption>Comparison Group: Non-Teleservices</caption></center><br>
+        <center><p style="text-decoration: overline underline;"><b>Comparison Group: Non-Teleservices</p></b></center><br>
         <center>
         {% for table in texas_postcost_nontele %}
             {{table|safe}}
         {% endfor %}</center> 
 
         <br><br>
+    </div>
 
 
     </body>
