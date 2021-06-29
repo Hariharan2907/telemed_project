@@ -38,6 +38,7 @@ texas_nclient['Blind/Disabled'] = texas_nclient['Blind/Disabled'].map('{:,.0f}'.
 texas_nclient['Telemonitoring'] = texas_nclient['Telemonitoring'].map('{:,.0f}'.format)
 texas_nclient['Televisits'] = texas_nclient['Televisits'].map('{:,.0f}'.format)
 texas_nclient['Other'] = texas_nclient['Other'].map('{:,.0f}'.format)
+texas_nclient = texas_nclient.rename(columns={'Telemonitoring':'Total '})
 texas_nclient_tele = texas_nclient[texas_nclient['treat']==1]
 texas_nclient_nontele = texas_nclient[texas_nclient['treat']==0]
 texas_nclient_tele=texas_nclient_tele.drop(['treat','Region'],axis=1)
@@ -57,6 +58,7 @@ texas_precost['Blind/Disabled'] = texas_precost['Blind/Disabled'].map('${:,.0f}'
 texas_precost['Telemonitoring'] = texas_precost['Telemonitoring'].map('${:,.0f}'.format)
 texas_precost['Televisits'] = texas_precost['Televisits'].map('${:,.0f}'.format)
 texas_precost['Other'] = texas_precost['Other'].map('${:,.0f}'.format)
+texas_precost = texas_precost.rename(columns={'Telemonitoring':'Total '})
 texas_precost_tele = texas_precost[texas_precost['treat']==1]
 texas_precost_nontele = texas_precost[texas_precost['treat']==0]
 texas_precost_tele=texas_precost_tele.drop(['treat','Region'],axis=1)
@@ -77,6 +79,7 @@ texas_postcost['Blind/Disabled'] = texas_postcost['Blind/Disabled'].map('${:,.0f
 texas_postcost['Telemonitoring'] = texas_postcost['Telemonitoring'].map('${:,.0f}'.format) 
 texas_postcost['Televisits'] = texas_postcost['Televisits'].map('${:,.0f}'.format)
 texas_postcost['Other'] = texas_postcost['Other'].map('${:,.0f}'.format)
+texas_postcost = texas_postcost.rename(columns={'Telemonitoring':'Total '})
 texas_postcost_tele = texas_postcost[texas_postcost['treat']==1]
 texas_postcost_nontele = texas_postcost[texas_postcost['treat']==0]
 texas_postcost_tele=texas_postcost_tele.drop(['treat','Region'],axis=1)
@@ -109,6 +112,7 @@ def medcost():
         num_client['Telemonitoring'] = num_client['Telemonitoring'].map('{:,.0f}'.format)
         num_client['Televisits'] = num_client['Televisits'].map('{:,.0f}'.format)
         num_client['Other'] = num_client['Other'].map('{:,.0f}'.format)
+        num_client = num_client.rename(columns={'Telemonitoring':'Total '})
         numclient_tele = num_client[num_client['treat']==1]
         numclient_nontele = num_client[num_client['treat']==0]
         numclient_tele=numclient_tele.drop(['treat','Region'],axis=1)
@@ -126,6 +130,7 @@ def medcost():
         df_precost['Telemonitoring'] = df_precost['Telemonitoring'].map('${:,.0f}'.format)
         df_precost['Televisits'] = df_precost['Televisits'].map('${:,.0f}'.format)
         df_precost['Other'] = df_precost['Other'].map('${:,.0f}'.format)
+        df_precost = df_precost.rename(columns={'Telemonitoring':'Total'})
         precost_tele = df_precost[df_precost['treat']==1]
         precost_nontele = df_precost[df_precost['treat']==0]
         precost_tele=precost_tele.drop(['treat','Region'],axis=1)
@@ -138,12 +143,12 @@ def medcost():
         df_postcost['Child'] = df_postcost['Child'].apply(np.round)  
         df_postcost['Telemonitoring'] = df_postcost['Telemonitoring'].apply(np.round)   
         df_postcost['Other'] = df_postcost['Other'].apply(np.round)   
-
         df_postcost['Child'] = df_postcost['Child'].map('${:,.0f}'.format)
         df_postcost['Blind/Disabled'] = df_postcost['Blind/Disabled'].map('${:,.0f}'.format)
         df_postcost['Telemonitoring'] = df_postcost['Telemonitoring'].map('${:,.0f}'.format)     
         df_postcost['Televisits'] = df_postcost['Televisits'].map('${:,.0f}'.format)
         df_postcost['Other'] = df_postcost['Other'].map('${:,.0f}'.format)
+        df_postcost = df_postcost.rename(columns={'Telemonitoring':'Total '})
         postcost_tele = df_postcost[df_postcost['treat']==1]
         postcost_nontele = df_postcost[df_postcost['treat']==0]
         postcost_tele=postcost_tele.drop(['treat','Region'],axis=1)
