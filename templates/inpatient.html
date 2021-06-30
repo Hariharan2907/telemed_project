@@ -37,10 +37,10 @@
             <a href = "#Top">Back to Top</a>     
         </div>
     
-        <center><h1 >Cost Study: Medical Cost</h1></center>
+        <center><h1 >Cost Study: Inpatient Cost</h1></center>
         <hr color = "black" style="width:50%;text-align:center;border-bottom: 4px double">
         
-        <form name="Item_1" action="/medcost" method="POST">
+        <form name="Item_1" action="/inpatcost" method="POST">
             <div class = "fixed">
             <label for="exampleFormControlFile2">Choose Region</label>
               <select name="sda">
@@ -90,7 +90,7 @@
         <br>
 
         <div class = "solid" >
-        <center><u><h2 id="Clients">Number of Clients for Texas</h2></u></center>
+        <center><u><h2 id="Clients">Number of Clients for {{sda_name}}</h2></u></center>
 
         <center><p class="text-border"><b>Treatment Group: Teleservices</b></p></center> 
         <center>
@@ -107,7 +107,7 @@
         </center>
         <center>
         
-        {% for table in texas_nclient_tele %}
+        {% for table in numclient_tele %}
         <center> {{table|safe}}</center>        
         {% endfor %}
 
@@ -128,7 +128,7 @@
             </center>
         
         <center>
-        {% for table in texas_nclient_nontele %}
+        {% for table in numclient_nontele %}
         <center> {{table|safe}}</center>           
         {% endfor %}</center> 
         <br>
@@ -136,47 +136,7 @@
         <br>
 
         <div class = "solid" >
-        <center><u><h2 id="Pre_Cost">Pre Cost Table for Texas</h2></u></center>
-        <center>
-        <center><p class="text-border"><b>Treatment Group: Teleservices</b></p></center>
-        <center>
-            <table class='mytable'>
-     
-                <tr>
-                <td>&nbsp;</td>
-    
-                <td colspan="4"><b>Tele Visit</b></td>               
-                <td style = "text-align: left;"><b>Telemonitoring</b></td>
-                
-                </tr>
-               </table>
-            </center>
-        {% for table in texas_precost_tele %}
-            {{table|safe}}
-        {% endfor %}</center>
-        <br><br>
-        <center><p class="text-border"><b>Comparison Group: Non-Teleservices</b></p></center>
-        <center>
-            <table class='mytable'>
-     
-                <tr>
-                <td>&nbsp;</td>
-    
-                <td colspan="4"><b>Non-Tele Visit</b></td>               
-                <td style = "text-align: left;"><b>Telemonitoring</b></td>
-                
-                </tr>
-               </table>
-            </center>
-        <center>
-            {% for table in texas_precost_nontele %}
-                {{table|safe}}
-            {% endfor %}</center>
-        </div>
-        <br>
-
-        <div class = "solid" >
-        <center><u><h2 id="Post_Cost">Post Cost Table for Texas</h2></u></center>
+        <center><u><h2 id="Post_Cost">Post Cost Table for {{sda_name}}</h2></u></center>
         <center>
         <center><p class="text-border"><b>Treatment Group: Teleservices</p></b></center>
         <center>
@@ -191,7 +151,7 @@
                 </tr>
                </table>
             </center>
-        {% for table in texas_postcost_tele %}
+        {% for table in postcost_tele_inpat %}
             {{table|safe}}
         {% endfor %}</center> 
         <br><br>
@@ -209,13 +169,53 @@
                </table>
             </center>
         <center>
-        {% for table in texas_postcost_nontele %}
+        {% for table in postcost_nontele_inpat %}
             {{table|safe}}
         {% endfor %}</center> 
 
         <br><br>
     </div>
+    <br>
+    <div class = "solid" >
+        <center><u><h2 id="Inpat_encount">Inpatient Encounters Table for {{sda_name}}</h2></u></center>
+        <center>
+        <center><p class="text-border"><b>Treatment Group: Teleservices</p></b></center>
+        <center>
+            <table class='mytable'>
+     
+                <tr>
+                <td>&nbsp;</td>
+    
+                <td colspan="4"><b>Tele Visit</b></td>               
+                <td style = "text-align: left;"><b>Telemonitoring</b></td>
+                
+                </tr>
+               </table>
+            </center>
+        {% for table in inpat_encount_tele %}
+            {{table|safe}}
+        {% endfor %}</center> 
+        <br><br>
+        <center><p class="text-border"><b>Comparison Group: Non-Teleservices</p></b></center>
+        <center>
+            <table class='mytable'>
+     
+                <tr>
+                <td>&nbsp;</td>
+    
+                <td colspan="4"><b>Non-Tele Visit</b></td>               
+                <td style = "text-align: left;"><b>Telemonitoring</b></td>
+                
+                </tr>
+               </table>
+            </center>
+        <center>
+        {% for table in inpat_encount_nontele %}
+            {{table|safe}}
+        {% endfor %}</center> 
 
+        <br><br>
+    </div>
 
     </body>
 </html>
