@@ -3,7 +3,7 @@
     <head>    
         <meta charset="UTF-8">
         <link rel="stylesheet" type = text/css href="{{ url_for('static', filename= 'css/main.css') }}">
-        <title>Cost Effective Analysis Tool</title>
+        <title>Cost Study: Inpatient Care Cost</title>
         
     </head>
 
@@ -11,8 +11,8 @@
     <body>  
 
         <div class="navbar" id="Top">
-            <a href="documents">Documents</a>
-            <a href="#">Other Data Resources</a>
+            <a href="https://sites.google.com/view/pinformatics/data-science/cost-study-resources?authuser=0" target="_blank">Documents</a>
+            <a href="https://sites.google.com/view/pinformatics/data-science/public-data-resources?authuser=0" target="_blank">Other Data Resources</a>
             <a href="#">Hospitilization Cost Lookup</a>
             
             <div class="dropdown">
@@ -23,8 +23,8 @@
                 <a href="#">Demographics</a>
                 <a href="medcost">Medical Cost</a>
                 <a href="inpatcost">Inpatient Care Cost</a>
-                <a href="#">ED Cost</a>
-                <a href="#">Outpatient Care Cost</a>
+                <a href="edcost">ED Cost</a>
+                <a href="outpatcost">Outpatient Care Cost</a>
               </div>
             </div>          
             <a href="home">CEA</a>       
@@ -32,12 +32,12 @@
         
         <div class="sidenav">
             <a href="#Clients">Number of Clients</a>
-            <a href="#Pre_Cost">Pre Cost Table</a>
-            <a href="#Post_Cost">Post Cost Table</a>       
+            <a href="#Post_Cost">Pre Cost Table</a>
+            <a href="#Inpat_encount">Inpatient Encounter Table</a>       
             <a href = "#Top">Back to Top</a>     
         </div>
     
-        <center><h1 >Cost Study: Inpatient Cost</h1></center>
+        <center><h1 >Cost Study: Inpatient Care Cost</h1></center>
         <hr color = "black" style="width:50%;text-align:center;border-bottom: 4px double">
         
         <form name="Item_1" action="/inpatcost" method="POST">
@@ -72,7 +72,7 @@
             <div style="margin: 0px 20px 0px 50px">
             <b>Blind/Disabled</b> – Medicaid clients identified as blind and / or disabled in the Medicaid assistance program and those identified with coverage in the breast and cervical cancer program (BCCP); 	<br>											
             <b>Child</b> – Medicaid clients aged 21 years and younger and those in the foster care, adoption, and those that have coverage in the Texas Temporary Assistance for Needy Families (TANF) program;	<br>									
-            <b>Other:</b> Combines the following groups	<br>		
+            <b>Other</b> – Combines the following groups	<br>		
             </div>		
             
             <div style="margin: 0px 20px 0px 100px">
