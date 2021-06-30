@@ -23,6 +23,8 @@ sda = (df['Region'].unique())
 sda = np.roll(sda,2)
 sda = sda[sda!=0]
 nclients = df[df['meas']=='nclient']
+
+#----------------------------------------------------Medical Cost------------------------------------------#
 med_df = df[df['type']=='med']
 
 #pre cost
@@ -65,8 +67,6 @@ texas_precost_tele=texas_precost_tele.drop(['treat','Region'],axis=1)
 texas_precost_nontele=texas_precost_nontele.drop(['treat','Region'],axis=1)
 
 
-
-
 texas_postcost = med_df_postcost[med_df_postcost['Region']=='Texas']
 texas_postcost=texas_postcost.drop(['type','post','meas'],axis=1)
 texas_postcost['Blind/Disabled'] = texas_postcost['Blind/Disabled'].apply(np.round)
@@ -85,20 +85,63 @@ texas_postcost_nontele = texas_postcost[texas_postcost['treat']==0]
 texas_postcost_tele=texas_postcost_tele.drop(['treat','Region'],axis=1)
 texas_postcost_nontele=texas_postcost_nontele.drop(['treat','Region'],axis=1)
 
+#----------------------------------------------------Inpatient Cost------------------------------------------#
+inpat_df = df[df['type']=='inp']
+
+#pre cost
+inpat_df_precost = inpat_df[inpat_df['post']==0]
+inpat_df_precost = inpat_df_precost[inpat_df_precost['meas']=='cost']
+#post cost
+inpat_df_postcost = inpat_df[inpat_df['post']==1]
+inpat_df_postcost = inpat_df_postcost[inpat_df_postcost['meas']=='cost']
+
+inpat_encount = inpat_df[inpat_df['meas']=='cnt']
+
+texas_postcost_inpat = inpat_df_postcost[inpat_df_postcost['Region']=='Texas']
+texas_postcost_inpat = texas_postcost_inpat.drop(['type','post','meas'],axis=1)
+texas_postcost_inpat['Blind/Disabled'] = texas_postcost_inpat['Blind/Disabled'].apply(np.round)
+texas_postcost_inpat['Child'] = texas_postcost_inpat['Child'].apply(np.round)
+texas_postcost_inpat['Telemonitoring'] = texas_postcost_inpat['Telemonitoring'].apply(np.round)
+texas_postcost_inpat['Other'] = texas_postcost_inpat['Other'].apply(np.round)
+texas_postcost_inpat = texas_postcost_inpat.sort_values(by=['treat'])
+texas_postcost_inpat['Child'] = texas_postcost_inpat['Child'].map('${:,.0f}'.format)
+texas_postcost_inpat['Blind/Disabled'] = texas_postcost_inpat['Blind/Disabled'].map('${:,.0f}'.format)
+texas_postcost_inpat['Telemonitoring'] = texas_postcost_inpat['Telemonitoring'].map('${:,.0f}'.format) 
+texas_postcost_inpat['Televisits'] = texas_postcost_inpat['Televisits'].map('${:,.0f}'.format)
+texas_postcost_inpat['Other'] = texas_postcost_inpat['Other'].map('${:,.0f}'.format)
+texas_postcost_inpat = texas_postcost_inpat.rename(columns={'Telemonitoring':'Total ','Televisits':'Total'})
+texas_postcost_tele_inpat = texas_postcost_inpat[texas_postcost_inpat['treat']==1]
+texas_postcost_nontele_inpat = texas_postcost_inpat[texas_postcost_inpat['treat']==0]
+texas_postcost_tele_inpat=texas_postcost_tele_inpat.drop(['treat','Region'],axis=1)
+texas_postcost_nontele_inpat=texas_postcost_nontele_inpat.drop(['treat','Region'],axis=1)
+
+texas_inpat_encount_df = inpat_encount[inpat_encount['Region']=='Texas']
+texas_inpat_encount_df = texas_inpat_encount_df.sort_values(by=['treat'])
+texas_inpat_encount_df= texas_inpat_encount_df.drop(['type','post','meas'],axis=1)                      
+texas_inpat_encount_df['Child'] = texas_inpat_encount_df['Child'].map('{:,.3f}'.format)
+texas_inpat_encount_df['Blind/Disabled'] = texas_inpat_encount_df['Blind/Disabled'].map('{:,.3f}'.format)
+texas_inpat_encount_df['Telemonitoring'] = texas_inpat_encount_df['Telemonitoring'].map('{:,.3f}'.format)
+texas_inpat_encount_df['Televisits'] = texas_inpat_encount_df['Televisits'].map('{:,.3f}'.format)
+texas_inpat_encount_df['Other'] = texas_inpat_encount_df['Other'].map('{:,.3f}'.format)        
+texas_inpat_encount_df = texas_inpat_encount_df.rename(columns={'Telemonitoring':'Total','Televisits':'Total'})
+texas_inpat_encount_tele = texas_inpat_encount_df[texas_inpat_encount_df['treat']==1]
+texas_inpat_encount_nontele = texas_inpat_encount_df[texas_inpat_encount_df['treat']==0]
+texas_inpat_encount_tele=texas_inpat_encount_tele.drop(['treat','Region'],axis=1)
+texas_inpat_encount_nontele=texas_inpat_encount_nontele.drop(['treat','Region'],axis=1)
+
+
+
+treatment_cost = []
 @app.route('/', methods=["GET","POST"])
 @app.route('/home', methods=["GET","POST"])
 def index():
-    #intervention_cost = ['Medical','Non Medical']
     
     if request.method == 'POST':
-        intervention = request.form['intervention']
-        intervention_period = request.form['intervention_period']
-        intervention_cost = request.form['intervention_cost']
-        net_cost = float(request.form['net_cost'])
-        outcome_change = float(request.form['outcome_change'])
+        treatment_cost.append(request.form['treat_cost'])
+        
 
-        return render_template('result.html', intervention = intervention, intervention_period=intervention_period,intervention_cost=intervention_cost, net_cost=net_cost, outcome_change=outcome_change)
-    return render_template('index.html')
+    return render_template('index.html',treatment_cost=treatment_cost)
+    
 
 @app.route('/medcost', methods=["GET", "POST"])
 def medcost():
@@ -162,6 +205,65 @@ def medcost():
                             texas_precost_nontele=[texas_precost_nontele.to_html(index=False)], texas_postcost_tele=[texas_postcost_tele.to_html(index = False)],  texas_postcost_nontele=[texas_postcost_nontele.to_html(index = False)])
     
     
+@app.route('/inpatcost', methods=["GET", "POST"])
+def inpatcost():
+    if request.method == "POST":
+        sda_name = request.form.get("sda", None)
+        num_client = nclients[nclients['Region']==sda_name]
+        num_client = num_client.sort_values(by=['treat'])
+        num_client=num_client.drop(['type','post','meas'],axis=1)
+        num_client['Child'] = num_client['Child'].map('{:,.0f}'.format)
+        num_client['Blind/Disabled'] = num_client['Blind/Disabled'].map('{:,.0f}'.format)
+        num_client['Telemonitoring'] = num_client['Telemonitoring'].map('{:,.0f}'.format)
+        num_client['Televisits'] = num_client['Televisits'].map('{:,.0f}'.format)
+        num_client['Other'] = num_client['Other'].map('{:,.0f}'.format)
+        num_client = num_client.rename(columns={'Telemonitoring':'Total ','Televisits':'Total'})
+        numclient_tele = num_client[num_client['treat']==1]
+        numclient_nontele = num_client[num_client['treat']==0]
+        numclient_tele=numclient_tele.drop(['treat','Region'],axis=1)
+        numclient_nontele=numclient_nontele.drop(['treat','Region'],axis=1)
+
+        postcost_inpat = inpat_df_postcost[inpat_df_postcost['Region']==sda_name]
+        postcost_inpat = postcost_inpat.sort_values(by=['treat'])
+        postcost_inpat=postcost_inpat.drop(['type','post','meas'],axis=1)
+        postcost_inpat['Blind/Disabled'] = postcost_inpat['Blind/Disabled'].apply(np.round)
+        postcost_inpat['Child'] = postcost_inpat['Child'].apply(np.round)
+        postcost_inpat['Telemonitoring'] = postcost_inpat['Telemonitoring'].apply(np.round)
+        postcost_inpat['Other'] = postcost_inpat['Other'].apply(np.round)
+        postcost_inpat['Child'] = postcost_inpat['Child'].map('${:,.0f}'.format)
+        postcost_inpat['Blind/Disabled'] = postcost_inpat['Blind/Disabled'].map('${:,.0f}'.format)
+        postcost_inpat['Telemonitoring'] = postcost_inpat['Telemonitoring'].map('${:,.0f}'.format)
+        postcost_inpat['Televisits'] = postcost_inpat['Televisits'].map('${:,.0f}'.format)
+        postcost_inpat['Other'] = postcost_inpat['Other'].map('${:,.0f}'.format)
+        postcost_inpat = postcost_inpat.rename(columns={'Telemonitoring':'Total','Televisits':'Total'})
+        postcost_tele_inpat = postcost_inpat[postcost_inpat['treat']==1]
+        postcost_nontele_inpat = postcost_inpat[postcost_inpat['treat']==0]
+        postcost_tele_inpat=postcost_tele_inpat.drop(['treat','Region'],axis=1)
+        postcost_nontele_inpat=postcost_nontele_inpat.drop(['treat','Region'],axis=1)
+
+        inpat_encount_df = inpat_encount[inpat_encount['Region']==sda_name]
+        inpat_encount_df = inpat_encount_df.sort_values(by=['treat'])
+        inpat_encount_df=inpat_encount_df.drop(['type','post','meas'],axis=1)                      
+        inpat_encount_df['Child'] = inpat_encount_df['Child'].map('{:,.3f}'.format)
+        inpat_encount_df['Blind/Disabled'] = inpat_encount_df['Blind/Disabled'].map('{:,.3f}'.format)
+        inpat_encount_df['Telemonitoring'] = inpat_encount_df['Telemonitoring'].map('{:,.3f}'.format)
+        inpat_encount_df['Televisits'] = inpat_encount_df['Televisits'].map('{:,.3f}'.format)
+        inpat_encount_df['Other'] = inpat_encount_df['Other'].map('{:,.3f}'.format)        
+        inpat_encount_df = inpat_encount_df.rename(columns={'Telemonitoring':'Total','Televisits':'Total'})
+        inpat_encount_tele = inpat_encount_df[inpat_encount_df['treat']==1]
+        inpat_encount_nontele = inpat_encount_df[inpat_encount_df['treat']==0]
+        inpat_encount_tele=inpat_encount_tele.drop(['treat','Region'],axis=1)
+        inpat_encount_nontele=inpat_encount_nontele.drop(['treat','Region'],axis=1)
+
+    
+        if sda_name != None:
+            return render_template("inpatient.html", sda_name=sda_name, sda=sda, numclient_tele=[numclient_tele.to_html(index = False)],numclient_nontele=[numclient_nontele.to_html(index = False)],
+                                    postcost_tele_inpat=[postcost_tele_inpat.to_html(index = False)], postcost_nontele_inpat=[postcost_nontele_inpat.to_html(index = False)], inpat_encount_tele=[inpat_encount_tele.to_html(index = False)],inpat_encount_nontele=[inpat_encount_nontele.to_html(index = False)])
+    
+    
+    
+    return render_template('inpatient1.html',sda=sda, texas_nclient_tele=[texas_nclient_tele.to_html(index=False)], texas_nclient_nontele=[texas_nclient_nontele.to_html(index=False)], texas_postcost_tele_inpat=[texas_postcost_tele_inpat.to_html(index = False)],  texas_postcost_nontele_inpat=[texas_postcost_nontele_inpat.to_html(index = False)],
+                            texas_inpat_encount_tele=[texas_inpat_encount_tele.to_html(index=False)],texas_inpat_encount_nontele=[texas_inpat_encount_nontele.to_html(index=False)])
 
 @app.route('/documents', methods = ["GET","POST"])
 def documents(): 
