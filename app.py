@@ -477,12 +477,15 @@ def outpatcost():
 
 
 
+url1 = "demo.csv"
+sda_demo = []
+
+df_demo = pd.read_csv(url1,error_bad_lines=False)
 
 
-
-@app.route('/documents', methods = ["GET","POST"])
+@app.route('/demographics', methods = ["GET","POST"])
 def documents(): 
-    return render_template('documents.html')
+    return render_template('demographics.html')
 
 if __name__ == "__main__":
     app.run(debug=True) 
