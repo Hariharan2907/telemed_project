@@ -23,6 +23,7 @@ sda = (df['Region'].unique())
 sda = np.roll(sda,2)
 sda = sda[sda!=0]
 nclients = df[df['meas']=='nclient']
+nclients.loc[nclients['Telemonitoring'] <= 5.0 , ['Telemonitoring']] = np.nan
 
 #----------------------------------------------------Medical Cost------------------------------------------#
 med_df = df[df['type']=='med']
@@ -223,12 +224,9 @@ treatment_cost = []
 @app.route('/', methods=["GET","POST"])
 @app.route('/home', methods=["GET","POST"])
 def index():
-    
-    if request.method == 'POST':
-        treatment_cost.append(request.form['treat_cost'])
-        
 
-    return render_template('index.html',treatment_cost=treatment_cost)
+        
+    return render_template('index.html')
     
 
 @app.route('/medcost', methods=["GET", "POST"])
@@ -240,14 +238,17 @@ def medcost():
         num_client=num_client.drop(['type','post','meas'],axis=1)
         num_client['Child'] = num_client['Child'].map('{:,.0f}'.format)
         num_client['Blind/Disabled'] = num_client['Blind/Disabled'].map('{:,.0f}'.format)
+        
         num_client['Telemonitoring'] = num_client['Telemonitoring'].map('{:,.0f}'.format)
         num_client['Televisits'] = num_client['Televisits'].map('{:,.0f}'.format)
         num_client['Other'] = num_client['Other'].map('{:,.0f}'.format)
+        
         num_client = num_client.rename(columns={'Telemonitoring':'Total ','Televisits':'Total'})
         numclient_tele = num_client[num_client['treat']==1]
         numclient_nontele = num_client[num_client['treat']==0]
         numclient_tele=numclient_tele.drop(['treat','Region'],axis=1)
         numclient_nontele=numclient_nontele.drop(['treat','Region'],axis=1)
+        
 
         df_precost = med_df_precost[med_df_precost['Region']==sda_name]
         df_precost = df_precost.sort_values(by=['treat'])
@@ -425,11 +426,13 @@ def outpatcost():
         num_client['Telemonitoring'] = num_client['Telemonitoring'].map('{:,.0f}'.format)
         num_client['Televisits'] = num_client['Televisits'].map('{:,.0f}'.format)
         num_client['Other'] = num_client['Other'].map('{:,.0f}'.format)
+        
         num_client = num_client.rename(columns={'Telemonitoring':'Total ','Televisits':'Total'})
         numclient_tele = num_client[num_client['treat']==1]
         numclient_nontele = num_client[num_client['treat']==0]
         numclient_tele=numclient_tele.drop(['treat','Region'],axis=1)
         numclient_nontele=numclient_nontele.drop(['treat','Region'],axis=1)
+        
 
         postcost_outpat = outpat_df_postcost[outpat_df_postcost['Region']==sda_name]
         postcost_outpat = postcost_outpat.sort_values(by=['treat'])
@@ -484,7 +487,7 @@ df_demo = pd.read_csv(url1,error_bad_lines=False)
 
 
 @app.route('/demographics', methods = ["GET","POST"])
-def documents(): 
+def demographics(): 
     return render_template('demographics.html')
 
 if __name__ == "__main__":
