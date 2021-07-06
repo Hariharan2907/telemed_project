@@ -33,21 +33,9 @@
             var cell4 = row.insertCell(3);
             var element4 = document.createElement("input");
             element4.type = "number";
-            element4.name = "treat_visit";
+            element4.name = "treat_outcome";
             cell4.appendChild(element4);
 
-            var cell5 = row.insertCell(4);
-            var element5 = document.createElement("input");
-            element5.type = "number";
-            element5.name = "comp_cost";
-            cell5.appendChild(element5);
-
-            var cell6 = row.insertCell(5);
-            var element6 = document.createElement("input");
-            element6.type = "number";
-            element6.name = "comp_visit";
-            cell6.appendChild(element6);
-      
       
           }
       
@@ -94,74 +82,135 @@
           <a href="edcost">ED Cost</a>
           <a href="outpatcost">Outpatient Care Cost</a>
         </div>
-      </div>          
-      <a href="home">CEA</a>
- 
+      </div>  
+      <div class="dropdown">
+        <button class="dropbtn">CEA
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="questionnaire">Questionnaire</a>
+          <a href="data_entry">Data Entry</a>
+          <a href="cea_results">CEA Results</a>
+
+        </div>
+      </div>  
+
       </div>
+      
+      <center><h1>Questionnaire</h1></center>
+      <center><h3><u>DISCLAIMER: These questions are solely used to facilitate thinking through the CEA processess. Not all questions are required/applicable.</u></h3></center>
+      <br><br>
+      <div style="margin: 15px 30px 10px 100px">
+        <div style="display: inline-block; text-align: right;">
+      <form method = "POST">
+        
+        <label for="inter_desc"> Intervention Description: </label>
+        <textarea id="inter_desc" style="margin-left:50px" name="inter_desc" rows ="1" cols="65">e.g., TM for Diabetes; Televists for Blind/Disabled
+        </textarea>
 
-          
+        <br><br>
+        <label for="health_desc"> Health Outcome Description: </label>
+        <textarea id="health_desc" style="margin-left:50px" name="health_desc" rows ="1" cols="65">e.g., Hospitalizations; stroke; ED usage
+        </textarea>
 
-        <center><h1>Cost Effectiveness Analysis Tool </h1></center>
-        <center><u><h2>Study perpective: MCO</h2></u></center>
-               
-        <form method = "POST">
-          <center>
-          <table class="ceatable" id="input-table">
-            <tr>
-              <th>&nbsp;</th>
-              <th>&nbsp;</th>
-              <th colspan="2">Treatment</th>
-              <th colspan="2">Comparison</th>
-            </tr>
-            <tr>
-              <th></th>
-              <th>Year</th>
-              <th>Avg Cost</th>
-              <th>Avg Visit</th>
-              <th>Avg Cost</th>
-              <th>Avg Visit</th>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-              <td><input type="number" name = "year1"></td> <td><input type="number" name="treat_cost"></td><td><input type="number" name="treat-visit1"></td>
-              <td><input type="number" name="comp-cost1"></td><td><input type="number" name="comp-visit1"></td>
-            </tr>
-            <!--
-            <tr>
-              <td><input type="number" name = "year2"></td> <td><input type="number" name="treat-cost2"></td><td><input type="number" name="treat-visit2"></td>
-              <td><input type="number" name="comp-cost2"></td><td><input type="number" name="comp-visit2"></td>
-            </tr>
-            <tr>
-              <td><input type="number" name = "year3"></td> <td><input type="number" name="treat-cost3"></td><td><input type="number" name="treat-visit3"></td>
-              <td><input type="number" name="comp-cost3"></td><td><input type="number" name="comp-visit3"></td>
-            </tr>
-            <tr>
-              <td><input type="number" name = "year4"></td> <td><input type="number" name="treat-cost4"></td><td><input type="number" name="treat-visit4"></td>
-              <td><input type="number" name="comp-cost4"></td><td><input type="number" name="comp-visit4"></td>
-            </tr>
-            <tr>
-              <td><input type="number" name = "year5"></td> <td><input type="number" name="treat-cost5"></td><td><input type="number" name="treat-visit5"></td>
-              <td><input type="number" name="comp-cost5"></td><td><input type="number" name="comp-visit5"></td>
-            </tr>
-            <tr>
-              <td><input type="number" name = "year6"></td> <td><input type="number" name="treat-cost6"></td><td><input type="number" name="treat-visit6"></td>
-              <td><input type="number" name="comp-cost6"></td><td><input type="number" name="comp-visit6"></td>
-            </tr> --> 
+        <br><br>
+        <label for="study_obj"> Study Objective: </label>
+        <textarea id="study_obj" style="margin-left:50px" name="study_obj" rows ="1" cols="65">i.e., maximize or minimize the health outcome?
+        </textarea>
 
-            
+        <br><br>
+        <label for="study_pers"> Study Perspective: </label>
+        <textarea id="study_pers" style="margin-left:50px" name="study_pers" rows ="1" cols="65">e.g., MCO; Societal
+        </textarea>
+
+        <br><br>
+        <label for="criteria">What are the criteria for evaluating the cost effectiveness ratio? </label>
+        <textarea id="criteria" style="margin-left:50px" name="criteria" rows ="1" cols="65">
+        </textarea>
+        <br><br><br>
+      </div>
+    </div>
+    <div style="margin: 15px 30px 10px 390px">
+      <div style="display: inline-block; text-align: right;">
+        <table>
+          <tr>
+            <th></th>
+            <th style="text-align: center;padding: 15px;">Size</th>
+            <th style="text-align: center; padding: 15px;">Inclusion/Exclusion criteria <br>(e.g. age, comorbidity, race, sex, socioeconomic status, dual eligibility)</th>
+          </tr>
+          <tr></tr>
+          <tr>
+            <td><b>Intervention Cohort</b></td>
+            <td><textarea id="interv_size" style="margin-left:50px" name="interv_size" rows ="1" cols="10"></textarea></td>
+            <td><textarea id="interv_crit" style ="margin:auto" name="interv_crit" rows ="1" cols="70"></textarea></td>
+          </tr>
+          <tr>
+            <td><b> Non Intervention Cohort</b></td>
+            <td><textarea id="noninterv_size" style="margin-left:50px" name="noninterv_size" rows ="1" cols="10"></textarea></td>
+            <td><textarea id="noninterv_crit" style ="margin:auto" name="noninterv_crit" rows ="1" cols="70"></textarea></td>
+          </tr>
         </table>
-        </center>
-        <br>
-        <center>
-        <INPUT type="button" value="Add Row" onclick="addRow('input-table')" />
-        <INPUT type="button" value="Delete Row" onclick="deleteRow('input-table')" />
-      </center>
+        <br><br>
+      </div>
+      </div>
+        
+
+      </form>
+
+      <form method = "POST">
+        <div style="margin: 15px 30px 10px 425px">
+          <div style="display: inline-block; text-align: left;">
+            <label for="study_time"> Study Time Frame: </label>
+        <select style="margin-left:50px"  name="study_time" id="study_time">
+          <option value="month">Month</option>
+          <option value="quarter">Quarter</option>
+          <option value="year">Year</option>
+        </select>    
+        </div>
+      </div>
+      
+
+      <div style="margin: 15px 30px 10px 425px">
+        <div style="display: inline-block; text-align: left;">
+      <label for="inter_start">Intervention Start: </label>
+      <textarea id="inter_start" style="margin-left:50px" name="inter_start" rows ="1" cols="30"> (if mo, give mm-yyyy option; if quarter, give qtr-yyyy option; if year, give yyyy option)  </textarea>
+      &ensp;
+      <label for="inter_end">Intervention End: </label>
+      <textarea id="inter_end" style="margin-left:50px" name="inter_end" rows ="1" cols="30"> (if mo, give mm-yyyy option; if quarter, give qtr-yyyy option; if year, give yyyy option)  </textarea>
+      <br><br>
+      <label for="noninter_start">Non Intervention Start: </label>
+      <textarea id="noninter_start" style="margin-left:50px" name="noninter_start" rows ="1" cols="30"> (if mo, give mm-yyyy option; if quarter, give qtr-yyyy option; if year, give yyyy option)  </textarea>
+      &ensp;
+      <label for="noninter_end">Non Intervention End: </label>
+      <textarea id="noninter_end" style="margin-left:50px" name="noninter_end" rows ="1" cols="30"> (if mo, give mm-yyyy option; if quarter, give qtr-yyyy option; if year, give yyyy option)  </textarea>
+      <br><br>
+      <legend><b>Intervention Cost Categories:</b></legend>
+      <input type="checkbox" name="med_cost" value="med_cost">Medical Costs<br>      
+      <input type="checkbox" name="nonmed_cost" value="nonmed_cost">Non-Medical Costs<br>      
+      <input type="checkbox" name="pharm_cost" value="pharm_cost">Pharmacy Costs<br> 
+      <input type="checkbox" name="medsupply_cost" value="medsupply_cost">Medical Supply Costs<br>      
+      <input type="checkbox" name="tech_cost" value="tech_cost">Technology Costs<br> 
+      <input type="checkbox" name="nurse_cost" value="nurse_cost">Nursing Costs<br> 
+      <input type="checkbox" name="diag_cost" value="diag_cost">Diagnostic Costs<br> 
+      <input type="checkbox" name="other" value="other">Other<br> 
       <br>
-      <center><input class = "btn btn-primary" type = "submit" value = "Computer CER" ></center>
-        </form>
-      {%for treat_cost in treatment_cost%}
-        <center><h3> {{treat_cost}} </h3></center>
-      {%endfor%}
+      <legend><b>Health Outcome-Associated Cost Categories:</b></legend>
+      <input type="checkbox" name="hospit" value="hospit">Hospitalizations<br>      
+      <input type="checkbox" name="em_care" value="em_care">Emergency Care<br>      
+      <input type="checkbox" name="sur_costs" value="sur_costs">Surgery-Related Costs<br> 
+      <input type="checkbox" name="read_mis" value="read_mis">Readmissions<br>      
+      <input type="checkbox" name="rehab" value="rehab">Rehabilitation<br> 
+      <input type="checkbox" name="acute_care" value="acute_care">Acute Care<br> 
+      <input type="checkbox" name="long_care" value="long_care">Long-Term Care (e.g., home health<br> 
+      <input type="checkbox" name="disab_cost" value="disab_cost">Disability-Related Costs<br> 
+      <input type="checkbox" name="lost_prod" value="lost_prod">Lost Productivity<br> 
+      <input type="checkbox" name="other1" value="other1">Other<br> 
+      <br>      
+      
+      </div>
+      </div>
+      </form>
+          
     </body>
 </html>
 
