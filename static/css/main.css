@@ -234,3 +234,8 @@ caption {
   width:300px;
   border-bottom: solid 2px black;
 }
+
+form label{
+  font-weight: bold;
+  text-align: right;
+}
