@@ -1,127 +1,26 @@
-<!doctype html>
-<html lang="en">
-    <head>    
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/main.css') }}">
-        <title>Cost Effective Analysis Tool</title>
-        <SCRIPT language="javascript">
-          function addRow(tableID) {
-      
-            var table = document.getElementById(tableID);
-      
-            var rowCount = table.rows.length;
-            var row = table.insertRow(rowCount);
-      
-            var cell1 = row.insertCell(0);
-            var element1 = document.createElement("input");
-            element1.type = "checkbox";
-            element1.name="chkbox[]";
-            cell1.appendChild(element1);
-      
-            var cell2 = row.insertCell(1);
-            var element2 = document.createElement("input");
-            element2.type = "number";
-            element2.name = "year";
-            cell2.appendChild(element2);
-      
-            var cell3 = row.insertCell(2);
-            var element3 = document.createElement("input");
-            element3.type = "number";
-            element3.name = "treat_cost";
-            cell3.appendChild(element3);
-            
-            var cell4 = row.insertCell(3);
-            var element4 = document.createElement("input");
-            element4.type = "number";
-            element4.name = "treat_outcome";
-            cell4.appendChild(element4);
-
-      
-          }
-      
-          function deleteRow(tableID) {
-            try {
-            var table = document.getElementById(tableID);
-            var rowCount = table.rows.length;
-      
-            for(var i=0; i<rowCount; i++) {
-              var row = table.rows[i];
-              var chkbox = row.cells[0].childNodes[0];
-              if(null != chkbox && true == chkbox.checked) {
-                table.deleteRow(i);
-                rowCount--;
-                i--;
-              }
-      
-      
-            }
-            }catch(e) {
-              alert(e);
-            }
-          }
-      
-        </SCRIPT>
-    </head>
-
-
-    <body>  
-
-    <div class="navbar">
-      <a href="https://sites.google.com/view/pinformatics/data-science/cost-study-resources?authuser=0" target="_blank">Documents</a>
-      <a href="https://sites.google.com/view/pinformatics/data-science/public-data-resources?authuser=0" target="_blank">Other Data Resources</a>
-      <a href="#">Hospitilization Cost Lookup</a>
-      
-      <div class="dropdown">
-        <button class="dropbtn">Cost Study 
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="demographics">Demographics</a>
-          <a href="medcost">Total Medical Cost</a>
-          <a href="inpatcost">Inpatient Care Cost</a>
-          <a href="edcost">ED Cost</a>
-          <a href="outpatcost">Outpatient Care Cost</a>
-        </div>
-      </div>  
-      <div class="dropdown">
-        <button class="dropbtn">CEA
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="questionnaire">Questionnaire</a>
-          <a href="data_entry">Data Entry</a>
-          <a href="cea_results">CEA Results</a>
-
-        </div>
-      </div>  
-
-      </div>
-      
+    {% extends "base.html" %}
+    {% block content %}
       <center><h1>Questionnaire</h1></center>
       <center><h3><u>DISCLAIMER: These questions are solely used to facilitate thinking through the CEA processess. Not all questions are required/applicable.</u></h3></center>
       <br><br>
       <div style="margin: 15px 30px 10px 100px">
         <div style="display: inline-block; text-align: right;">
-      <form method = "POST">
+      <form method = "POST" action="data_entry">
         
         <label for="inter_desc"> Intervention Description: </label>
-        <textarea id="inter_desc" style="margin-left:50px" name="inter_desc" rows ="1" cols="65">e.g., TM for Diabetes; Televists for Blind/Disabled
-        </textarea>
+        <textarea id="inter_desc" style="margin-left:50px" name="inter_desc" rows ="1" cols="65" placeholder="e.g., TM for Diabetes; Televists for Blind/Disabled"></textarea>
 
         <br><br>
         <label for="health_desc"> Health Outcome Description: </label>
-        <textarea id="health_desc" style="margin-left:50px" name="health_desc" rows ="1" cols="65">e.g., Hospitalizations; stroke; ED usage
-        </textarea>
+        <textarea id="health_desc" style="margin-left:50px" name="health_desc" rows ="1" cols="65" placeholder="e.g., Hospitalizations; stroke; ED usage"></textarea>
 
         <br><br>
         <label for="study_obj"> Study Objective: </label>
-        <textarea id="study_obj" style="margin-left:50px" name="study_obj" rows ="1" cols="65">i.e., maximize or minimize the health outcome?
-        </textarea>
+        <textarea id="study_obj" style="margin-left:50px" name="study_obj" rows ="1" cols="65" placeholder="i.e., maximize or minimize the health outcome?"></textarea>
 
         <br><br>
         <label for="study_pers"> Study Perspective: </label>
-        <textarea id="study_pers" style="margin-left:50px" name="study_pers" rows ="1" cols="65">e.g., MCO; Societal
-        </textarea>
+        <textarea id="study_pers" style="margin-left:50px" name="study_pers" rows ="1" cols="65" placeholder="e.g., MCO; Societal"></textarea>
 
         <br><br>
         <label for="criteria">What are the criteria for evaluating the cost effectiveness ratio? </label>
@@ -157,7 +56,7 @@
 
       </form>
 
-      <form method = "POST">
+      <form method = "POST" action ="data_entry" >
         <div style="margin: 15px 30px 10px 425px">
           <div style="display: inline-block; text-align: left;">
             <label for="study_time"> Study Time Frame: </label>
@@ -173,16 +72,16 @@
       <div style="margin: 15px 30px 10px 425px">
         <div style="display: inline-block; text-align: left;">
       <label for="inter_start">Intervention Start: </label>
-      <textarea id="inter_start" style="margin-left:50px" name="inter_start" rows ="1" cols="30"> (if mo, give mm-yyyy option; if quarter, give qtr-yyyy option; if year, give yyyy option)  </textarea>
+      <textarea id="inter_start" style="margin-left:50px" name="inter_start" rows ="1" cols="30" placeholder="(if mo, give mm-yyyy option; if quarter, give qtr-yyyy option; if year, give yyyy option)"></textarea>
       &ensp;
       <label for="inter_end">Intervention End: </label>
-      <textarea id="inter_end" style="margin-left:50px" name="inter_end" rows ="1" cols="30"> (if mo, give mm-yyyy option; if quarter, give qtr-yyyy option; if year, give yyyy option)  </textarea>
+      <textarea id="inter_end" style="margin-left:50px" name="inter_end" rows ="1" cols="30" placeholder="(if mo, give mm-yyyy option; if quarter, give qtr-yyyy option; if year, give yyyy option)"></textarea>
       <br><br>
       <label for="noninter_start">Non Intervention Start: </label>
-      <textarea id="noninter_start" style="margin-left:50px" name="noninter_start" rows ="1" cols="30"> (if mo, give mm-yyyy option; if quarter, give qtr-yyyy option; if year, give yyyy option)  </textarea>
+      <textarea id="noninter_start" style="margin-left:50px" name="noninter_start" rows ="1" cols="30" placeholder="(if mo, give mm-yyyy option; if quarter, give qtr-yyyy option; if year, give yyyy option)"></textarea>
       &ensp;
       <label for="noninter_end">Non Intervention End: </label>
-      <textarea id="noninter_end" style="margin-left:50px" name="noninter_end" rows ="1" cols="30"> (if mo, give mm-yyyy option; if quarter, give qtr-yyyy option; if year, give yyyy option)  </textarea>
+      <textarea id="noninter_end" style="margin-left:50px" name="noninter_end" rows ="1" cols="30" placeholder="(if mo, give mm-yyyy option; if quarter, give qtr-yyyy option; if year, give yyyy option)"></textarea>
       <br><br>
       <legend><b>Intervention Cost Categories:</b></legend>
       <input type="checkbox" name="med_cost" value="med_cost">Medical Costs<br>      
@@ -206,12 +105,11 @@
       <input type="checkbox" name="lost_prod" value="lost_prod">Lost Productivity<br> 
       <input type="checkbox" name="other1" value="other1">Other<br> 
       <br>      
-      
+      <center><input class = "btn btn-primary" type = "submit" value = "Next" target="data_entry"></center>
       </div>
       </div>
       </form>
-          
-    </body>
-</html>
+      {% endblock content %} 
+
 
   
