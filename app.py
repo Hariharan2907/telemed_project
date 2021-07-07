@@ -222,12 +222,15 @@ texas_outpat_visits_nontele=texas_outpat_visits_nontele.drop(['treat','Region'],
 
 treatment_cost = []
 @app.route('/', methods=["GET","POST"])
-@app.route('/home', methods=["GET","POST"])
+@app.route('/questionnaire', methods=["GET","POST"])
 def index():
-
-        
+    if request.method == 'POST':
+        return render_template('data_entry.html')       
     return render_template('index.html')
-    
+
+@app.route('/data_entry',methods=["GET","POST"])
+def data_entry():
+    return render_template('data_entry.html')
 
 @app.route('/medcost', methods=["GET", "POST"])
 def medcost():
