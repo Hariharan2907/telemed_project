@@ -1,6 +1,6 @@
     {% extends "base.html" %}
     {% block content %}
-      <center><h1>Questionnaire</h1></center>
+      <center><h1>CEA Design</h1></center>
       <center><h3><u>DISCLAIMER: These questions are solely used to facilitate thinking through the CEA processess. Not all questions are required/applicable.</u></h3></center>
       <br><br>
       <div style="margin: 15px 30px 10px 100px">
@@ -24,8 +24,7 @@
 
         <br><br>
         <label for="criteria">What are the criteria for evaluating the cost effectiveness ratio? </label>
-        <textarea id="criteria" style="margin-left:50px" name="criteria" rows ="1" cols="65">
-        </textarea>
+        <textarea id="criteria" style="margin-left:50px" name="criteria" rows ="1" cols="65" placeholder="e.g., How much are you willing to spend to avoid a stroke?"></textarea>
         <br><br><br>
       </div>
     </div>
@@ -39,14 +38,14 @@
           </tr>
           <tr></tr>
           <tr>
-            <td><b>Intervention Cohort</b></td>
+            <td><b>Intervention (Treatment) Cohort</b></td>
             <td><textarea id="interv_size" style="margin-left:50px" name="interv_size" rows ="1" cols="10"></textarea></td>
-            <td><textarea id="interv_crit" style ="margin:auto" name="interv_crit" rows ="1" cols="70"></textarea></td>
+            <td><textarea id="interv_crit" style ="margin:auto" name="interv_crit" rows ="1" cols="70" placeholder="(e.g. age, comorbidity, race, sex, socioeconomic status, dual eligibility)"></textarea></td>
           </tr>
           <tr>
-            <td><b> Non Intervention Cohort</b></td>
+            <td><b> Non Intervention (Comparison) Cohort</b></td>
             <td><textarea id="noninterv_size" style="margin-left:50px" name="noninterv_size" rows ="1" cols="10"></textarea></td>
-            <td><textarea id="noninterv_crit" style ="margin:auto" name="noninterv_crit" rows ="1" cols="70"></textarea></td>
+            <td><textarea id="noninterv_crit" style ="margin:auto" name="noninterv_crit" rows ="1" cols="70" placeholder="(e.g. age, comorbidity, race, sex, socioeconomic status, dual eligibility)"></textarea></td>
           </tr>
         </table>
         <br><br>
@@ -105,9 +104,28 @@
       <input type="checkbox" name="lost_prod" value="lost_prod">Lost Productivity<br> 
       <input type="checkbox" name="other1" value="other1">Other<br> 
       <br>      
+
+      <br>
+      </div>
+      </div>
+
+      <div style="margin: 15px 30px 10px 425px">
+      <div style="display: inline-block; text-align: right;">
+        <label for="data_source">Data Sources: </label>
+        <textarea id="data_source" style="margin-left:50px" name="data_source" rows ="1" cols="65" placeholder="e.g., claims/encounters, PUDF, public data sources"></textarea>
+        
+        <br><br>
+        <label for="team_memb">Study Team Members: </label>
+        <textarea id="team_memb" style="margin-left:50px" name="team_memb" rows ="1" cols="65" ></textarea>
+
+        <br><br>
+        <label for="comments">Other Comments/Notes: </label>
+        <textarea id="comments" style="margin-left:50px" name="comments" rows ="1" cols="65" placeholder="eg., personal notes"></textarea>
+        <br><br>        
+      </div>
+      </div>
       <center><input class = "btn btn-primary" type = "submit" value = "Next" target="data_entry"></center>
-      </div>
-      </div>
+      <br>
       </form>
       {% endblock content %} 
 

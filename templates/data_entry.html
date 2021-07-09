@@ -1,54 +1,38 @@
 {% extends "base.html" %}
+
 {% block content %}
 
 
         <center><h1>Cost Effectiveness Analysis Tool </h1></center>
-        <center><u><h2>Study perpective: MCO</h2></u></center>
+        <center><u><h2>Intervention Cohort</h2></u></center>
                
-        <form method = "POST">
+        <form method = "POST" id="myform" name="myform">
           <center>
           <table class="ceatable" id="input-table">
-
+            <thead>
             <tr>
               <th></th>
               <th>Time Period (SFY)</th>
-              <th>Costs</th>
-              <th>Health Outcome</th>
+              <th>Cost 1</th>
+              
             </tr>
+            </thead>
+            <tbody>
             <tr>
-              <td>&nbsp;</td>
-              <td><input type="number" name = "year1"></td> <td><input type="number" name="treat_cost1"></td><td><input type="number" name="treat-outcome"></td>
-         
+              <td><input type="button" value="Remove" onclick="removeRow(this)"/></td>  
+              <td><input type="number" name = "year1"></td> <td><input type="number" name="inter_costs"></td>
+                      
             </tr>
-            <!--
-            <tr>
-              <td><input type="number" name = "year2"></td> <td><input type="number" name="treat-cost2"></td><td><input type="number" name="treat-visit2"></td>
-              <td><input type="number" name="comp-cost2"></td><td><input type="number" name="comp-visit2"></td>
-            </tr>
-            <tr>
-              <td><input type="number" name = "year3"></td> <td><input type="number" name="treat-cost3"></td><td><input type="number" name="treat-visit3"></td>
-              <td><input type="number" name="comp-cost3"></td><td><input type="number" name="comp-visit3"></td>
-            </tr>
-            <tr>
-              <td><input type="number" name = "year4"></td> <td><input type="number" name="treat-cost4"></td><td><input type="number" name="treat-visit4"></td>
-              <td><input type="number" name="comp-cost4"></td><td><input type="number" name="comp-visit4"></td>
-            </tr>
-            <tr>
-              <td><input type="number" name = "year5"></td> <td><input type="number" name="treat-cost5"></td><td><input type="number" name="treat-visit5"></td>
-              <td><input type="number" name="comp-cost5"></td><td><input type="number" name="comp-visit5"></td>
-            </tr>
-            <tr>
-              <td><input type="number" name = "year6"></td> <td><input type="number" name="treat-cost6"></td><td><input type="number" name="treat-visit6"></td>
-              <td><input type="number" name="comp-cost6"></td><td><input type="number" name="comp-visit6"></td>
-            </tr> --> 
-
+        </tbody>
             
         </table>
         </center>
         <br>
         <center>
-        <INPUT type="button" value="Add Row" onclick="addRow('input-table')" />
-        <INPUT type="button" value="Delete Row" onclick="deleteRow('input-table')" />
+        <INPUT type="button" value="Add Row" onclick="addRowToTable('input-table')" />
+        <INPUT type="button" value="Add Column" onclick="addColumn('input-table')" />
+        <INPUT type="button" value="Delete Column" onclick="deleteColumn('input-table')" />
+        
       </center>
       <br>
       <center><input class = "btn btn-primary" type = "submit" value = "Computer CER" ></center>
