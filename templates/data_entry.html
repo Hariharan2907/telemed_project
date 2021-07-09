@@ -8,6 +8,11 @@
                
         <form method = "POST" id="myform" name="myform">
           <center>
+            <center><p class="text-border"><b>Intervention Cost</b></p></center> 
+            <INPUT type="button" value="Add Row" onclick="addRowToTable()" />
+            <INPUT type="button" value="Add Column" onclick="addColumn('input-table')" />
+            <INPUT type="button" value="Delete Column" onclick="deleteColumn('input-table')" />
+            <br>
           <table class="ceatable" id="input-table">
             <thead>
             <tr>
@@ -18,9 +23,10 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
+            <tr id = "clone">
               <td><input type="button" value="Remove" onclick="removeRow(this)"/></td>  
-              <td><input type="number" name = "year1"></td> <td><input type="number" name="inter_costs"></td>
+              <td><input type="number" name = "year" ></td>
+              <td><input type="number" name="inter_costs" step=any></td>
                       
             </tr>
         </tbody>
@@ -29,15 +35,14 @@
         </center>
         <br>
         <center>
-        <INPUT type="button" value="Add Row" onclick="addRowToTable('input-table')" />
-        <INPUT type="button" value="Add Column" onclick="addColumn('input-table')" />
-        <INPUT type="button" value="Delete Column" onclick="deleteColumn('input-table')" />
+            
+ 
         
       </center>
       <br>
-      <center><input class = "btn btn-primary" type = "submit" value = "Computer CER" ></center>
+      <center><input class = "btn btn-primary" type = "submit" value = "Compute Sum for Intervention Cost" ></center>
         </form>
-      {%for treat_cost in treatment_cost%}
-        <center><h3> {{treat_cost}} </h3></center>
-      {%endfor%}
+      
+        <center><h3> Intervention Cost Sum: {{total_cost}} </h3></center>
+      
       {% endblock content %} 
