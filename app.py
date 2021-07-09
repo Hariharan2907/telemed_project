@@ -220,19 +220,27 @@ texas_outpat_visits_nontele = texas_outpat_visits_df[texas_outpat_visits_df['tre
 texas_outpat_visits_tele=texas_outpat_visits_tele.drop(['treat','Region'],axis=1)
 texas_outpat_visits_nontele=texas_outpat_visits_nontele.drop(['treat','Region'],axis=1)
 
-treatment_cost = []
+
+
 @app.route('/', methods=["GET","POST"])
 @app.route('/cea_design', methods=["GET","POST"])
 def index():
     if request.method == 'POST':
         return render_template('data_entry.html')       
     return render_template('index.html')
-
+inter_costs = []
 @app.route('/data_entry',methods=["GET","POST"])
 def data_entry():
     if request.method== 'POST':
-        costs = request.form.getlist('inter_costs')
-        print(costs)
+        inter_costs = request.form.getlist('inter_costs')
+        year = request.form.getlist('year')
+        inter_costs1 = [float(i) for i in inter_costs]
+        total_cost = sum(inter_costs1)
+        print(total_cost)
+        #total_intercost = sum(inter_costs)
+ 
+    
+        return render_template('data_entry.html',total_cost=total_cost)
     return render_template('data_entry.html')
 
 @app.route('/medcost', methods=["GET", "POST"])
