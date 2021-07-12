@@ -56,34 +56,28 @@
             <td><textarea id="noninterv_crit" style ="margin:auto" name="noninterv_crit" rows ="1" cols="70" placeholder="(e.g. Age, Comorbidity, Race, Sex, Socioeconomic Status, Dual Eligibility)"></textarea></td>
           </tr>
         </table>
-        <br><br>
+        <br>
       </div>
       </div>
         
 
       </form>
+      <form method = "POST" action ="data_entry" >      
 
-      <form method = "POST" action ="data_entry" >
-
-      
-
-      <div style="margin: 15px 30px 10px 425px">
+      <div style="margin: 15px 30px 10px 390px">
         <div style="display: inline-block; text-align: left;">
-      <label for="inter_start">Intervention Start: </label>
-      <textarea id="inter_start" style="margin-left:50px" name="inter_start" rows ="1" cols="30" placeholder="(if mo, give mm-yyyy option; if quarter, give qtr-yyyy option; if year, give yyyy option)"></textarea>
-      &ensp;
-      <label for="inter_end">Intervention End: </label>
-      <textarea id="inter_end" style="margin-left:50px" name="inter_end" rows ="1" cols="30" placeholder="(if mo, give mm-yyyy option; if quarter, give qtr-yyyy option; if year, give yyyy option)"></textarea>
+      <label for="study_dur">Study Duration: </label>
+      <textarea id="study_dur" style="margin-left:50px" name="study_dur" rows ="1" cols="30" placeholder="(e.g., number of years studied)"></textarea>     
+ 
+      
       <br><br>
-      <label for="noninter_start">Non Intervention Start: </label>
-      <textarea id="noninter_start" style="margin-left:50px" name="noninter_start" rows ="1" cols="30" placeholder="(if mo, give mm-yyyy option; if quarter, give qtr-yyyy option; if year, give yyyy option)"></textarea>
-      &ensp;
-      <label for="noninter_end">Non Intervention End: </label>
-      <textarea id="noninter_end" style="margin-left:50px" name="noninter_end" rows ="1" cols="30" placeholder="(if mo, give mm-yyyy option; if quarter, give qtr-yyyy option; if year, give yyyy option)"></textarea>
-      <br><br>
-      <legend><b>Intervention Cost Categories:</b></legend>
+      <table>
+      <tr>
+      <td>
+      <legend><b>Intervention Costs:</b></legend>
       <br>
-      <input type="checkbox" name="med_cost" value="med_cost">Medical Costs<br>      
+      
+      <input type="checkbox" name="med_cost" value="med_cost">Medical Costs (e.g., Inpatient, Outpatient, ED)<br>      
       <input type="checkbox" name="nonmed_cost" value="nonmed_cost">Non-Medical Costs<br>      
       <input type="checkbox" name="pharm_cost" value="pharm_cost">Pharmacy Costs<br> 
       <input type="checkbox" name="medsupply_cost" value="medsupply_cost">Medical Supply Costs<br>      
@@ -91,20 +85,22 @@
       <input type="checkbox" name="nurse_cost" value="nurse_cost">Nursing Costs<br> 
       <input type="checkbox" name="diag_cost" value="diag_cost">Diagnostic Costs<br> 
       <input type="checkbox" name="other" value="other">Other: <textarea id="other" style="margin-left:10px" name="other" rows ="1" cols="30"></textarea> <br> 
-      <br>
-      <legend><b>Health Outcome-Associated Cost Categories:</b></legend>
+      </td>
+      <td>
+      <legend><b>Health Outcome-Associated Costs:</b></legend>
       <br>
       <input type="checkbox" name="hospit" value="hospit">Hospitalizations<br>      
-      <input type="checkbox" name="em_care" value="em_care">Emergency Care<br>      
-      <input type="checkbox" name="sur_costs" value="sur_costs">Surgery-Related Costs<br> 
+      <input type="checkbox" name="em_care" value="em_care">Emergency Department (ED) Care<br>   
       <input type="checkbox" name="read_mis" value="read_mis">Readmissions<br>      
       <input type="checkbox" name="rehab" value="rehab">Rehabilitation<br> 
       <input type="checkbox" name="acute_care" value="acute_care">Acute Care<br> 
-      <input type="checkbox" name="long_care" value="long_care">Long-Term Care (e.g., home health<br> 
-      <input type="checkbox" name="disab_cost" value="disab_cost">Disability-Related Costs<br> 
+      <input type="checkbox" name="long_care" value="long_care">Long-Term Care (e.g., home health)<br> 
       <input type="checkbox" name="lost_prod" value="lost_prod">Lost Productivity<br> 
       <input type="checkbox" name="other1" value="other1">Other: <textarea id="other1" style="margin-left:10px" name="other1" rows ="1" cols="30"></textarea><br> 
-      <br>      
+    </td>
+    </table>
+      <br>
+
 
       <br>
       </div>
