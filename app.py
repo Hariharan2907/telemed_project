@@ -228,19 +228,53 @@ def index():
     if request.method == 'POST':
         return render_template('data_entry.html')       
     return render_template('index.html')
+
+
 inter_costs = []
+inter_costs1 = []
 @app.route('/data_entry',methods=["GET","POST"])
 def data_entry():
     if request.method== 'POST':
         inter_costs = request.form.getlist('inter_costs')
+        noninter_costs = request.form.getlist('noninter_costs')
+        health_outcomes = request.form.getlist('health_outcomes')
         year = request.form.getlist('year')
-        inter_costs1 = [float(i) for i in inter_costs]
-        total_cost = sum(inter_costs1)
-        print(total_cost)
-        #total_intercost = sum(inter_costs)
- 
+
+        if inter_costs:
+            inter_costs1 = [float(i) for i in inter_costs]
+        else:
+            inter_costs1 = []
+            total_intercost = 0
+
+        if not inter_costs1: 
+            total_intercost = 0
+        else:            
+            total_intercost = sum(inter_costs1)
+        
+        if noninter_costs:
+            noninter_costs1 = [float(i) for i in noninter_costs]
+        else:
+            noninter_costs1 = []
+            total_nonintercost = 0
+
+        if not noninter_costs1: 
+            total_nonintercost = 0
+        else:            
+            total_nonintercost = sum(noninter_costs1)
+        
+                
+        if health_outcomes:
+            health_outcomes1 = [float(i) for i in health_outcomes]
+        else:
+            health_outcomes1 = []
+            total_outcomes = 0
+
+        if not health_outcomes1: 
+            total_outcomes = 0
+        else:            
+            total_outcomes = sum(health_outcomes1)
     
-        return render_template('data_entry.html',total_cost=total_cost)
+        return render_template('data_entry.html',total_intercost=total_intercost, total_nonintercost = total_nonintercost, total_outcomes=total_outcomes)
     return render_template('data_entry.html')
 
 @app.route('/medcost', methods=["GET", "POST"])
