@@ -3,8 +3,8 @@
       <center><h1>CEA Design</h1></center>
       <center><h3><u>DISCLAIMER: These questions are solely used to facilitate thinking through the CEA processess. Not all questions are required/applicable.</u></h3></center>
       <br><br>
-      <div style="margin: 15px 30px 10px 100px">
-        <div style="display: inline-block; text-align: right;">
+      <div style="margin: 15px 30px 10px 390px">
+        <div style="display: inline-block; text-align: left;">
       <form method = "POST" action="data_entry">
         
         <label for="inter_desc"> Intervention Description: </label>
@@ -15,8 +15,16 @@
         <textarea id="health_desc" style="margin-left:50px" name="health_desc" rows ="1" cols="65" placeholder="e.g., Hospitalizations; stroke; ED usage"></textarea>
 
         <br><br>
+        
+          <div style="display: inline-block; text-align: right;">
         <label for="study_obj"> Study Objective: </label>
-        <textarea id="study_obj" style="margin-left:50px" name="study_obj" rows ="1" cols="65" placeholder="i.e., maximize or minimize the health outcome?"></textarea>
+        <select name="study_obj" id = "study_obj" style="margin-left:50px"> 
+          <option value="max_outcome"> Maximize Health Outcome</option>
+          <option value="min_outcome"> Minimize Health Outcome</option>
+        </select>
+        </div>
+        
+        
 
         <br><br>
         <label for="study_pers"> Study Perspective: </label>
@@ -40,12 +48,12 @@
           <tr>
             <td><b>Intervention (Treatment) Cohort</b></td>
             <td><textarea id="interv_size" style="margin-left:50px" name="interv_size" rows ="1" cols="10"></textarea></td>
-            <td><textarea id="interv_crit" style ="margin:auto" name="interv_crit" rows ="1" cols="70" placeholder="(e.g. age, comorbidity, race, sex, socioeconomic status, dual eligibility)"></textarea></td>
+            <td><textarea id="interv_crit" style ="margin:auto" name="interv_crit" rows ="1" cols="70" placeholder="(e.g. Age, Comorbidity, Race, Sex, Socioeconomic Status, Dual Eligibility)"></textarea></td>
           </tr>
           <tr>
             <td><b> Non Intervention (Comparison) Cohort</b></td>
             <td><textarea id="noninterv_size" style="margin-left:50px" name="noninterv_size" rows ="1" cols="10"></textarea></td>
-            <td><textarea id="noninterv_crit" style ="margin:auto" name="noninterv_crit" rows ="1" cols="70" placeholder="(e.g. age, comorbidity, race, sex, socioeconomic status, dual eligibility)"></textarea></td>
+            <td><textarea id="noninterv_crit" style ="margin:auto" name="noninterv_crit" rows ="1" cols="70" placeholder="(e.g. Age, Comorbidity, Race, Sex, Socioeconomic Status, Dual Eligibility)"></textarea></td>
           </tr>
         </table>
         <br><br>
@@ -56,16 +64,7 @@
       </form>
 
       <form method = "POST" action ="data_entry" >
-        <div style="margin: 15px 30px 10px 425px">
-          <div style="display: inline-block; text-align: left;">
-            <label for="study_time"> Study Time Frame: </label>
-        <select style="margin-left:50px"  name="study_time" id="study_time">
-          <option value="month">Month</option>
-          <option value="quarter">Quarter</option>
-          <option value="year">Year</option>
-        </select>    
-        </div>
-      </div>
+
       
 
       <div style="margin: 15px 30px 10px 425px">
@@ -83,6 +82,7 @@
       <textarea id="noninter_end" style="margin-left:50px" name="noninter_end" rows ="1" cols="30" placeholder="(if mo, give mm-yyyy option; if quarter, give qtr-yyyy option; if year, give yyyy option)"></textarea>
       <br><br>
       <legend><b>Intervention Cost Categories:</b></legend>
+      <br>
       <input type="checkbox" name="med_cost" value="med_cost">Medical Costs<br>      
       <input type="checkbox" name="nonmed_cost" value="nonmed_cost">Non-Medical Costs<br>      
       <input type="checkbox" name="pharm_cost" value="pharm_cost">Pharmacy Costs<br> 
@@ -90,9 +90,10 @@
       <input type="checkbox" name="tech_cost" value="tech_cost">Technology Costs<br> 
       <input type="checkbox" name="nurse_cost" value="nurse_cost">Nursing Costs<br> 
       <input type="checkbox" name="diag_cost" value="diag_cost">Diagnostic Costs<br> 
-      <input type="checkbox" name="other" value="other">Other<br> 
+      <input type="checkbox" name="other" value="other">Other: <textarea id="other" style="margin-left:10px" name="other" rows ="1" cols="30"></textarea> <br> 
       <br>
       <legend><b>Health Outcome-Associated Cost Categories:</b></legend>
+      <br>
       <input type="checkbox" name="hospit" value="hospit">Hospitalizations<br>      
       <input type="checkbox" name="em_care" value="em_care">Emergency Care<br>      
       <input type="checkbox" name="sur_costs" value="sur_costs">Surgery-Related Costs<br> 
@@ -102,7 +103,7 @@
       <input type="checkbox" name="long_care" value="long_care">Long-Term Care (e.g., home health<br> 
       <input type="checkbox" name="disab_cost" value="disab_cost">Disability-Related Costs<br> 
       <input type="checkbox" name="lost_prod" value="lost_prod">Lost Productivity<br> 
-      <input type="checkbox" name="other1" value="other1">Other<br> 
+      <input type="checkbox" name="other1" value="other1">Other: <textarea id="other1" style="margin-left:10px" name="other1" rows ="1" cols="30"></textarea><br> 
       <br>      
 
       <br>
@@ -112,7 +113,7 @@
       <div style="margin: 15px 30px 10px 425px">
       <div style="display: inline-block; text-align: right;">
         <label for="data_source">Data Sources: </label>
-        <textarea id="data_source" style="margin-left:50px" name="data_source" rows ="1" cols="65" placeholder="e.g., claims/encounters, PUDF, public data sources"></textarea>
+        <textarea id="data_source" style="margin-left:50px" name="data_source" rows ="1" cols="65" placeholder="e.g., Claims/Encounters, PUDF, Public Data Sources"></textarea>
         
         <br><br>
         <label for="team_memb">Study Team Members: </label>
@@ -120,7 +121,7 @@
 
         <br><br>
         <label for="comments">Other Comments/Notes: </label>
-        <textarea id="comments" style="margin-left:50px" name="comments" rows ="1" cols="65" placeholder="eg., personal notes"></textarea>
+        <textarea id="comments" style="margin-left:50px" name="comments" rows ="1" cols="65" placeholder="eg., Personal Notes"></textarea>
         <br><br>        
       </div>
       </div>
