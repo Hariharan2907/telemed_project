@@ -311,19 +311,26 @@ def cea_results():
     h9 = request.args.get('h9')
     h10 = request.args.get('h10')
 
-    cer1 = c1/h1 if c1 !=None and h1 != None else None
-    cer2 = c2/h2 if c2 !=None and h2 != None else None
-    cer3 = c3/h3 if c3 !=None and h3 != None else None
-    cer4 = c4/h4 if c4 !=None and h4 != None else None
-    cer5 = c5/h5 if c5 !=None and h5 != None else None
-    cer6 = c6/h6 if c6 !=None and h6 != None else None
-    cer7 = c7/h7 if c7 !=None and h7 != None else None
-    cer8 = c8/h8 if c8 !=None and h8 != None else None
-    cer9 = c9/h9 if c9 !=None and h9 != None else None
-    cer10 = c10/h10 if c10 !=None and h10 != None else None
+    cer1 = round(float(c1)/float(h1),2) if c1 !=None and h1 != None and float(h1) != 0 else None
+    cer2 = round(float(c2)/float(h2),2) if c2 !=None and h2 != None and float(h2) != 0 else None
+    cer3 = round(float(c3)/float(h3),2) if c3 !=None and h3 != None and float(h3) != 0 else None
+    cer4 = round(float(c4)/float(h4),2) if c4 !=None and h4 != None and float(h4) != 0 else None
+    cer5 = round(float(c5)/float(h5),2) if c5 !=None and h5 != None and float(h5) != 0 else None
+    cer6 = round(float(c6)/float(h6),2) if c6 !=None and h6 != None and float(h6) != 0 else None
+    cer7 = round(float(c7)/float(h7),2) if c7 !=None and h7 != None and float(h7) != 0 else None
+    cer8 = round(float(c8)/float(h8),2) if c8 !=None and h8 != None and float(h8) != 0 else None
+    cer9 = round(float(c9)/float(h9),2) if c9 !=None and h9 != None and float(h9) != 0 else None
+    cer10 = round(float(c10)/float(h10),2) if c10 !=None and h10 != None and float(h10) != 0 else None        
 
-    param_list = [p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,h1,h2,h3,h4,h5,h6,h7,h8,h9,h10,cer1,cer2,cer3,cer4,cer5,cer6,cer7,cer8,cer9,cer10 ]
-    
+    param_list = [p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,h1,h2,h3,h4,h5,h6,h7,h8,h9,h10,cer1,cer2,cer3,cer4,cer5,cer6,cer7,cer8,cer9,cer10]
+    n_year = 0
+    sum_period = 0
+    for i in range(10):
+        if param_list[i + 30] != None:
+            n_year += 1
+            sum_period += param_list[i + 30]
+    param_list.append(sum_period / n_year)
+
     return render_template('result.html', param_list = param_list)
 
 @app.route('/medcost', methods=["GET", "POST"])
