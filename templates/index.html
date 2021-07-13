@@ -3,7 +3,7 @@
       <center><h1>CEA Design</h1></center>
       <center><h3><u>DISCLAIMER: These questions are solely used to facilitate thinking through the CEA processess. Not all questions are required/applicable.</u></h3></center>
       <br><br>
-      <div style="margin: 15px 30px 10px 390px">
+      <div style="margin-left: 20%;">
         <div style="display: inline-block; text-align: left;">
       <form method = "POST" action="data_entry">
         
@@ -37,7 +37,8 @@
         <hr color = "black" style="width:100%;text-align:center;border-bottom: 3px double">
       </div>
     </div>
-    <div style="margin: 15px 30px 10px 390px">
+
+    <div style="margin-left: 20%;">
       <div style="display: inline-block; text-align: right;">
         <table>
           <tr>
@@ -59,6 +60,7 @@
         </table>
         <br>
         <hr color = "black" style="width:100%;text-align:center;border-bottom: 3px double">
+        <br/>
       </div>
       </div>
         
@@ -66,52 +68,48 @@
       </form>
       <form method = "POST" action ="data_entry" >      
 
-      <div style="margin: 15px 30px 10px 390px">
-        <div style="display: inline-block; text-align: left;">
-      <label for="study_dur">Study Duration: </label>
-      <textarea id="study_dur" style="margin-left:50px" name="study_dur" rows ="1" cols="50" placeholder="(e.g., number of years studied)"></textarea>     
- 
-      
-      <br><br>
-      <table>
-      <tr>
-      <td style="padding-right: 75px;">
-      <legend><b>Intervention Costs:</b></legend>
-      <br>
-      
-      <input type="checkbox" name="med_cost" value="med_cost">Medical Costs (e.g., Inpatient, Outpatient, ED)<br>      
-      <input type="checkbox" name="nonmed_cost" value="nonmed_cost">Non-Medical Costs<br>      
-      <input type="checkbox" name="pharm_cost" value="pharm_cost">Pharmacy Costs<br> 
-      <input type="checkbox" name="medsupply_cost" value="medsupply_cost">Medical Supply Costs<br>      
-      <input type="checkbox" name="tech_cost" value="tech_cost">Technology Costs<br> 
-      <input type="checkbox" name="nurse_cost" value="nurse_cost">Nursing Costs<br> 
-      <input type="checkbox" name="diag_cost" value="diag_cost">Diagnostic Costs<br> 
-      <input type="checkbox" name="other" value="other">Other: <textarea id="other" style="margin-left:10px" name="other" rows ="1" cols="30"></textarea> <br> 
+      <div style="margin-left: 20%;">
+      <div style="display: inline-block; text-align: left;">
+        <label for="study_dur">Study Duration: </label>
+        <textarea id="study_dur" style="margin-left:50px" name="study_dur" rows ="1" cols="50" placeholder="(e.g., Number of years studied)"></textarea>     
+        <br><br>
+        
+        <table>
+        <tr>
+        <td style="padding-right: 75px;">
+        <legend><b>Intervention Costs:</b></legend>
+        <br>
+        
+        <input type="checkbox" name="med_cost" value="med_cost">Medical Costs (e.g., Inpatient, Outpatient, ED)<br>      
+        <input type="checkbox" name="nonmed_cost" value="nonmed_cost">Non-Medical Costs<br>      
+        <input type="checkbox" name="pharm_cost" value="pharm_cost">Pharmacy Costs<br> 
+        <input type="checkbox" name="medsupply_cost" value="medsupply_cost">Medical Supply Costs<br>      
+        <input type="checkbox" name="tech_cost" value="tech_cost">Technology Costs<br> 
+        <input type="checkbox" name="nurse_cost" value="nurse_cost">Nursing Costs<br> 
+        <input type="checkbox" name="diag_cost" value="diag_cost">Diagnostic Costs<br> 
+        <input type="checkbox" name="other" value="other">Other: <textarea id="other" style="margin-left:10px" name="other" rows ="1" cols="30"></textarea> <br> 
+        </td>
+        <td>&ensp;</td>
+        <td>
+        <legend><b>Health Outcomes:</b></legend>
+        <br>
+        <input type="checkbox" name="hospit" value="hospit">Hospitalizations<br>      
+        <input type="checkbox" name="em_care" value="em_care">Emergency Department (ED) Care<br>   
+        <input type="checkbox" name="read_mis" value="read_mis">Readmissions<br>      
+        <input type="checkbox" name="rehab" value="rehab">Rehabilitation<br> 
+        <input type="checkbox" name="acute_care" value="acute_care">Acute Care<br> 
+        <input type="checkbox" name="long_care" value="long_care">Long-Term Care (e.g., home health)<br> 
+        <input type="checkbox" name="lost_prod" value="lost_prod">Lost Productivity<br> 
+        <input type="checkbox" name="other1" value="other1">Other: <textarea id="other1" style="margin-left:10px" name="other1" rows ="1" cols="30"></textarea><br> 
       </td>
-      <td>&ensp;</td>
-      <td>
-      <legend><b>Health Outcomes:</b></legend>
-      <br>
-      <input type="checkbox" name="hospit" value="hospit">Hospitalizations<br>      
-      <input type="checkbox" name="em_care" value="em_care">Emergency Department (ED) Care<br>   
-      <input type="checkbox" name="read_mis" value="read_mis">Readmissions<br>      
-      <input type="checkbox" name="rehab" value="rehab">Rehabilitation<br> 
-      <input type="checkbox" name="acute_care" value="acute_care">Acute Care<br> 
-      <input type="checkbox" name="long_care" value="long_care">Long-Term Care (e.g., home health)<br> 
-      <input type="checkbox" name="lost_prod" value="lost_prod">Lost Productivity<br> 
-      <input type="checkbox" name="other1" value="other1">Other: <textarea id="other1" style="margin-left:10px" name="other1" rows ="1" cols="30"></textarea><br> 
-    </td>
-    </table>
-      <br>
-
-
-      <br>
-      <hr color = "black" style="width:140%;text-align:center;border-bottom: 3px double">
+      </table>
+        <br>
+        <hr color = "black" style="width:140%;text-align:center;border-bottom: 3px double">
       </div>
       </div>
 
-      <div style="margin: 15px 30px 10px 425px">
-      <div style="display: inline-block; text-align: right;">
+      <div style="margin-left: 20%;">
+      <div style="display: inline-block; text-align: left;">
         <label for="data_source">Data Sources: </label>
         <textarea id="data_source" style="margin-left:50px" name="data_source" rows ="1" cols="65" placeholder="e.g., Claims/Encounters, PUDF, Public Data Sources"></textarea>
         
