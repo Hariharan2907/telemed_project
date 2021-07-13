@@ -1,44 +1,26 @@
-<!doctype html>
-<html lang="en">
-    <head>    
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/main.css') }}">
-        <title>Cost Effective Analysis Tool</title>
-        
-    </head>
+{% extends "base.html" %}
 
-    <body>  
-
-        <div class="navbar">
-            <a href="documents">Documents</a>
-            <a href="#">Other Data Resources</a>
-            <a href="#">Hospitilization Cost Lookup</a>
-            
-            <div class="dropdown">
-              <button class="dropbtn">Cost Study 
-                <i class="fa fa-caret-down"></i>
-              </button>
-              <div class="dropdown-content">
-                <a href="#">Demographics</a>
-                <a href="medcost">Medical Cost</a>
-                <a href="#">Inpatient Care Cost</a>
-                <a href="#">ED Cost</a>
-                <a href="#">Outpatient Care Cost</a>
-              </div>
-            </div>          
-            <a href="home">CEA</a>
-       
-            </div>
-            
-        
-        <center><h1 style="font-family: Roboto, sans-serif" >Cost Effectiveness Analysis Tool </h1></center>
-        <center><u><h2 style="font-family: Roboto, sans-serif ">Study perpective: MCO</h2></u></center>
-        <p></p>
-        <center><h3> Intervention: {{intervention}} </h3></center>
-        <center><h3> Intervention Period: {{intervention_period}}</h3></center>
-        <center><h3> Intervention Cost Type: {{intervention_cost}}</h3></center>
-        <center><h3> Net Cost: {{net_cost}}</h3></center>
-        <center><h3> Change in Outcome: {{outcome_change}}</h3></center>
-        <center><h3> CE Ratio: {{net_cost/outcome_change}}</h3></center>
-    </body>
-</html>
+{% block content %}
+<center><h1>Cost Effectiveness Ratio (CER) </h1></center>
+<center>
+<table class="result">
+  <tr>
+    <th>Study Period</th>
+    <th>Cost Difference</th>
+    <th>Health Outcome Difference</th>
+    <th>CER</th>
+  </tr>
+  <tr><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td></tr>
+  
+</table>
+</center>
+{% endblock content %} 
