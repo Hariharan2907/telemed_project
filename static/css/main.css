@@ -107,7 +107,24 @@ table.mytable{
 .mytable tr:first-child {
   border-top: solid 1px rgb(0, 0, 0);
  }
-
+table.result{
+    
+  border-collapse: collapse;
+  padding: 20px;  
+  font-size: 16px;
+  padding: 10px 10px 10px 10px;
+  table-layout: auto;
+  text-align:center;
+  width: 40%;
+  empty-cells: show;
+}
+.result th,.result td{
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align:center;
+  padding: 10px 10px 10px 10px;
+  
+}
 table.ceatable{
   
   border-collapse: collapse;
@@ -117,6 +134,7 @@ table.ceatable{
   table-layout: auto;
   text-align:center;
   width: 40%;
+  empty-cells: show;
 }
 .ceatable th,.ceatable td{
   border: 1px solid black;
