@@ -4,98 +4,10 @@
 
 
         <center><h1>Cost Effectiveness Analysis Tool </h1></center>
-        <center><u><h2>Intervention Cohort</h2></u></center>
+        <center><h2>In order to use the CEA tool, Click on the link below and enter the neccessary data. </h2></center>
+        <center><h3><a href="https://docs.google.com/spreadsheets/d/17bs9j7og7yYSvlyjvVUm6P8xL2HsUgXYwAdMTz7m1ss/view#gid=0" target="_blank">Click here to use the Cost Effectiveness Analysis Tool</a></h3></center>
                
-        <form method = "POST" id="myform" name="myform">
-          <center>
-            <center><p class="text-border"><b>Intervention Cost</b></p></center> 
-            <br>
-            <INPUT type="button" value="Add Row" onclick="addRowToTable('inter_costs')" />
-            <INPUT type="button" value="Add Column" onclick="addColumn('inter_costs')" />
-            <INPUT type="button" value="Delete Column" onclick="deleteColumn('inter_costs')" />
-            <br><br>
-          <table class="ceatable" id="inter_costs">
-            <thead>
-            <tr>
-              <th></th>
-              <th>Time Period (SFY)</th>
-              <th>Cost 1</th>
-              
-            </tr>
-            </thead>
-            <tbody>
-            <tr id = "clone">
-              <td><input type="button" value="Remove" onclick="removeRow(this)"/></td>  
-              <td><input type="number" name = "year" ></td>
-              <td><input type="number" name="inter_costs" step=any value = 0></td>
-                      
-            </tr>
-        </tbody>
-            
-        </table>
-        <br>
-        
-          </form>
-        
-          
-        <br>
 
-        <center><p class="text-border"><b>Non-Intervention Cost</b></p></center> 
-        <br>
-        <INPUT type="button" value="Add Row" onclick="addRowToTable('noninter_costs')" />
-        <INPUT type="button" value="Add Column" onclick="addColumn('noninter_costs')" />
-        <INPUT type="button" value="Delete Column" onclick="deleteColumn('noninter_costs')" />
-        <br><br>
-      <table class="ceatable" id="noninter_costs">
-        <thead>
-        <tr>
-          <th></th>
-          <th>Time Period (SFY)</th>
-          <th>Cost 1</th>
-          
-        </tr>
-        </thead>
-        <tbody>
-        <tr id = "clone">
-          <td><input type="button" value="Remove" onclick="removeRow(this)"/></td>  
-          <td><input type="number" name = "year" ></td>
-          <td><input type="number" name="noninter_costs" step=any value = 0></td>
-                  
-        </tr>
-    </tbody>        
-    </table>
-    <br><br>
-
-    <center><p class="text-border"><b>Health Outcomes</b></p></center> 
-    <br>
-    <INPUT type="button" value="Add Row" onclick="addRowToTable('health_outcomes')" />
-    <INPUT type="button" value="Add Column" onclick="addColumn('health_outcomes')" />
-    <INPUT type="button" value="Delete Column" onclick="deleteColumn('health_outcomes')" />
-    <br><br>
-  <table class="ceatable" id="health_outcomes">
-    <thead>
-    <tr>
-      <th></th>
-      <th>Time Period (SFY)</th>
-      <th>Cost 1</th>
-      
-    </tr>
-    </thead>
-    <tbody>
-    <tr id = "clone">
-      <td><input type="button" value="Remove" onclick="removeRow(this)"/></td>  
-      <td><input type="number" name = "year" ></td>
-      <td><input type="number" name="health_outcomes" step=any value = 0></td>
-              
-    </tr>
-</tbody>        
-</table>
-    <center><input class = "btn btn-primary" type = "submit" value = "Compute Sums" ></center>
-  </form>
-  <center><h3> Intervention Cost Sum: {{total_intercost}} </h3></center>
-  <center><h3> Non Intervention Cost Sum: {{total_nonintercost}} </h3></center>
-  <center><h3> Health Outcomes Sum: {{total_outcomes}} </h3></center>
-        </center>
 
       
       {% endblock content %} 
