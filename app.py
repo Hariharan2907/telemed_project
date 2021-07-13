@@ -278,7 +278,53 @@ def data_entry():
     return render_template('data_entry.html')
 @app.route('/cea_results',methods=["GET","POST"])
 def cea_results():
-    return render_template('result.html')
+    p1 = request.args.get('p1')
+    p2 = request.args.get('p2')
+    p3 = request.args.get('p3')
+    p4 = request.args.get('p4')
+    p5 = request.args.get('p5')
+    p6 = request.args.get('p6')
+    p7 = request.args.get('p7')
+    p8 = request.args.get('p8')
+    p9 = request.args.get('p9')
+    p10 = request.args.get('p10')
+
+    c1 = request.args.get('c1')
+    c2 = request.args.get('c2')
+    c3 = request.args.get('c3')
+    c4 = request.args.get('c4')
+    c5 = request.args.get('c5')
+    c6 = request.args.get('c6')
+    c7 = request.args.get('c7')
+    c8 = request.args.get('c8')
+    c9 = request.args.get('c9')
+    c10 = request.args.get('c10')
+
+    h1 = request.args.get('h1')
+    h2 = request.args.get('h2')
+    h3 = request.args.get('h3')
+    h4 = request.args.get('h4')
+    h5 = request.args.get('h5')
+    h6 = request.args.get('h6')
+    h7 = request.args.get('h7')
+    h8 = request.args.get('h8')
+    h9 = request.args.get('h9')
+    h10 = request.args.get('h10')
+
+    cer1 = c1/h1 if c1 !=None and h1 != None else None
+    cer2 = c2/h2 if c2 !=None and h2 != None else None
+    cer3 = c3/h3 if c3 !=None and h3 != None else None
+    cer4 = c4/h4 if c4 !=None and h4 != None else None
+    cer5 = c5/h5 if c5 !=None and h5 != None else None
+    cer6 = c6/h6 if c6 !=None and h6 != None else None
+    cer7 = c7/h7 if c7 !=None and h7 != None else None
+    cer8 = c8/h8 if c8 !=None and h8 != None else None
+    cer9 = c9/h9 if c9 !=None and h9 != None else None
+    cer10 = c10/h10 if c10 !=None and h10 != None else None
+
+    param_list = [p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,h1,h2,h3,h4,h5,h6,h7,h8,h9,h10,cer1,cer2,cer3,cer4,cer5,cer6,cer7,cer8,cer9,cer10 ]
+    
+    return render_template('result.html', param_list = param_list)
 
 @app.route('/medcost', methods=["GET", "POST"])
 def medcost():
