@@ -276,6 +276,9 @@ def data_entry():
     
         return render_template('data_entry.html',total_intercost=total_intercost, total_nonintercost = total_nonintercost, total_outcomes=total_outcomes)
     return render_template('data_entry.html')
+@app.route('/cea_results',methods=["GET","POST"])
+def cea_results():
+    return render_template('result.html')
 
 @app.route('/medcost', methods=["GET", "POST"])
 def medcost():
