@@ -330,7 +330,7 @@ def cea_results():
             n_year += 1
             sum_period += param_list[i + 30]
     param_list.append(sum_period / n_year)
-
+    param_list[40] = round(param_list[40])
     return render_template('result.html', param_list = param_list)
 
 @app.route('/medcost', methods=["GET", "POST"])
