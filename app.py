@@ -330,9 +330,10 @@ def cea_results():
             n_year += 1
             sum_period += param_list[i + 30]
     param_list.append(sum_period / n_year)
-    param_list[40] = abs(round(param_list[40]))
+    avg_cer = param_list[40]
+    avg_cer = abs(round(avg_cer))
     
-    return render_template('result.html', param_list = param_list)
+    return render_template('result.html', param_list = param_list,avg_cer=avg_cer)
 
 @app.route('/medcost', methods=["GET", "POST"])
 def medcost():
