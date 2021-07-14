@@ -25,6 +25,7 @@ sda = sda[sda!=0]
 nclients = df[df['meas']=='nclient']
 nclients.loc[nclients['Telemonitoring'] <= 5.0 , ['Telemonitoring']] = np.nan
 
+
 #----------------------------------------------------Medical Cost------------------------------------------#
 med_df = df[df['type']=='med']
 
@@ -276,6 +277,8 @@ def data_entry():
     
         return render_template('data_entry.html',total_intercost=total_intercost, total_nonintercost = total_nonintercost, total_outcomes=total_outcomes)
     return render_template('data_entry.html')
+
+
 @app.route('/cea_results',methods=["GET","POST"])
 def cea_results():
     p1 = request.args.get('p1')
@@ -311,6 +314,17 @@ def cea_results():
     h9 = request.args.get('h9')
     h10 = request.args.get('h10')
 
+    tot_int1 = request.args.get('tot_int1')
+    tot_int2 = request.args.get('tot_int2')
+    tot_int3 = request.args.get('tot_int3')
+    tot_int4 = request.args.get('tot_int4')
+    tot_int5 = request.args.get('tot_int5')
+    tot_int6 = request.args.get('tot_int6')
+    tot_int7 = request.args.get('tot_int7')
+    tot_int8 = request.args.get('tot_int8')
+    tot_int9 = request.args.get('tot_int9')
+    tot_int10 = request.args.get('tot_int10')
+
     cer1 = round(float(c1)/float(h1),2) if c1 !=None and h1 != None and float(h1) != 0 else None
     cer2 = round(float(c2)/float(h2),2) if c2 !=None and h2 != None and float(h2) != 0 else None
     cer3 = round(float(c3)/float(h3),2) if c3 !=None and h3 != None and float(h3) != 0 else None
@@ -322,7 +336,9 @@ def cea_results():
     cer9 = round(float(c9)/float(h9),2) if c9 !=None and h9 != None and float(h9) != 0 else None
     cer10 = round(float(c10)/float(h10),2) if c10 !=None and h10 != None and float(h10) != 0 else None        
 
-    param_list = [p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,h1,h2,h3,h4,h5,h6,h7,h8,h9,h10,cer1,cer2,cer3,cer4,cer5,cer6,cer7,cer8,cer9,cer10]
+
+
+    param_list = [p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,h1,h2,h3,h4,h5,h6,h7,h8,h9,h10,cer1,cer2,cer3,cer4,cer5,cer6,cer7,cer8,cer9,cer10,tot_int1,tot_int2,tot_int3,tot_int4,tot_int5,tot_int6,tot_int7,tot_int8,tot_int9,tot_int10]
     n_year = 0
     sum_period = 0  
     for i in range(10):
@@ -330,10 +346,19 @@ def cea_results():
             n_year += 1
             sum_period += param_list[i + 30]
     param_list.append(sum_period / n_year)
-    avg_cer = param_list[40]
-    avg_cer = abs(round(avg_cer))
+
+    param_list = ["0" if x == '' or x == None else x for x in param_list]
+    for i in range(len(param_list)):
+        print(param_list[i])
     
-    return render_template('result.html', param_list = param_list,avg_cer=avg_cer)
+
+            
+  
+        
+    #avg_cer = param_list[40]
+    #avg_cer = abs(round(avg_cer))
+    
+    return render_template('result.html', param_list = param_list)
 
 @app.route('/medcost', methods=["GET", "POST"])
 def medcost():
