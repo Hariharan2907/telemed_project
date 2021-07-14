@@ -324,13 +324,14 @@ def cea_results():
 
     param_list = [p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,h1,h2,h3,h4,h5,h6,h7,h8,h9,h10,cer1,cer2,cer3,cer4,cer5,cer6,cer7,cer8,cer9,cer10]
     n_year = 0
-    sum_period = 0
+    sum_period = 0  
     for i in range(10):
         if param_list[i + 30] != None:
             n_year += 1
             sum_period += param_list[i + 30]
     param_list.append(sum_period / n_year)
     param_list[40] = abs(round(param_list[40]))
+    
     return render_template('result.html', param_list = param_list)
 
 @app.route('/medcost', methods=["GET", "POST"])
