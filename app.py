@@ -325,6 +325,28 @@ def cea_results():
     tot_int9 = request.args.get('tot_int9')
     tot_int10 = request.args.get('tot_int10')
 
+    tot_nonint1 = request.args.get('tot_nonint1')
+    tot_nonint2 = request.args.get('tot_nonint2')
+    tot_nonint3 = request.args.get('tot_nonint3')
+    tot_nonint4 = request.args.get('tot_nonint4')
+    tot_nonint5 = request.args.get('tot_nonint5')
+    tot_nonint6 = request.args.get('tot_nonint6')
+    tot_nonint7 = request.args.get('tot_nonint7')
+    tot_nonint8 = request.args.get('tot_nonint8')
+    tot_nonint9 = request.args.get('tot_nonint9')
+    tot_nonint10 = request.args.get('tot_nonint10')
+
+    tot_out1 = request.args.get('tot_out1')
+    tot_out2 = request.args.get('tot_out2')
+    tot_out3 = request.args.get('tot_out3')
+    tot_out4 = request.args.get('tot_out4')
+    tot_out5 = request.args.get('tot_out5')
+    tot_out6 = request.args.get('tot_out6')
+    tot_out7 = request.args.get('tot_out7')
+    tot_out8 = request.args.get('tot_out8')
+    tot_out9 = request.args.get('tot_out9')
+    tot_out10 = request.args.get('tot_out10')
+
     cer1 = round(float(c1)/float(h1),2) if c1 !=None and h1 != None and float(h1) != 0 else None
     cer2 = round(float(c2)/float(h2),2) if c2 !=None and h2 != None and float(h2) != 0 else None
     cer3 = round(float(c3)/float(h3),2) if c3 !=None and h3 != None and float(h3) != 0 else None
@@ -338,7 +360,8 @@ def cea_results():
 
 
 
-    param_list = [p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,h1,h2,h3,h4,h5,h6,h7,h8,h9,h10,cer1,cer2,cer3,cer4,cer5,cer6,cer7,cer8,cer9,cer10,tot_int1,tot_int2,tot_int3,tot_int4,tot_int5,tot_int6,tot_int7,tot_int8,tot_int9,tot_int10]
+    param_list = [p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,h1,h2,h3,h4,h5,h6,h7,h8,h9,h10,cer1,cer2,cer3,cer4,cer5,cer6,cer7,cer8,cer9,cer10,tot_int1,tot_int2,tot_int3,tot_int4,tot_int5,tot_int6,tot_int7,tot_int8,tot_int9,tot_int10,
+                tot_nonint1,tot_nonint2,tot_nonint3,tot_nonint4,tot_nonint5,tot_nonint6,tot_nonint7,tot_nonint8,tot_nonint9,tot_nonint10,tot_out1,tot_out2,tot_out3,tot_out4,tot_out5,tot_out6,tot_out7,tot_out8,tot_out9,tot_out10]
     n_year = 0
     sum_period = 0  
     for i in range(10):
