@@ -406,13 +406,14 @@ def cea_results():
             param_list[i] = '(' + str(abs(round(float(param_list[i]),2))) + ')'
         else:
             param_list[i]
-
-    param_list = ["" if x == '$ 0' or x == None or x=='0' else x for x in param_list]
-
     for i in range(len(param_list)):
         print(param_list[i])  
+        #param_list[i] = "{:,}".format(float(param_list[i]))
+    param_list = ["" if x == '$ 0' or x == None or x=='0' else x for x in param_list]
 
-            
+
+
+        
   
         
     avg_cer = param_list[80]
