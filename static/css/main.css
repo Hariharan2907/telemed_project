@@ -110,19 +110,18 @@ table.mytable{
 table.result{
     
   border-collapse: collapse;
-  padding: 20px;  
   font-size: 16px;
-  padding: 10px 10px 10px 10px;
+  padding: 10px 20px 10px 20px;
   table-layout: auto;
   text-align:center;
-  width: 40%;
-  empty-cells: show;
+  width: 50%;
+  empty-cells: hide;
 }
 .result th,.result td{
   border: 1px solid black;
   border-collapse: collapse;
   text-align:center;
-  padding: 10px 10px 10px 10px;
+  padding: 10px 20px 10px 20px;
   
 }
 table.ceatable{

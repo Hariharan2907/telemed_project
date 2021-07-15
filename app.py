@@ -382,7 +382,33 @@ def cea_results():
             sum_period += param_list[i + 30]
     param_list.append(sum_period / n_year)
 
-    param_list = ["0" if x == '' or x == None else x for x in param_list]
+    for i in range(10,20):
+        if float(param_list[i]) < 0:
+            param_list[i] = '$ (' + str(abs(round(float(param_list[i])))) + ')'
+        else:
+            param_list[i] = '$ ' + param_list[i]
+    
+    for i in range(30,60):
+        if param_list[i] != None:
+            if float(param_list[i]) < 0:
+                param_list[i] = '$ (' + str(abs(round(float(param_list[i])))) + ')'
+            else:
+                param_list[i] = '$ ' + param_list[i]
+    
+    for i in range(20,30):
+        if float(param_list[i]) < 0:
+            param_list[i] = '(' + str(abs(round(float(param_list[i]),2))) + ')'
+        else:
+            param_list[i]
+
+    for i in range(60,80):
+        if float(param_list[i]) < 0:
+            param_list[i] = '(' + str(abs(round(float(param_list[i]),2))) + ')'
+        else:
+            param_list[i]
+
+    param_list = ["" if x == '$ 0' or x == None or x=='0' else x for x in param_list]
+
     for i in range(len(param_list)):
         print(param_list[i])  
 
