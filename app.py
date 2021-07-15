@@ -416,9 +416,12 @@ def cea_results():
   
         
     avg_cer = param_list[80]
-    avg_cer = abs(round(avg_cer))
+    summ_cer = avg_cer
+    summ_cer = abs(round(summ_cer))
+    if avg_cer < 0:
+        avg_cer = '(' + str(abs(round(avg_cer))) + ')'
     
-    return render_template('result.html', param_list = param_list, avg_cer=avg_cer)
+    return render_template('result.html', param_list = param_list, avg_cer=avg_cer,summ_cer=summ_cer)
 
 @app.route('/medcost', methods=["GET", "POST"])
 def medcost():
