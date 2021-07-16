@@ -222,17 +222,18 @@ texas_outpat_visits_tele=texas_outpat_visits_tele.drop(['treat','Region'],axis=1
 texas_outpat_visits_nontele=texas_outpat_visits_nontele.drop(['treat','Region'],axis=1)
 
 
+'''
 
-@app.route('/', methods=["GET","POST"])
 @app.route('/cea_design', methods=["GET","POST"])
 def index():
     if request.method == 'POST':
         return render_template('data_entry.html')       
     return render_template('index.html')
-
+    '''
 
 inter_costs = []
 inter_costs1 = []
+
 @app.route('/data_entry',methods=["GET","POST"])
 def data_entry():
     if request.method== 'POST':
@@ -423,7 +424,7 @@ def cea_results():
 def download_file():
     path = "doc/v1_gsheets_210715demo.xlsx"
     return send_file(path,as_attachment=True)
-
+@app.route('/', methods=["GET","POST"])
 @app.route('/medcost', methods=["GET", "POST"])
 def medcost():
     if request.method == "POST":
