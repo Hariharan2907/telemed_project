@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, send_file
 import requests
 import json
 import pandas as pd
@@ -410,12 +410,7 @@ def cea_results():
         print(param_list[i])  
         #param_list[i] = "{:,}".format(float(param_list[i]))
     param_list = ["" if x == '$ 0' or x == None or x=='0' else x for x in param_list]
-
-
-
-        
-  
-        
+    
     avg_cer = param_list[80]
     summ_cer = avg_cer
     summ_cer = abs(round(summ_cer))
@@ -423,6 +418,11 @@ def cea_results():
         avg_cer = '(' + str(abs(round(avg_cer))) + ')'
     
     return render_template('result.html', param_list = param_list, avg_cer=avg_cer,summ_cer=summ_cer)
+
+@app.route('/download')
+def download_file():
+    path = "doc/v1_gsheets_210715demo.xlsx"
+    return send_file(path,as_attachment=True)
 
 @app.route('/medcost', methods=["GET", "POST"])
 def medcost():
