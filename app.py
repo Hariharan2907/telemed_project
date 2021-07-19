@@ -422,8 +422,9 @@ def cea_results():
 
 @app.route('/download')
 def download_file():
-    path = "doc/v1_gsheets_210715demo.xlsx"
+    path = "doc/cea_tamu.xlsx"
     return send_file(path,as_attachment=True)
+
 @app.route('/', methods=["GET","POST"])
 @app.route('/medcost', methods=["GET", "POST"])
 def medcost():
