@@ -681,7 +681,8 @@ url1 = "demo.csv"
 sda_demo = []
 
 df_demo = pd.read_csv(url1,error_bad_lines=False)
-
+#df_demo = df_demo.rename(columns={'rgrp31':'Child', 'rgrp4': 'Blind/Disabled','rgrp6':'Telemonitoring','sfy':'Year','SDA' : 'Region','tot_tvst':'Televisits'})
+sda_demo = (df_demo['SDA'].unique())
 
 @app.route('/demographics', methods = ["GET","POST"])
 def demographics(): 

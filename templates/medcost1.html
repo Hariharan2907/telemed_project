@@ -1,41 +1,7 @@
-<!doctype html>
-<html lang="en">
-    <head>    
-        <meta charset="UTF-8">
-        <link rel="stylesheet" type = text/css href="{{ url_for('static', filename= 'css/main.css') }}">
-        <title>Cost Study: Total Medical Cost</title>
-        
-    </head>
+{% extends "base1.html" %}
 
+{% block content %}
 
-    <body>  
-        <div class="navbar" id="Top">
-            <a href="https://sites.google.com/view/pinformatics/data-science/cost-study-resources?authuser=0" target="_blank">Documents</a>
-            <a href="https://sites.google.com/view/pinformatics/data-science/public-data-resources?authuser=0" target="_blank">Other Data Resources</a>
-            <a href="#">Hospitilization Cost Lookup</a>
-            
-            <div class="dropdown">
-              <button class="dropbtn">Cost Study 
-                <i class="fa fa-caret-down"></i>
-              </button>
-              <div class="dropdown-content">
-                <a href="demographics">Demographics</a>
-                <a href="medcost">Total Medical Cost</a>
-                <a href="inpatcost">Inpatient Care Cost</a>
-                <a href="edcost">ED Cost</a>
-                <a href="outpatcost">Outpatient Care Cost</a>
-              </div>
-            </div>  
-            <a href="{{url_for('download_file')}}" target="_blank">CEA</a>
-        
-            </div>
-        <div class="sidenav">
-            <a href="#Clients">Number of Clients</a>
-            <a href="#Pre_Cost">Pre Cost Table</a>
-            <a href="#Post_Cost">Post Cost Table</a>       
-            <a href = "#Top">Back to Top</a>     
-        </div>
-    
         <center><h1 >Cost Study: Total Medical Cost</h1></center>
         <hr color = "black" style="width:50%;text-align:center;border-bottom: 4px double">
         
@@ -80,8 +46,8 @@
                 <b>Pregnant</b> – Medicaid clients in the pregnant program; 	
             </div>
             <br>
-            <b>Pre-cost: </b> Total medical or pharmaceutical costs for the six-month period preceding an index month. Does not include the <a href=documents#index-month>index month</a>. <br>				
-            <b>Post-cost:</b> Total medical or pharmaceutical costs for the six-month period following an index month. Does not include the <a href=documents#index-month>index month</a>.							
+            <b>Pre-cost: </b> Total medical or pharmaceutical costs for the six-month period preceding an index month. Does not include the index month</a>. <br>				
+            <b>Post-cost:</b> Total medical or pharmaceutical costs for the six-month period following an index month. Does not include the index month</a>.							
             
             
             </div>
@@ -215,8 +181,6 @@
         <br><br>
     </div>
 
-
-    </body>
-</html>
+    {% endblock content %} 
 
   
