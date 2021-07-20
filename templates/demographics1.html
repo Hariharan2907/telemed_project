@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+    <head>    
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type = text/css href="{{ url_for('static', filename= 'css/main.css') }}">
+        <title>Demographics</title>
+        
+    </head>
+
+
+    <body>  
+      <form name="Item_1" action="/demographics" method="POST">
+        <div class = "fixed">
+        <label for="exampleFormControlFile2">Choose Region</label>
+          <select name="sda_demo">
+              <option value = ""></option>
+            {% for district in sda_demo %}
+              <option value="{{district}}">{{ district }}</option>
+            {% endfor %}     
+          </select>
+          <input type ="submit" value="Submit">
+        </div>
+    </form>
+
+      <div class="navbar" id="Top">
+        <a href="https://sites.google.com/view/pinformatics/data-science/cost-study-resources?authuser=0" target="_blank">Documents</a>
+        <a href="https://sites.google.com/view/pinformatics/data-science/public-data-resources?authuser=0" target="_blank">Other Data Resources</a>
+        <a href="#">Hospitilization Cost Lookup</a>
+        
+        <div class="dropdown">
+          <button class="dropbtn">Cost Study 
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="demographics">Demographics</a>
+            <a href="medcost">Total Medical Cost</a>
+            <a href="inpatcost">Inpatient Care Cost</a>
+            <a href="edcost">ED Cost</a>
+            <a href="outpatcost">Outpatient Care Cost</a>
+          </div>
+        </div>  
+        <a href="{{url_for('download_file')}}" target="_blank">CEA</a>
+    
+        </div>
+        <center><h1 >Demographics</h1></center>
+        <hr color = "black" style="width:50%;text-align:center;border-bottom: 4px double">
+        <br>
+        <center><u><h2>Demographics table for Texas</h2></u></center>
+        <br>
+        <center>
+        {% for table in texas_demo %}
+        <center> {{table|safe}}</center>           
+        {% endfor %}</center> 
+
+
+    </body>
+    </html>
+
+        

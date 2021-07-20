@@ -3,12 +3,24 @@
     <head>    
         <meta charset="UTF-8">
         <link rel="stylesheet" type = text/css href="{{ url_for('static', filename= 'css/main.css') }}">
-        <title>Cost Study: Outpatient Care Cost</title>
+        <title>Demographics</title>
         
     </head>
 
 
     <body>  
+      <form name="Item_1" action="/demographics" method="POST">
+        <div class = "fixed">
+        <label for="exampleFormControlFile2">Choose Region</label>
+          <select name="sda_demo">
+              <option value = ""></option>
+            {% for district in sda_demo %}
+              <option value="{{district}}">{{ district }}</option>
+            {% endfor %}     
+          </select>
+          <input type ="submit" value="Submit">
+        </div>
+    </form>
 
       <div class="navbar" id="Top">
         <a href="https://sites.google.com/view/pinformatics/data-science/cost-study-resources?authuser=0" target="_blank">Documents</a>
@@ -32,4 +44,16 @@
         </div>
         <center><h1 >Demographics</h1></center>
         <hr color = "black" style="width:50%;text-align:center;border-bottom: 4px double">
+        <br>
+        <center><u><h2>Demographics table for {{sda_demo_name}}</h2></u></center>
+        
+        <center>
+        {% for table in region_demo %}
+        <center> {{table|safe}}</center>           
+        {% endfor %}</center> 
+      </div>
+
+    </body>
+    </html>
+
         

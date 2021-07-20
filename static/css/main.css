@@ -195,7 +195,17 @@ table.dataframe {
 .dataframe tr:last-child{
   border-bottom: solid 1px rgb(0, 0, 0);
  }
- 
+
+.demo{
+  border-collapse: collapse;
+  text-align:center;
+  padding: 10px;  
+  font-size: 16px;
+  border:none;
+  table-layout: fixed;
+  width: 100%;
+}
+
 caption {
   text-align: left;
   text-decoration: overline;

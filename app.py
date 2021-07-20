@@ -681,12 +681,26 @@ url1 = "demo.csv"
 sda_demo = []
 
 df_demo = pd.read_csv(url1,error_bad_lines=False)
-#df_demo = df_demo.rename(columns={'rgrp31':'Child', 'rgrp4': 'Blind/Disabled','rgrp6':'Telemonitoring','sfy':'Year','SDA' : 'Region','tot_tvst':'Televisits'})
-sda_demo = (df_demo['SDA'].unique())
+df_demo = df_demo.rename(columns={'rgrp31':'Child-Treat', 'rgrp32':'Child-Comp',  'rgrp41': 'Blind/Disabled-Treat', 'rgrp42':'Blind/Disabled-Comp',
+                                'rgrp61':'Telemonitoring-Treat','rgrp62':'Telemonitoring-Comp','sfy':'Year','SDA' : 'Region'})
+df_demo = df_demo.fillna(0)
+df_demo = df_demo.drop(['ord'],axis=1)
+sda_demo = (df_demo['Region'].unique())
+sda_demo = np.roll(sda_demo,2)
+sda_demo = sda_demo[sda_demo!=0]
+
+texas_demo = df_demo[df_demo['Region']=='Texas']
+
+print(texas_demo.head())
 
 @app.route('/demographics', methods = ["GET","POST"])
 def demographics(): 
-    return render_template('demographics.html')
+    if request.method == "POST":
+        sda_demo_name = request.form.get('sda_demo',None)
+        region_demo = df_demo[df_demo['Region']==sda_demo_name]
+        if sda_demo_name != None:
+            return render_template('demographics.html',sda_demo=sda_demo, sda_demo_name=sda_demo_name, region_demo=[region_demo.to_html(index=False,classes='demo')])
+    return render_template('demographics1.html',sda_demo=sda_demo, texas_demo=[texas_demo.to_html(index=False,header=None,classes='demo')])
 
 if __name__ == "__main__":
     app.run(debug=True) 
