@@ -690,17 +690,33 @@ sda_demo = np.roll(sda_demo,2)
 sda_demo = sda_demo[sda_demo!=0]
 
 texas_demo = df_demo[df_demo['Region']=='Texas']
+texas_2013 = texas_demo[texas_demo['Year']==2013]
+texas_2014 = texas_demo[texas_demo['Year']==2014]
+texas_2015 = texas_demo[texas_demo['Year']==2015]
+texas_2016 = texas_demo[texas_demo['Year']==2016]
+texas_2017 = texas_demo[texas_demo['Year']==2017]
+texas_2018 = texas_demo[texas_demo['Year']==2018]
 
-print(texas_demo.head())
+
 
 @app.route('/demographics', methods = ["GET","POST"])
 def demographics(): 
     if request.method == "POST":
         sda_demo_name = request.form.get('sda_demo',None)
         region_demo = df_demo[df_demo['Region']==sda_demo_name]
+        region_2013 = region_demo[region_demo['Year']==2013]
+        region_2014 = region_demo[region_demo['Year']==2014]
+        region_2015 = region_demo[region_demo['Year']==2015]
+        region_2016 = region_demo[region_demo['Year']==2016]
+        region_2017 = region_demo[region_demo['Year']==2017]
+        region_2018 = region_demo[region_demo['Year']==2018]
         if sda_demo_name != None:
-            return render_template('demographics.html',sda_demo=sda_demo, sda_demo_name=sda_demo_name, region_demo=[region_demo.to_html(index=False,classes='demo')])
-    return render_template('demographics1.html',sda_demo=sda_demo, texas_demo=[texas_demo.to_html(index=False,header=None,classes='demo')])
+            return render_template('demographics.html',sda_demo=sda_demo, sda_demo_name=sda_demo_name, region_2013=[region_2013.to_html(index=False,classes='demo')], region_2014=[region_2014.to_html(index=False,classes='demo')],
+                                    region_2015=[region_2015.to_html(index=False,classes='demo')], region_2016=[region_2016.to_html(index=False,classes='demo')],  region_2017=[region_2017.to_html(index=False,classes='demo')],
+                                    region_2018=[region_2018.to_html(index=False,classes='demo')])
+    return render_template('demographics1.html',sda_demo=sda_demo, texas_2013=[texas_2013.to_html(index=False,classes='demo')], texas_2014=[texas_2014.to_html(index=False,classes='demo')],
+                            texas_2015=[texas_2015.to_html(index=False,classes='demo')],texas_2016=[texas_2016.to_html(index=False,classes='demo')],texas_2017=[texas_2017.to_html(index=False,classes='demo')],
+                            texas_2018=[texas_2018.to_html(index=False,classes='demo')])
 
 if __name__ == "__main__":
     app.run(debug=True) 
