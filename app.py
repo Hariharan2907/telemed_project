@@ -682,7 +682,8 @@ sda_demo = []
 
 df_demo = pd.read_csv(url1,error_bad_lines=False)
 df_demo = df_demo.rename(columns={'rgrp31':'Child-Treat', 'rgrp32':'Child-Comp',  'rgrp41': 'Blind/Disabled-Treat', 'rgrp42':'Blind/Disabled-Comp',
-                                'rgrp61':'Telemonitoring-Treat','rgrp62':'Telemonitoring-Comp','sfy':'Year','SDA' : 'Region'})
+                                'rgrp61':'Telemonitoring-Treat','rgrp62':'Telemonitoring-Comp','sfy':'Year','SDA' : 'Region','demo':'Demographic'})
+df_demo = df_demo[['Region','Year','Demographic','Child-Treat','Child-Comp','Blind/Disabled-Treat','Blind/Disabled-Comp','Telemonitoring-Treat','Telemonitoring-Comp','ord']]
 df_demo = df_demo.fillna(0)
 df_demo = df_demo.drop(['ord'],axis=1)
 sda_demo = (df_demo['Region'].unique())
@@ -690,6 +691,14 @@ sda_demo = np.roll(sda_demo,2)
 sda_demo = sda_demo[sda_demo!=0]
 
 texas_demo = df_demo[df_demo['Region']=='Texas']
+texas_demo['Child-Treat'] = texas_demo['Child-Treat'].map('{:,.2f}'.format)
+texas_demo['Child-Comp'] = texas_demo['Child-Comp'].map('{:,.2f}'.format)
+texas_demo['Blind/Disabled-Treat'] = texas_demo['Blind/Disabled-Treat'].map('{:,.2f}'.format)
+texas_demo['Blind/Disabled-Comp'] = texas_demo['Blind/Disabled-Comp'].map('{:,.2f}'.format)
+texas_demo['Telemonitoring-Treat'] = texas_demo['Telemonitoring-Treat'].map('{:,.2f}'.format)
+texas_demo['Telemonitoring-Comp'] = texas_demo['Telemonitoring-Comp'].map('{:,.2f}'.format)
+texas_demo = texas_demo.rename(columns={'Child-Treat':'Treatment', 'Child-Comp':'Comparison',  'Blind/Disabled-Treat':'Treatment','Blind/Disabled-Comp':'Comparison',
+                                'Telemonitoring-Treat':'Treatment','Telemonitoring-Comp': 'Comparison'})
 texas_2013 = texas_demo[texas_demo['Year']==2013]
 texas_2014 = texas_demo[texas_demo['Year']==2014]
 texas_2015 = texas_demo[texas_demo['Year']==2015]
@@ -704,6 +713,14 @@ def demographics():
     if request.method == "POST":
         sda_demo_name = request.form.get('sda_demo',None)
         region_demo = df_demo[df_demo['Region']==sda_demo_name]
+        region_demo['Child-Treat'] = region_demo['Child-Treat'].map('{:,.2f}'.format)
+        region_demo['Child-Comp'] = region_demo['Child-Comp'].map('{:,.2f}'.format)
+        region_demo['Blind/Disabled-Treat'] = region_demo['Blind/Disabled-Treat'].map('{:,.2f}'.format)
+        region_demo['Blind/Disabled-Comp'] = region_demo['Blind/Disabled-Comp'].map('{:,.2f}'.format)
+        region_demo['Telemonitoring-Treat'] = region_demo['Telemonitoring-Treat'].map('{:,.2f}'.format)
+        region_demo['Telemonitoring-Comp'] = region_demo['Telemonitoring-Comp'].map('{:,.2f}'.format)
+        region_demo = region_demo.rename(columns={'Child-Treat':'Treatment', 'Child-Comp':'Comparison',  'Blind/Disabled-Treat':'Treatment','Blind/Disabled-Comp':'Comparison',
+                                'Telemonitoring-Treat':'Treatment','Telemonitoring-Comp': 'Comparison'})
         region_2013 = region_demo[region_demo['Year']==2013]
         region_2014 = region_demo[region_demo['Year']==2014]
         region_2015 = region_demo[region_demo['Year']==2015]

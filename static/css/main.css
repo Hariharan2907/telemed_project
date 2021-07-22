@@ -199,40 +199,76 @@ table.dataframe {
 table.demo{
   border-collapse: collapse;
   border: 1px solid black;
-  text-align:left;
+  text-align:center;
   padding: 10px;  
   font-size: 16px;
   border:none;
   table-layout: fixed;
-  width: 75%;
-  table-layout: auto;
+  width: 90%;
+  
 }
 
 .demo th, .demo td {
   border: 1px solid black;
-  text-align:left;
-  padding: 10px; 
+  text-align:center;
+  width: 10%;
+  padding: 10px;
+  border-collapse: collapse;
   
 }
 
-.demo td:nth-child(6), .demo th:nth-child(6) {
-  border-left: 1px solid rgb(0, 0, 0);
-  width: 100px;
- }
-
-
-caption {
-  text-align: left;
-  text-decoration: overline;
-  font-size: 16px;
+.demo td:nth-child(1), .demo th:nth-child(1) {
+  
+  width: 10%;
 }
 
-.blank_row
-{
-  border: 1px solid black;
+.demo td:nth-child(2), .demo th:nth-child(2) {
+  
+  width: 10%;
+}
+
+.demo td:nth-child(5), .demo th:nth-child(5) {
+  
+  width: 10%;
+}
+
+
+.demo td:nth-child(6), .demo th:nth-child(6) {
+  border-left: 1px solid rgb(0, 0, 0);
+  width: 10%;
+}
+
+table.demographics {
   border-collapse: collapse;
-  height: 10px !important; /* overwrites any other rules */
-  background-color: #FFFFFF;
+  border: 1px solid black;
+  text-align:center;
+  padding: 10px;
+  font-size: 16px;
+  border:none;
+  table-layout: fixed;
+  width: 90%;  
+}
+
+.demographics th, .demographics td {
+  border: 1px solid black;  
+  border-bottom: none !important;
+  
+}
+
+.demographics th:nth-child(1) {
+  width: 30%;
+}
+
+.demographics th:nth-child(2) {
+  width: 20%;
+}
+
+.demographics th:nth-child(3) {
+  width: 20%;
+}
+
+.demographics th:nth-child(4) {
+  width: 20%;
 }
 
 .sidenav {
