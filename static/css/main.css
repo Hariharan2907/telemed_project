@@ -204,7 +204,7 @@ table.demo{
   font-size: 16px;
   border:none;
   table-layout: fixed;
-  width: 90%;
+  width: 80%;
   
 }
 
@@ -246,7 +246,7 @@ table.demographics {
   font-size: 16px;
   border:none;
   table-layout: fixed;
-  width: 90%;  
+  width: 80%;  
 }
 
 .demographics th, .demographics td {
@@ -256,7 +256,7 @@ table.demographics {
 }
 
 .demographics th:nth-child(1) {
-  width: 30%;
+  width: 20%;
 }
 
 .demographics th:nth-child(2) {

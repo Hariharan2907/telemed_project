@@ -689,6 +689,7 @@ df_demo = df_demo.drop(['ord'],axis=1)
 sda_demo = (df_demo['Region'].unique())
 sda_demo = np.roll(sda_demo,2)
 sda_demo = sda_demo[sda_demo!=0]
+df_demo.loc[df_demo.Demographic == "N","Demographic"] = "Cohort Size"
 
 texas_demo = df_demo[df_demo['Region']=='Texas']
 texas_demo['Child-Treat'] = texas_demo['Child-Treat'].map('{:,.2f}'.format)
@@ -699,6 +700,8 @@ texas_demo['Telemonitoring-Treat'] = texas_demo['Telemonitoring-Treat'].map('{:,
 texas_demo['Telemonitoring-Comp'] = texas_demo['Telemonitoring-Comp'].map('{:,.2f}'.format)
 texas_demo = texas_demo.rename(columns={'Child-Treat':'Treatment', 'Child-Comp':'Comparison',  'Blind/Disabled-Treat':'Treatment','Blind/Disabled-Comp':'Comparison',
                                 'Telemonitoring-Treat':'Treatment','Telemonitoring-Comp': 'Comparison'})
+texas_demo = texas_demo.drop(['Region'],axis=1)
+
 texas_2013 = texas_demo[texas_demo['Year']==2013]
 texas_2014 = texas_demo[texas_demo['Year']==2014]
 texas_2015 = texas_demo[texas_demo['Year']==2015]
@@ -721,6 +724,7 @@ def demographics():
         region_demo['Telemonitoring-Comp'] = region_demo['Telemonitoring-Comp'].map('{:,.2f}'.format)
         region_demo = region_demo.rename(columns={'Child-Treat':'Treatment', 'Child-Comp':'Comparison',  'Blind/Disabled-Treat':'Treatment','Blind/Disabled-Comp':'Comparison',
                                 'Telemonitoring-Treat':'Treatment','Telemonitoring-Comp': 'Comparison'})
+        region_demo = region_demo.drop(['Region'],axis=1)                                
         region_2013 = region_demo[region_demo['Year']==2013]
         region_2014 = region_demo[region_demo['Year']==2014]
         region_2015 = region_demo[region_demo['Year']==2015]
