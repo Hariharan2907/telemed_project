@@ -1,0 +1,470 @@
+"Obs","SDA","ccsr","year","n_hospitalizations","avg_los","std_los","lci_los","uci_los","avg_chrg","std_chrg","lci_chrg","uci_chrg"
+"1","Bexar SDA","Acute myocardial infarction",2016,294,4.9626,4.618,4.433,5.493,118769.69,92702.00,108129.21,129410.17
+"2","Bexar SDA","Acute myocardial infarction",2017,274,4.5803,4.457,4.050,5.110,129928.11,115141.81,116233.94,143622.27
+"3","Bexar SDA","Acute myocardial infarction",2018,264,4.6667,4.296,4.146,5.187,138706.82,112387.59,125087.11,152326.52
+"4","Bexar SDA","Acute myocardial infarction",2019,284,4.8380,5.464,4.200,5.476,150146.49,165040.97,130869.38,169423.60
+"5","Bexar SDA","Alcohol-related disorders",2016,51,6.0980,5.434,4.570,7.626,31920.25,72746.17,11460.06,52380.44
+"6","Bexar SDA","Alcohol-related disorders",2017,62,5.2258,6.527,3.568,6.883,40470.79,92140.96,17071.37,63870.22
+"7","Bexar SDA","Alcohol-related disorders",2018,43,4.3953,3.230,3.401,5.390,25763.61,28897.91,16870.14,34657.07
+"8","Bexar SDA","Alcohol-related disorders",2019,34,6.0294,6.776,3.665,8.394,67576.71,132611.53,21306.36,113847.07
+"9","Bexar SDA","Cardiac and circulatory congenital anomalies",2016,16,3.7500,1.807,2.787,4.713,96850.39,57734.27,66085.97,127614.81
+"10","Bexar SDA","Cardiac and circulatory congenital anomalies",2017,12,9.0833,11.098,2.032,16.135,215694.77,260529.42,50162.28,381227.27
+"11","Bexar SDA","Cardiac and circulatory congenital anomalies",2018,8,4.0000,1.773,2.518,5.482,145020.43,51422.13,102030.46,188010.41
+"12","Bexar SDA","Cardiac and circulatory congenital anomalies",2019,19,10.0526,10.674,4.908,15.197,348582.86,329215.85,189905.90,507259.82
+"13","Bexar SDA","Depressive disorders",2016,247,6.6316,5.923,5.889,7.374,15581.08,15189.62,13677.43,17484.74
+"14","Bexar SDA","Depressive disorders",2017,289,5.8720,4.429,5.359,6.385,15258.17,17391.49,13244.61,17271.74
+"15","Bexar SDA","Depressive disorders",2018,292,6.2671,6.937,5.468,7.066,15003.00,18568.80,12864.30,17141.70
+"16","Bexar SDA","Depressive disorders",2019,78,9.9744,20.838,5.276,14.673,28926.76,37044.46,20574.53,37279.00
+"17","Bexar SDA","Heart failure",2016,332,5.4518,4.944,4.918,5.986,57237.03,73381.55,49314.63,65159.43
+"18","Bexar SDA","Heart failure",2017,335,5.4657,4.489,4.983,5.948,63053.07,70688.15,55455.95,70650.19
+"19","Bexar SDA","Heart failure",2018,375,5.3200,4.362,4.877,5.763,66282.10,75882.48,58576.94,73987.25
+"20","Bexar SDA","Heart failure",2019,396,5.2348,4.759,4.765,5.705,68232.29,150494.76,53364.22,83100.36
+"21","Bexar SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2016,155,3.4452,2.526,3.044,3.846,21888.65,10425.29,20234.42,23542.88
+"22","Bexar SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2017,134,3.6791,3.455,3.089,4.269,24864.82,14365.12,22410.26,27319.39
+"23","Bexar SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2018,151,3.6755,2.997,3.194,4.157,28161.96,17740.30,25309.38,31014.55
+"24","Bexar SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2019,169,3.4438,2.639,3.043,3.844,27413.31,16156.04,24959.84,29866.77
+"25","Bexar SDA","MACE Event",2016,349,5.9398,5.423,5.369,6.511,159956.96,102037.71,149214.37,170699.56
+"26","Bexar SDA","MACE Event",2017,298,5.6980,5.377,5.085,6.311,165702.91,117690.35,152285.95,179119.87
+"27","Bexar SDA","MACE Event",2018,306,5.7712,5.218,5.184,6.358,186741.17,118782.89,173379.27,200103.06
+"28","Bexar SDA","MACE Event",2019,291,5.3402,4.861,4.779,5.901,193640.15,171019.66,173908.48,213371.82
+"29","Bexar SDA","Schizophrenia spectrum and other psychotic disorders",2016,152,15.8421,80.729,2.905,28.780,27294.73,42432.09,20494.63,34094.83
+"30","Bexar SDA","Schizophrenia spectrum and other psychotic disorders",2017,167,52.3054,253.398,13.591,91.020,44359.79,115117.42,26772.10,61947.47
+"31","Bexar SDA","Schizophrenia spectrum and other psychotic disorders",2018,144,24.7778,117.374,5.443,44.112,32697.12,58940.89,22988.12,42406.12
+"32","Bexar SDA","Schizophrenia spectrum and other psychotic disorders",2019,63,27.4286,101.796,1.792,53.066,33248.54,49607.81,20754.97,45742.10
+"33","Dallas SDA","Acute myocardial infarction",2016,4498,4.5694,4.828,4.428,4.710,100901.00,107285.28,97764.86,104037.14
+"34","Dallas SDA","Acute myocardial infarction",2017,4518,4.4743,5.464,4.315,4.634,102578.59,112424.51,99299.51,105857.67
+"35","Dallas SDA","Acute myocardial infarction",2018,4550,4.3532,5.688,4.188,4.519,98426.35,176273.90,93303.10,103549.61
+"36","Dallas SDA","Acute myocardial infarction",2019,4549,4.3282,5.284,4.175,4.482,105270.78,165594.54,100457.39,110084.18
+"37","Dallas SDA","Alcohol-related disorders",2016,1988,5.0359,9.183,4.631,5.441,27166.44,45896.38,25147.69,29185.20
+"38","Dallas SDA","Alcohol-related disorders",2017,1940,4.6701,6.292,4.390,4.950,29031.50,47434.37,26919.41,31143.58
+"39","Dallas SDA","Alcohol-related disorders",2018,1673,4.2451,4.514,4.029,4.462,30821.75,61426.13,27876.19,33767.30
+"40","Dallas SDA","Alcohol-related disorders",2019,1702,5.2415,31.948,3.723,6.760,31414.23,47360.56,29162.62,33665.85
+"41","Dallas SDA","Cardiac and circulatory congenital anomalies",2016,396,13.2929,23.964,10.925,15.660,323142.61,613002.88,262581.23,383703.99
+"42","Dallas SDA","Cardiac and circulatory congenital anomalies",2017,385,14.3974,51.508,9.236,19.559,422337.70,1408175.44,281231.70,563443.69
+"43","Dallas SDA","Cardiac and circulatory congenital anomalies",2018,382,14.0681,29.445,11.106,17.030,432510.37,855394.81,346457.61,518563.13
+"44","Dallas SDA","Cardiac and circulatory congenital anomalies",2019,362,16.2624,35.483,12.595,19.930,460520.99,1017502.14,355352.02,565689.95
+"45","Dallas SDA","Depressive disorders",2016,7058,7.3342,23.014,6.797,7.871,13519.87,17817.27,13104.13,13935.61
+"46","Dallas SDA","Depressive disorders",2017,8132,7.0328,9.231,6.832,7.233,14180.69,13035.81,13897.32,14464.06
+"47","Dallas SDA","Depressive disorders",2018,4072,7.4678,10.260,7.153,7.783,15577.42,16127.34,15081.92,16072.91
+"48","Dallas SDA","Depressive disorders",2019,1965,7.9033,9.894,7.466,8.341,19043.04,18426.35,18227.82,19858.26
+"49","Dallas SDA","Heart failure",2016,9185,5.6519,5.662,5.536,5.768,53318.78,79559.73,51691.51,54946.04
+"50","Dallas SDA","Heart failure",2017,9834,5.3453,5.366,5.239,5.451,52944.50,87000.90,51224.77,54664.23
+"51","Dallas SDA","Heart failure",2018,10292,5.5276,5.495,5.421,5.634,56134.50,102515.94,54153.70,58115.30
+"52","Dallas SDA","Heart failure",2019,10397,5.6427,6.241,5.523,5.763,62170.15,126261.20,59742.90,64597.40
+"53","Dallas SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2016,4851,4.2142,3.929,4.104,4.325,25429.71,24959.44,24727.16,26132.25
+"54","Dallas SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2017,5264,4.0849,3.779,3.983,4.187,26867.36,23454.19,26233.62,27501.10
+"55","Dallas SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2018,5370,4.1812,4.124,4.071,4.292,28106.41,26272.91,27403.56,28809.27
+"56","Dallas SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2019,5397,4.1247,4.178,4.013,4.236,28905.10,24956.31,28239.13,29571.06
+"57","Dallas SDA","MACE Event",2016,4570,5.6074,5.827,5.438,5.776,137370.90,128737.76,133637.44,141104.35
+"58","Dallas SDA","MACE Event",2017,3936,6.1062,15.357,5.626,6.586,148435.39,391944.14,136187.01,160683.76
+"59","Dallas SDA","MACE Event",2018,3895,5.7694,6.413,5.568,5.971,142526.91,204807.76,136092.98,148960.83
+"60","Dallas SDA","MACE Event",2019,4138,5.7963,5.930,5.616,5.977,149793.54,193938.74,143882.77,155704.32
+"61","Dallas SDA","Schizophrenia spectrum and other psychotic disorders",2015,2,53.0000,31.113,-226.537,332.537,76744.00,45051.19,-328024.86,481512.86
+"62","Dallas SDA","Schizophrenia spectrum and other psychotic disorders",2016,6481,18.9517,86.135,16.854,21.049,28521.22,50666.39,27287.47,29754.98
+"63","Dallas SDA","Schizophrenia spectrum and other psychotic disorders",2017,7762,16.6917,81.522,14.878,18.506,26058.06,47832.39,24993.79,27122.33
+"64","Dallas SDA","Schizophrenia spectrum and other psychotic disorders",2018,3920,25.3643,76.753,22.961,27.768,31140.91,45132.60,29727.63,32554.19
+"65","Dallas SDA","Schizophrenia spectrum and other psychotic disorders",2019,2009,24.8447,87.389,21.021,28.668,39694.07,56570.58,37218.87,42169.27
+"66","El Paso SDA","Acute myocardial infarction",2016,1077,5.0492,4.721,4.767,5.332,159768.50,148448.12,150892.77,168644.22
+"67","El Paso SDA","Acute myocardial infarction",2017,1381,4.9949,5.111,4.725,5.265,145393.86,130404.72,138510.10,152277.62
+"68","El Paso SDA","Acute myocardial infarction",2018,1422,4.9613,4.965,4.703,5.220,155929.94,172211.08,146971.56,164888.32
+"69","El Paso SDA","Acute myocardial infarction",2019,1326,4.8371,4.582,4.590,5.084,162020.99,175941.33,152542.46,171499.52
+"70","El Paso SDA","Alcohol-related disorders",2016,447,6.8725,8.728,6.061,7.684,36445.44,48462.17,31940.62,40950.26
+"71","El Paso SDA","Alcohol-related disorders",2017,461,6.2408,6.350,5.660,6.822,38801.91,72386.10,32176.74,45427.08
+"72","El Paso SDA","Alcohol-related disorders",2018,467,5.2441,5.389,4.754,5.734,35653.03,64180.92,29816.90,41489.16
+"73","El Paso SDA","Alcohol-related disorders",2019,296,3.5203,3.520,3.118,3.923,49554.71,61114.10,42563.88,56545.55
+"74","El Paso SDA","Cardiac and circulatory congenital anomalies",2016,116,11.6638,23.993,7.251,16.076,206720.30,416534.76,130113.99,283326.61
+"75","El Paso SDA","Cardiac and circulatory congenital anomalies",2017,111,9.7027,15.271,6.830,12.575,218589.82,397113.41,143892.46,293287.19
+"76","El Paso SDA","Cardiac and circulatory congenital anomalies",2018,127,10.2835,17.650,7.184,13.383,237152.41,310735.13,182585.69,291719.13
+"77","El Paso SDA","Cardiac and circulatory congenital anomalies",2019,128,11.6953,22.262,7.802,15.589,306076.75,564327.86,207373.22,404780.28
+"78","El Paso SDA","Depressive disorders",2016,1888,9.7108,9.989,9.260,10.162,19797.12,17722.19,18997.21,20597.04
+"79","El Paso SDA","Depressive disorders",2017,2086,9.3547,13.833,8.761,9.949,18081.08,15496.39,17415.69,18746.46
+"80","El Paso SDA","Depressive disorders",2018,1818,8.6331,8.913,8.223,9.043,19013.13,33423.42,17475.71,20550.54
+"81","El Paso SDA","Depressive disorders",2019,425,8.0612,7.917,7.306,8.816,25272.41,25335.01,22856.86,27687.96
+"82","El Paso SDA","Heart failure",2016,1632,5.3517,4.912,5.113,5.590,84196.74,131401.73,77816.87,90576.60
+"83","El Paso SDA","Heart failure",2017,1752,5.1650,6.233,4.873,5.457,86027.98,117855.99,80505.52,91550.45
+"84","El Paso SDA","Heart failure",2018,1863,5.0327,4.169,4.843,5.222,76816.10,122432.09,71252.97,82379.23
+"85","El Paso SDA","Heart failure",2019,2052,5.5936,6.360,5.318,5.869,93116.34,120043.56,87919.31,98313.36
+"86","El Paso SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2016,685,3.0365,1.933,2.891,3.182,31551.25,23925.20,29756.40,33346.10
+"87","El Paso SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2017,707,3.0212,2.170,2.861,3.181,33832.37,22614.88,32162.52,35502.22
+"88","El Paso SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2018,682,3.2126,2.506,3.024,3.401,37698.22,28838.19,35530.03,39866.41
+"89","El Paso SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2019,641,2.9470,1.953,2.796,3.098,37243.68,26870.56,35159.58,39327.77
+"90","El Paso SDA","MACE Event",2016,1244,5.7323,5.456,5.429,6.036,203838.07,159659.42,194957.20,212718.94
+"91","El Paso SDA","MACE Event",2017,1227,5.9764,6.118,5.634,6.319,207821.89,174553.03,198045.42,217598.36
+"92","El Paso SDA","MACE Event",2018,1119,5.8016,5.381,5.486,6.117,217635.34,183859.72,206851.09,228419.60
+"93","El Paso SDA","MACE Event",2019,1017,6.1219,6.128,5.745,6.499,243751.92,226088.83,229840.09,257663.76
+"94","El Paso SDA","Schizophrenia spectrum and other psychotic disorders",2016,1510,25.6861,123.354,19.459,31.913,26097.41,64833.80,22824.68,29370.13
+"95","El Paso SDA","Schizophrenia spectrum and other psychotic disorders",2017,1622,20.3064,72.538,16.774,23.839,24821.53,38767.60,22933.47,26709.59
+"96","El Paso SDA","Schizophrenia spectrum and other psychotic disorders",2018,1572,15.8015,60.948,12.786,18.817,22935.57,49416.92,20490.83,25380.30
+"97","El Paso SDA","Schizophrenia spectrum and other psychotic disorders",2019,208,23.4423,82.169,12.210,34.675,42213.98,53891.71,34847.07,49580.88
+"98","Harris SDA","Acute myocardial infarction",2015,3,3.6667,1.528,-0.128,7.461,41209.69,13657.68,7282.13,75137.24
+"99","Harris SDA","Acute myocardial infarction",2016,6717,5.6491,8.617,5.443,5.855,108326.95,140907.67,104956.62,111697.29
+"100","Harris SDA","Acute myocardial infarction",2017,6589,5.3049,5.823,5.164,5.446,113350.83,139427.88,109983.64,116718.02
+"101","Harris SDA","Acute myocardial infarction",2018,6335,5.4281,6.811,5.260,5.596,122366.57,143855.07,118823.47,125909.66
+"102","Harris SDA","Acute myocardial infarction",2019,7161,5.2849,6.288,5.139,5.431,98062.83,165039.41,94239.68,101885.99
+"103","Harris SDA","Alcohol-related disorders",2016,2368,5.6795,11.063,5.234,6.125,27085.68,54762.31,24878.89,29292.47
+"104","Harris SDA","Alcohol-related disorders",2017,2143,5.3014,5.634,5.063,5.540,28556.21,35230.75,27063.74,30048.68
+"105","Harris SDA","Alcohol-related disorders",2018,2065,5.3661,11.494,4.870,5.862,31503.35,35776.59,29959.37,33047.33
+"106","Harris SDA","Alcohol-related disorders",2019,1752,3.8927,4.363,3.688,4.097,27930.84,48282.35,25668.44,30193.24
+"107","Harris SDA","Cardiac and circulatory congenital anomalies",2015,1,1.0000,".",".",".",7917.53,".",".","."
+"108","Harris SDA","Cardiac and circulatory congenital anomalies",2016,557,13.3250,20.984,11.579,15.071,246233.50,371323.03,215329.21,277137.79
+"109","Harris SDA","Cardiac and circulatory congenital anomalies",2017,537,13.4022,24.744,11.305,15.500,278735.82,566783.27,230689.54,326782.09
+"110","Harris SDA","Cardiac and circulatory congenital anomalies",2018,589,13.4228,22.243,11.623,15.223,282569.97,342141.49,254882.00,310257.93
+"111","Harris SDA","Cardiac and circulatory congenital anomalies",2019,635,12.6803,19.979,11.123,14.237,173645.41,310451.60,149452.68,197838.15
+"112","Harris SDA","Depressive disorders",2016,8457,7.4855,10.655,7.258,7.713,11923.56,13830.06,11628.76,12218.36
+"113","Harris SDA","Depressive disorders",2017,8691,7.4361,8.466,7.258,7.614,12770.62,15381.81,12447.19,13094.05
+"114","Harris SDA","Depressive disorders",2018,5844,7.5161,8.462,7.299,7.733,15460.52,14670.40,15084.32,15836.73
+"115","Harris SDA","Depressive disorders",2019,2943,7.9786,11.291,7.571,8.387,14145.18,25312.15,13230.31,15060.05
+"116","Harris SDA","Heart failure",2015,18,5.1111,2.908,3.665,6.557,41299.83,25183.26,28776.48,53823.17
+"117","Harris SDA","Heart failure",2016,13093,6.1963,8.716,6.047,6.346,64869.02,144015.21,62401.98,67336.07
+"118","Harris SDA","Heart failure",2017,12703,5.9591,8.319,5.814,6.104,65477.27,134447.90,63139.02,67815.51
+"119","Harris SDA","Heart failure",2018,13610,5.7980,6.847,5.683,5.913,67593.48,143166.01,65188.02,69998.94
+"120","Harris SDA","Heart failure",2019,14526,5.7716,7.562,5.649,5.895,55508.10,158154.84,52935.96,58080.23
+"121","Harris SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2016,6803,3.5374,2.958,3.467,3.608,24001.07,18589.75,23559.25,24442.90
+"122","Harris SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2017,6901,3.4487,2.849,3.381,3.516,25508.31,20154.32,25032.71,25983.90
+"123","Harris SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2018,7587,3.4717,3.290,3.398,3.546,26510.81,22310.72,26008.70,27012.91
+"124","Harris SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2019,8017,3.4321,3.160,3.363,3.501,19943.69,25389.00,19387.84,20499.53
+"125","Harris SDA","MACE Event",2015,1,1.0000,".",".",".",62281.56,".",".","."
+"126","Harris SDA","MACE Event",2016,6893,6.8966,7.868,6.711,7.082,153250.19,162249.59,149419.26,157081.11
+"127","Harris SDA","MACE Event",2017,5980,7.0241,7.341,6.838,7.210,166818.73,170736.79,162490.47,171146.98
+"128","Harris SDA","MACE Event",2018,6149,6.9496,8.001,6.750,7.150,176181.09,179984.66,171681.57,180680.62
+"129","Harris SDA","MACE Event",2019,6794,6.9841,7.680,6.801,7.167,142141.65,204827.63,137270.28,147013.02
+"130","Harris SDA","Schizophrenia spectrum and other psychotic disorders",2016,10219,16.8991,83.071,15.288,18.510,19280.06,41385.31,18477.57,20082.55
+"131","Harris SDA","Schizophrenia spectrum and other psychotic disorders",2017,10209,15.7168,86.851,14.032,17.402,19704.13,43034.21,18869.25,20539.00
+"132","Harris SDA","Schizophrenia spectrum and other psychotic disorders",2018,6515,16.5965,77.711,14.709,18.484,23182.63,42229.17,22157.01,24208.24
+"133","Harris SDA","Schizophrenia spectrum and other psychotic disorders",2019,4224,25.8447,184.317,20.285,31.405,22210.29,86410.44,19603.68,24816.91
+"134","Hidalgo SDA","Acute myocardial infarction",2016,1973,5.3862,5.112,5.161,5.612,123737.45,129373.86,118025.32,129449.57
+"135","Hidalgo SDA","Acute myocardial infarction",2017,2123,5.5662,5.280,5.341,5.791,135450.99,146362.66,129221.52,141680.46
+"136","Hidalgo SDA","Acute myocardial infarction",2018,2189,5.6163,6.393,5.348,5.884,154869.39,170167.41,147736.89,162001.89
+"137","Hidalgo SDA","Acute myocardial infarction",2019,2262,5.5508,5.898,5.308,5.794,162945.18,258821.02,152273.47,173616.88
+"138","Hidalgo SDA","Alcohol-related disorders",2016,273,4.9780,12.250,3.518,6.438,26838.68,23651.29,24020.57,29656.79
+"139","Hidalgo SDA","Alcohol-related disorders",2017,293,3.9249,3.358,3.539,4.311,33690.39,40299.06,29056.85,38323.93
+"140","Hidalgo SDA","Alcohol-related disorders",2018,301,4.1196,4.019,3.664,4.575,39500.10,38461.18,35137.53,43862.68
+"141","Hidalgo SDA","Alcohol-related disorders",2019,305,3.5344,3.428,3.148,3.921,35565.89,92332.21,25162.28,45969.49
+"142","Hidalgo SDA","Cardiac and circulatory congenital anomalies",2016,236,16.2458,31.799,12.168,20.324,308103.59,559610.36,236337.34,379869.84
+"143","Hidalgo SDA","Cardiac and circulatory congenital anomalies",2017,250,12.5760,23.003,9.711,15.441,240709.58,399628.56,190930.07,290489.09
+"144","Hidalgo SDA","Cardiac and circulatory congenital anomalies",2018,208,17.3077,29.841,13.228,21.387,352369.75,611533.02,268774.25,435965.26
+"145","Hidalgo SDA","Cardiac and circulatory congenital anomalies",2019,211,17.8720,33.378,13.342,22.402,371157.75,596406.33,290218.49,452097.00
+"146","Hidalgo SDA","Depressive disorders",2016,3407,5.3637,6.630,5.141,5.586,16356.15,12589.32,15933.27,16779.03
+"147","Hidalgo SDA","Depressive disorders",2017,3968,5.2457,13.064,4.839,5.652,16750.04,12861.06,16349.76,17150.33
+"148","Hidalgo SDA","Depressive disorders",2018,4023,4.9911,5.116,4.833,5.149,15199.56,60929.80,13316.20,17082.93
+"149","Hidalgo SDA","Depressive disorders",2019,3701,4.6582,6.543,4.447,4.869,19408.79,34901.49,18283.99,20533.58
+"150","Hidalgo SDA","Heart failure",2016,3443,5.9042,6.868,5.675,6.134,71618.66,139918.32,66943.38,76293.93
+"151","Hidalgo SDA","Heart failure",2017,3104,5.5567,5.544,5.362,5.752,69892.82,124477.13,65512.09,74273.55
+"152","Hidalgo SDA","Heart failure",2018,3264,5.4366,8.217,5.155,5.719,70570.73,244289.92,62186.95,78954.51
+"153","Hidalgo SDA","Heart failure",2019,3290,5.1994,4.686,5.039,5.360,73040.51,113355.07,69165.69,76915.32
+"154","Hidalgo SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2016,1492,2.9169,2.265,2.802,3.032,27007.85,19308.17,26027.33,27988.38
+"155","Hidalgo SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2017,1590,2.7667,1.903,2.673,2.860,26731.98,14905.19,25998.79,27465.17
+"156","Hidalgo SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2018,1723,2.8781,1.906,2.788,2.968,29387.53,17686.23,28551.84,30223.23
+"157","Hidalgo SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2019,1740,2.8138,1.979,2.721,2.907,30803.12,19222.35,29899.30,31706.94
+"158","Hidalgo SDA","MACE Event",2016,2379,6.4304,5.730,6.200,6.661,171268.23,141377.68,165584.25,176952.21
+"159","Hidalgo SDA","MACE Event",2017,2096,7.0501,6.156,6.786,7.314,194489.77,166194.30,187370.76,201608.78
+"160","Hidalgo SDA","MACE Event",2018,2053,6.9386,6.362,6.663,7.214,196194.87,375568.29,179939.43,212450.31
+"161","Hidalgo SDA","MACE Event",2019,2055,6.9533,6.603,6.668,7.239,225530.97,217507.32,216121.35,234940.59
+"162","Hidalgo SDA","Schizophrenia spectrum and other psychotic disorders",2016,1390,15.9971,58.644,12.912,19.083,25235.15,34528.29,23418.40,27051.89
+"163","Hidalgo SDA","Schizophrenia spectrum and other psychotic disorders",2017,1270,14.4921,44.294,12.054,16.931,24091.10,25737.68,22674.23,25507.97
+"164","Hidalgo SDA","Schizophrenia spectrum and other psychotic disorders",2018,1315,15.7163,83.217,11.214,20.218,22965.06,79750.55,18650.67,27279.45
+"165","Hidalgo SDA","Schizophrenia spectrum and other psychotic disorders",2019,883,11.2809,38.959,8.708,13.854,28664.88,30742.07,26634.41,30695.35
+"166","Jefferson SDA","Acute myocardial infarction",2016,1120,5.5973,6.356,5.225,5.970,122326.50,140079.36,114113.86,130539.15
+"167","Jefferson SDA","Acute myocardial infarction",2017,1128,5.1126,5.296,4.803,5.422,122674.59,139885.26,114502.52,130846.66
+"168","Jefferson SDA","Acute myocardial infarction",2018,1104,5.3614,8.512,4.859,5.864,129848.82,138457.29,121672.53,138025.11
+"169","Jefferson SDA","Acute myocardial infarction",2019,1128,5.3599,5.688,5.028,5.692,129855.18,134890.84,121974.89,137735.48
+"170","Jefferson SDA","Alcohol-related disorders",2015,1,11.0000,".",".",".",115487.70,".",".","."
+"171","Jefferson SDA","Alcohol-related disorders",2016,204,4.0882,3.462,3.610,4.566,20016.44,20914.19,17129.28,22903.60
+"172","Jefferson SDA","Alcohol-related disorders",2017,214,5.4206,4.739,4.782,6.059,25909.73,39790.81,20548.08,31271.38
+"173","Jefferson SDA","Alcohol-related disorders",2018,85,5.4235,4.263,4.504,6.343,37719.07,45816.40,27836.70,47601.44
+"174","Jefferson SDA","Alcohol-related disorders",2019,114,4.7719,4.996,3.845,5.699,49913.91,118810.01,27868.17,71959.64
+"175","Jefferson SDA","Cardiac and circulatory congenital anomalies",2016,51,15.0588,29.719,6.700,23.417,243033.02,336065.55,148513.06,337552.97
+"176","Jefferson SDA","Cardiac and circulatory congenital anomalies",2017,50,14.6800,28.413,6.605,22.755,256036.50,384150.42,146862.16,365210.84
+"177","Jefferson SDA","Cardiac and circulatory congenital anomalies",2018,59,17.5593,42.187,6.565,28.553,389143.69,858483.72,165421.61,612865.76
+"178","Jefferson SDA","Cardiac and circulatory congenital anomalies",2019,54,12.7407,22.369,6.635,18.846,141582.27,160737.12,97709.48,185455.06
+"179","Jefferson SDA","Depressive disorders",2016,527,7.7837,6.639,7.216,8.352,13601.18,11053.47,12655.29,14547.07
+"180","Jefferson SDA","Depressive disorders",2017,456,8.0987,6.052,7.542,8.656,14439.06,12568.70,13282.38,15595.73
+"181","Jefferson SDA","Depressive disorders",2018,313,8.4984,7.725,7.639,9.358,16061.62,14421.24,14457.76,17665.48
+"182","Jefferson SDA","Depressive disorders",2019,180,8.6389,5.541,7.824,9.454,17879.94,16163.29,15502.62,20257.26
+"183","Jefferson SDA","Heart failure",2015,1,4.0000,".",".",".",34575.67,".",".","."
+"184","Jefferson SDA","Heart failure",2016,1717,5.7088,6.124,5.419,5.999,58036.65,85279.97,54000.04,62073.26
+"185","Jefferson SDA","Heart failure",2017,1868,5.4775,4.922,5.254,5.701,57005.16,79775.87,53385.12,60625.19
+"186","Jefferson SDA","Heart failure",2018,1915,5.9185,11.228,5.415,6.422,66983.06,228575.58,56739.09,77227.03
+"187","Jefferson SDA","Heart failure",2019,1987,6.1641,7.215,5.847,6.482,65895.44,130238.20,60165.47,71625.41
+"188","Jefferson SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2016,413,3.5787,3.331,3.257,3.901,24032.72,15921.71,22492.65,25572.79
+"189","Jefferson SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2017,445,3.4000,2.956,3.125,3.675,25952.54,18791.06,24201.87,27703.21
+"190","Jefferson SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2018,410,3.2976,2.369,3.068,3.528,27969.80,19287.02,26097.36,29842.25
+"191","Jefferson SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2019,452,3.6173,4.991,3.156,4.079,28183.11,33105.90,25122.90,31243.32
+"192","Jefferson SDA","MACE Event",2016,1417,7.2103,7.541,6.817,7.603,164170.07,154208.48,156134.02,172206.12
+"193","Jefferson SDA","MACE Event",2017,1221,7.0106,9.250,6.491,7.530,159628.66,146242.50,151417.68,167839.64
+"194","Jefferson SDA","MACE Event",2018,1177,6.7324,9.156,6.209,7.256,172691.04,162073.99,163422.31,181959.77
+"195","Jefferson SDA","MACE Event",2019,1321,6.8304,6.836,6.461,7.199,164680.25,149305.59,156621.44,172739.06
+"196","Jefferson SDA","Schizophrenia spectrum and other psychotic disorders",2016,443,24.1129,93.083,15.421,32.805,24335.26,43266.49,20295.19,28375.33
+"197","Jefferson SDA","Schizophrenia spectrum and other psychotic disorders",2017,384,17.8776,42.805,13.583,22.172,23388.46,24730.11,20907.13,25869.78
+"198","Jefferson SDA","Schizophrenia spectrum and other psychotic disorders",2018,279,19.4552,41.969,14.509,24.401,25480.08,22461.22,22832.96,28127.21
+"199","Jefferson SDA","Schizophrenia spectrum and other psychotic disorders",2019,123,21.9024,45.823,13.723,30.082,26175.48,23978.91,21895.38,30455.59
+"200","Lubbock SDA","Acute myocardial infarction",2015,1,1.0000,".",".",".",8618.00,".",".","."
+"201","Lubbock SDA","Acute myocardial infarction",2016,1269,4.8897,4.788,4.626,5.153,115319.94,101954.77,109705.07,120934.81
+"202","Lubbock SDA","Acute myocardial infarction",2017,1258,4.7782,4.425,4.533,5.023,118749.48,105510.81,112913.38,124585.59
+"203","Lubbock SDA","Acute myocardial infarction",2018,1350,4.5644,4.596,4.319,4.810,118552.56,327074.04,101089.63,136015.49
+"204","Lubbock SDA","Acute myocardial infarction",2019,1438,4.7914,5.278,4.518,5.064,137814.53,132590.71,130955.73,144673.32
+"205","Lubbock SDA","Alcohol-related disorders",2016,674,5.0875,6.136,4.623,5.552,28140.87,25959.73,26177.51,30104.23
+"206","Lubbock SDA","Alcohol-related disorders",2017,651,5.4977,24.887,3.582,7.413,27152.74,34314.69,24511.87,29793.62
+"207","Lubbock SDA","Alcohol-related disorders",2018,556,4.3022,3.765,3.989,4.616,25421.91,91011.12,17840.44,33003.38
+"208","Lubbock SDA","Alcohol-related disorders",2019,672,4.3125,6.797,3.798,4.827,34094.87,40055.24,31060.93,37128.81
+"209","Lubbock SDA","Cardiac and circulatory congenital anomalies",2016,92,11.2609,21.673,6.772,15.749,206621.92,315412.11,141301.93,271941.92
+"210","Lubbock SDA","Cardiac and circulatory congenital anomalies",2017,78,16.4744,35.039,8.574,24.374,312169.08,551116.49,187911.51,436426.65
+"211","Lubbock SDA","Cardiac and circulatory congenital anomalies",2018,68,13.4559,33.424,5.366,21.546,351119.99,774729.59,163595.48,538644.50
+"212","Lubbock SDA","Cardiac and circulatory congenital anomalies",2019,81,11.5926,20.733,7.008,16.177,292345.33,362923.81,212096.28,372594.37
+"213","Lubbock SDA","Depressive disorders",2016,1957,6.9202,10.569,6.452,7.389,22296.22,17239.22,21531.96,23060.48
+"214","Lubbock SDA","Depressive disorders",2017,2085,6.2508,8.896,5.869,6.633,19214.24,15557.44,18546.07,19882.41
+"215","Lubbock SDA","Depressive disorders",2018,1817,5.6731,8.106,5.300,6.046,-1368.82,195571.15,-10367.21,7629.58
+"216","Lubbock SDA","Depressive disorders",2019,1687,5.3391,9.605,4.880,5.798,15559.90,118966.77,9878.86,21240.95
+"217","Lubbock SDA","Heart failure",2015,2,3.0000,2.828,-22.412,28.412,9794.00,10057.89,-80572.53,100160.53
+"218","Lubbock SDA","Heart failure",2016,2000,5.2480,4.589,5.047,5.449,60944.47,88691.92,57055.10,64833.85
+"219","Lubbock SDA","Heart failure",2017,1917,5.3385,4.741,5.126,5.551,66986.36,99989.73,62507.51,71465.21
+"220","Lubbock SDA","Heart failure",2018,2149,5.3527,4.914,5.145,5.561,63903.48,206690.12,55159.79,72647.16
+"221","Lubbock SDA","Heart failure",2019,2204,5.6806,4.991,5.472,5.889,76645.85,140523.35,70775.97,82515.74
+"222","Lubbock SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2015,2,2.0000,1.414,-10.706,14.706,5201.25,1050.76,-4239.46,14641.96
+"223","Lubbock SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2016,654,3.4511,2.804,3.236,3.666,26018.96,22987.73,24253.89,27784.02
+"224","Lubbock SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2017,710,3.1986,2.070,3.046,3.351,25307.17,36811.48,22594.83,28019.51
+"225","Lubbock SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2018,757,3.3369,2.155,3.183,3.491,31256.88,25988.07,29402.62,33111.13
+"226","Lubbock SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2019,866,3.3614,2.348,3.205,3.518,35189.27,26380.17,33429.83,36948.71
+"227","Lubbock SDA","MACE Event",2016,1745,5.2218,4.918,4.991,5.453,131745.44,109376.74,126610.01,136880.88
+"228","Lubbock SDA","MACE Event",2017,1437,5.7871,6.022,5.475,6.099,149239.65,136082.87,142197.76,156281.54
+"229","Lubbock SDA","MACE Event",2018,1613,5.6646,5.278,5.407,5.922,150915.65,380505.28,132332.56,169498.73
+"230","Lubbock SDA","MACE Event",2019,1630,5.9429,5.909,5.656,6.230,171621.14,156730.30,164006.84,179235.45
+"231","Lubbock SDA","Schizophrenia spectrum and other psychotic disorders",2016,844,22.5296,107.837,15.244,29.815,33574.20,55654.43,29814.09,37334.31
+"232","Lubbock SDA","Schizophrenia spectrum and other psychotic disorders",2017,902,20.2483,59.499,16.360,24.136,29371.87,35567.99,27047.59,31696.14
+"233","Lubbock SDA","Schizophrenia spectrum and other psychotic disorders",2018,742,33.6038,144.700,23.175,44.032,3092.64,354345.26,-22445.12,28630.39
+"234","Lubbock SDA","Schizophrenia spectrum and other psychotic disorders",2019,588,18.7534,73.234,12.822,24.685,27232.86,184037.46,12326.82,42138.89
+"235","MRSA Central","Acute myocardial infarction",2016,1194,4.2144,4.391,3.965,4.464,78133.23,71973.55,74046.66,82219.81
+"236","MRSA Central","Acute myocardial infarction",2017,1244,4.4172,5.036,4.137,4.697,6633.50,887984.58,-42759.61,56026.62
+"237","MRSA Central","Acute myocardial infarction",2018,1227,4.1752,4.537,3.921,4.429,-135715.90,1471651.76,-218141.06,-53290.73
+"238","MRSA Central","Acute myocardial infarction",2019,1334,3.9805,3.888,3.772,4.189,-162557.04,1687878.53,-253214.99,-71899.09
+"239","MRSA Central","Alcohol-related disorders",2016,245,4.7796,4.579,4.203,5.356,14712.09,15677.00,12739.27,16684.91
+"240","MRSA Central","Alcohol-related disorders",2017,279,5.0609,7.170,4.216,5.906,-40939.18,349655.36,-82147.13,268.76
+"241","MRSA Central","Alcohol-related disorders",2018,213,4.5587,4.926,3.893,5.224,-93576.65,463432.47,-156170.42,-30982.88
+"242","MRSA Central","Alcohol-related disorders",2019,236,3.7161,3.225,3.303,4.130,-179892.64,842510.67,-287938.93,-71846.34
+"243","MRSA Central","Cardiac and circulatory congenital anomalies",2016,73,14.3425,25.805,8.322,20.363,317967.96,561344.34,186996.64,448939.28
+"244","MRSA Central","Cardiac and circulatory congenital anomalies",2017,57,10.6316,18.722,5.664,15.599,241803.88,252615.91,174775.86,308831.91
+"245","MRSA Central","Cardiac and circulatory congenital anomalies",2018,60,14.9500,37.945,5.148,24.752,319460.50,674123.79,145315.86,493605.14
+"246","MRSA Central","Cardiac and circulatory congenital anomalies",2019,71,20.8873,34.538,12.712,29.062,487212.64,770979.33,304724.81,669700.47
+"247","MRSA Central","Depressive disorders",2016,1203,7.0158,7.427,6.596,7.436,12208.53,9897.63,11648.66,12768.39
+"248","MRSA Central","Depressive disorders",2017,1373,6.8740,9.757,6.357,7.391,4371.83,78870.38,196.32,8547.35
+"249","MRSA Central","Depressive disorders",2018,930,7.3817,11.276,6.656,8.107,-7547.09,157820.43,-17703.40,2609.23
+"250","MRSA Central","Depressive disorders",2019,667,5.6852,6.464,5.194,6.177,-61241.12,169206.57,-74105.60,-48376.63
+"251","MRSA Central","Heart failure",2016,2189,5.0836,5.552,4.851,5.316,40719.97,75759.08,37544.56,43895.39
+"252","MRSA Central","Heart failure",2017,2163,4.9579,4.844,4.754,5.162,25354.85,259314.97,14420.56,36289.14
+"253","MRSA Central","Heart failure",2018,2216,4.9806,4.750,4.783,5.178,-9528.60,421870.80,-27102.98,8045.79
+"254","MRSA Central","Heart failure",2019,2347,4.9110,4.371,4.734,5.088,-42284.89,1326611.18,-95983.04,11413.26
+"255","MRSA Central","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2016,615,3.0358,1.813,2.892,3.179,20662.17,13991.83,19554.16,21770.18
+"256","MRSA Central","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2017,641,2.9423,1.508,2.825,3.059,18696.79,22051.02,16986.50,20407.08
+"257","MRSA Central","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2018,685,3.1080,2.004,2.958,3.258,17022.63,46301.84,13549.11,20496.16
+"258","MRSA Central","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2019,674,3.3279,2.726,3.122,3.534,18938.50,34768.32,16308.94,21568.07
+"259","MRSA Central","MACE Event",2016,1530,4.9739,4.884,4.729,5.219,99347.78,82839.59,95193.61,103501.95
+"260","MRSA Central","MACE Event",2017,1292,5.5611,5.900,5.239,5.883,33408.69,963204.46,-19161.88,85979.26
+"261","MRSA Central","MACE Event",2018,1226,5.7659,9.436,5.237,6.295,-112164.00,1646247.43,-204405.70,-19922.31
+"262","MRSA Central","MACE Event",2019,1305,5.2897,5.572,4.987,5.592,-195096.35,2018722.07,-304724.64,-85468.05
+"263","MRSA Central","Schizophrenia spectrum and other psychotic disorders",2016,770,25.6688,118.092,17.315,34.023,23810.49,57351.72,19753.23,27867.76
+"264","MRSA Central","Schizophrenia spectrum and other psychotic disorders",2017,829,26.3390,122.186,18.009,34.669,15838.21,129333.66,7021.27,24655.15
+"265","MRSA Central","Schizophrenia spectrum and other psychotic disorders",2018,534,27.5993,153.603,14.542,40.657,-37781.16,317050.22,-64733.27,-10829.04
+"266","MRSA Central","Schizophrenia spectrum and other psychotic disorders",2019,486,27.2346,125.132,16.082,38.387,-84414.37,223619.90,-104345.21,-64483.53
+"267","MRSA Northeast","Acute myocardial infarction",2016,2743,4.3299,4.395,4.165,4.494,103258.14,91396.41,99836.33,106679.95
+"268","MRSA Northeast","Acute myocardial infarction",2017,2933,4.2932,4.437,4.133,4.454,105740.01,105521.50,101919.58,109560.44
+"269","MRSA Northeast","Acute myocardial infarction",2018,2768,4.3313,5.150,4.139,4.523,111961.50,114110.37,107708.64,116214.35
+"270","MRSA Northeast","Acute myocardial infarction",2019,2758,4.4532,4.963,4.268,4.639,122399.61,122316.67,117832.65,126966.57
+"271","MRSA Northeast","Alcohol-related disorders",2016,472,4.8898,5.155,4.424,5.356,29238.75,36711.17,25918.33,32559.17
+"272","MRSA Northeast","Alcohol-related disorders",2017,502,4.6873,4.434,4.298,5.076,30249.76,39523.61,26783.96,33715.56
+"273","MRSA Northeast","Alcohol-related disorders",2018,399,4.4386,4.039,4.041,4.836,35813.87,42858.99,31595.68,40032.06
+"274","MRSA Northeast","Alcohol-related disorders",2019,487,4.0842,3.954,3.732,4.436,32851.03,34715.82,29760.07,35941.99
+"275","MRSA Northeast","Cardiac and circulatory congenital anomalies",2016,122,11.5082,22.864,7.410,15.606,321309.95,578637.12,217595.38,425024.51
+"276","MRSA Northeast","Cardiac and circulatory congenital anomalies",2017,98,7.7449,7.863,6.169,9.321,255218.87,336156.04,187823.85,322613.89
+"277","MRSA Northeast","Cardiac and circulatory congenital anomalies",2018,99,12.5152,27.431,7.044,17.986,431735.38,983642.31,235551.38,627919.38
+"278","MRSA Northeast","Cardiac and circulatory congenital anomalies",2019,112,13.1250,25.665,8.320,17.930,331358.18,482799.65,240958.55,421757.81
+"279","MRSA Northeast","Depressive disorders",2016,2434,8.2174,11.033,7.779,8.656,20365.43,17433.22,19672.51,21058.34
+"280","MRSA Northeast","Depressive disorders",2017,2532,7.8555,10.419,7.449,8.261,20558.31,16476.93,19916.21,21200.41
+"281","MRSA Northeast","Depressive disorders",2018,2446,7.0012,8.888,6.649,7.354,24310.30,18837.06,23563.43,25057.18
+"282","MRSA Northeast","Depressive disorders",2019,2210,7.0516,18.556,6.278,7.826,26691.56,55674.90,24369.10,29014.03
+"283","MRSA Northeast","Heart failure",2016,4133,4.8631,4.901,4.714,5.013,50240.75,71088.02,48072.85,52408.65
+"284","MRSA Northeast","Heart failure",2017,4432,5.0384,5.187,4.886,5.191,53562.80,81832.74,51152.93,55972.68
+"285","MRSA Northeast","Heart failure",2018,4729,4.8010,4.662,4.668,4.934,55106.36,93217.14,52448.88,57763.84
+"286","MRSA Northeast","Heart failure",2019,5037,4.9784,5.734,4.820,5.137,60211.63,185288.85,55093.44,65329.81
+"287","MRSA Northeast","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2016,1202,3.3827,3.146,3.205,3.561,26196.82,20476.96,25038.05,27355.60
+"288","MRSA Northeast","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2017,1153,3.4952,4.127,3.257,3.734,28910.23,33394.81,26980.62,30839.83
+"289","MRSA Northeast","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2018,1153,3.4059,4.179,3.164,3.647,30540.22,43977.49,27999.13,33081.31
+"290","MRSA Northeast","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2019,1222,3.3388,3.879,3.121,3.556,31670.78,25504.24,30239.40,33102.16
+"291","MRSA Northeast","MACE Event",2016,2909,5.3692,5.366,5.174,5.564,144274.01,108695.68,140322.45,148225.58
+"292","MRSA Northeast","MACE Event",2017,2612,5.4805,5.250,5.279,5.682,154969.15,127935.25,150060.60,159877.70
+"293","MRSA Northeast","MACE Event",2018,2804,5.8010,5.693,5.590,6.012,165525.75,148817.95,160015.11,171036.39
+"294","MRSA Northeast","MACE Event",2019,2750,5.8113,5.598,5.602,6.021,178002.21,149725.67,172403.74,183600.68
+"295","MRSA Northeast","Schizophrenia spectrum and other psychotic disorders",2016,1345,23.1569,77.940,18.988,27.326,29289.62,31042.48,27629.14,30950.10
+"296","MRSA Northeast","Schizophrenia spectrum and other psychotic disorders",2017,1318,23.3490,69.553,19.591,27.107,28361.38,34944.06,26473.12,30249.65
+"297","MRSA Northeast","Schizophrenia spectrum and other psychotic disorders",2018,1239,20.9855,63.544,17.444,24.527,32723.65,37683.74,30623.30,34824.00
+"298","MRSA Northeast","Schizophrenia spectrum and other psychotic disorders",2019,996,25.7540,158.438,15.902,35.606,37981.35,75580.26,33281.81,42680.89
+"299","MRSA West","Acute myocardial infarction",2015,1,1.0000,".",".",".",5045.25,".",".","."
+"300","MRSA West","Acute myocardial infarction",2016,2519,4.6892,4.608,4.509,4.869,95171.38,94553.62,91477.17,98865.58
+"301","MRSA West","Acute myocardial infarction",2017,2636,4.7026,4.554,4.529,4.877,103468.95,102482.97,99554.90,107383.00
+"302","MRSA West","Acute myocardial infarction",2018,2533,4.6190,4.590,4.440,4.798,111425.18,115030.99,106943.38,115906.99
+"303","MRSA West","Acute myocardial infarction",2019,2477,4.7412,4.910,4.548,4.935,127112.31,132063.49,121909.00,132315.63
+"304","MRSA West","Alcohol-related disorders",2016,666,7.2406,8.367,6.604,7.878,18290.45,20837.60,16705.01,19875.89
+"305","MRSA West","Alcohol-related disorders",2017,606,6.8581,8.358,6.191,7.525,18596.28,19289.22,17057.43,20135.13
+"306","MRSA West","Alcohol-related disorders",2018,551,6.6642,8.327,5.967,7.361,11534.92,173479.35,-2982.08,26051.92
+"307","MRSA West","Alcohol-related disorders",2019,345,4.2464,4.510,3.769,4.724,32162.40,43504.49,27555.56,36769.24
+"308","MRSA West","Cardiac and circulatory congenital anomalies",2016,133,11.5639,20.815,7.994,15.134,242127.36,302790.39,190191.86,294062.85
+"309","MRSA West","Cardiac and circulatory congenital anomalies",2017,137,14.1825,28.351,9.392,18.973,300998.93,550200.18,208040.18,393957.68
+"310","MRSA West","Cardiac and circulatory congenital anomalies",2018,122,16.2295,26.975,11.394,21.065,374512.53,524947.98,280421.17,468603.89
+"311","MRSA West","Cardiac and circulatory congenital anomalies",2019,149,16.5168,31.669,11.390,21.644,427804.99,769639.60,303207.83,552402.14
+"312","MRSA West","Depressive disorders",2016,2988,8.9438,24.034,8.082,9.806,13443.11,15782.56,12876.99,14009.24
+"313","MRSA West","Depressive disorders",2017,3201,8.4852,13.475,8.018,8.952,13376.52,13570.80,12906.22,13846.82
+"314","MRSA West","Depressive disorders",2018,2252,9.0369,21.970,8.129,9.945,11996.55,72365.73,9006.14,14986.96
+"315","MRSA West","Depressive disorders",2019,1288,9.1436,13.086,8.428,9.859,13132.80,70441.20,9282.22,16983.37
+"316","MRSA West","Heart failure",2016,3489,5.3947,5.326,5.218,5.571,42960.43,76838.22,40409.93,45510.93
+"317","MRSA West","Heart failure",2017,3354,5.1354,4.577,4.980,5.290,42122.52,65280.17,39912.46,44332.59
+"318","MRSA West","Heart failure",2018,3430,5.1184,5.632,4.930,5.307,47038.75,82304.16,44283.41,49794.10
+"319","MRSA West","Heart failure",2019,3349,5.1717,4.613,5.015,5.328,52745.38,79743.55,50043.65,55447.12
+"320","MRSA West","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2016,1455,3.3691,3.158,3.207,3.531,20994.10,19850.44,19973.28,22014.92
+"321","MRSA West","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2017,1583,3.4750,3.704,3.292,3.658,23042.01,31407.18,21493.66,24590.36
+"322","MRSA West","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2018,1648,3.2633,2.750,3.131,3.396,22042.22,18986.63,21124.86,22959.57
+"323","MRSA West","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2019,1819,3.2573,2.861,3.126,3.389,24926.40,21183.32,23952.28,25900.53
+"324","MRSA West","MACE Event",2016,3236,5.5158,6.085,5.306,5.725,125164.55,129090.42,120715.16,129613.94
+"325","MRSA West","MACE Event",2017,2758,5.7632,5.771,5.548,5.979,134441.08,119125.68,129993.26,138888.89
+"326","MRSA West","MACE Event",2018,2556,5.8482,5.472,5.636,6.060,147773.70,135539.07,142516.70,153030.70
+"327","MRSA West","MACE Event",2019,2497,5.9656,5.947,5.732,6.199,165820.15,152599.69,159831.86,171808.45
+"328","MRSA West","Schizophrenia spectrum and other psychotic disorders",2016,1427,35.2950,207.351,24.528,46.062,29266.58,111851.80,23458.30,35074.87
+"329","MRSA West","Schizophrenia spectrum and other psychotic disorders",2017,1575,27.1359,107.780,21.809,32.463,25192.22,58675.98,22292.19,28092.24
+"330","MRSA West","Schizophrenia spectrum and other psychotic disorders",2018,1231,48.9537,269.832,33.865,64.042,38086.75,152377.34,29566.21,46607.28
+"331","MRSA West","Schizophrenia spectrum and other psychotic disorders",2019,527,52.3719,228.361,32.830,71.914,35114.61,137942.62,23310.27,46918.95
+"332","Nueces SDA","Acute myocardial infarction",2016,1107,5.4643,5.769,5.124,5.805,125051.59,134533.52,117117.81,132985.37
+"333","Nueces SDA","Acute myocardial infarction",2017,1087,5.0570,4.894,4.766,5.348,130856.06,121882.87,123602.35,138109.77
+"334","Nueces SDA","Acute myocardial infarction",2018,1318,5.4469,5.156,5.168,5.725,135089.94,123515.40,128415.56,141764.32
+"335","Nueces SDA","Acute myocardial infarction",2019,1208,5.2707,4.987,4.989,5.552,135786.27,135163.52,128156.53,143416.01
+"336","Nueces SDA","Alcohol-related disorders",2016,359,5.2312,4.570,4.757,5.706,32360.42,36434.43,28578.75,36142.09
+"337","Nueces SDA","Alcohol-related disorders",2017,272,5.5331,4.997,4.937,6.130,31722.70,59466.22,24624.01,38821.38
+"338","Nueces SDA","Alcohol-related disorders",2018,194,5.5773,5.689,4.772,6.383,47074.81,53949.05,39435.35,54714.28
+"339","Nueces SDA","Alcohol-related disorders",2019,226,4.1549,3.158,3.741,4.569,41765.40,41319.51,36349.24,47181.56
+"340","Nueces SDA","Cardiac and circulatory congenital anomalies",2016,69,13.7681,21.975,8.489,19.047,295932.40,430084.07,192614.93,399249.88
+"341","Nueces SDA","Cardiac and circulatory congenital anomalies",2017,92,17.8152,37.238,10.103,25.527,359500.62,775476.01,198904.08,520097.15
+"342","Nueces SDA","Cardiac and circulatory congenital anomalies",2018,109,12.0367,22.093,7.842,16.231,285634.83,458799.80,198528.11,372741.54
+"343","Nueces SDA","Cardiac and circulatory congenital anomalies",2019,78,11.6026,19.751,7.149,16.056,284650.90,419253.93,190123.74,379178.05
+"344","Nueces SDA","Depressive disorders",2016,1821,6.2306,9.966,5.773,6.689,20287.77,14753.11,19609.72,20965.83
+"345","Nueces SDA","Depressive disorders",2017,1877,6.4204,17.046,5.649,7.192,21762.40,16705.41,21006.17,22518.63
+"346","Nueces SDA","Depressive disorders",2018,742,7.5013,14.451,6.460,8.543,20371.06,17386.79,19117.99,21624.13
+"347","Nueces SDA","Depressive disorders",2019,1919,4.7978,4.287,4.606,4.990,21998.44,14147.66,21365.05,22631.83
+"348","Nueces SDA","Heart failure",2016,1782,5.8002,5.915,5.525,6.075,66938.41,104484.63,62083.94,71792.88
+"349","Nueces SDA","Heart failure",2017,1742,5.4466,5.485,5.189,5.704,70141.09,101180.27,65386.41,74895.78
+"350","Nueces SDA","Heart failure",2018,1745,5.2401,5.502,4.982,5.498,69745.70,115975.92,64300.43,75190.97
+"351","Nueces SDA","Heart failure",2019,1704,5.5475,6.063,5.259,5.836,75788.20,118637.52,70151.25,81425.14
+"352","Nueces SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2016,614,3.9756,4.252,3.639,4.313,28682.91,19650.01,27125.56,30240.26
+"353","Nueces SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2017,644,3.9161,4.039,3.604,4.229,32056.46,25715.92,30066.59,34046.34
+"354","Nueces SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2018,606,4.1205,4.334,3.775,4.466,34625.23,26067.87,32545.59,36704.86
+"355","Nueces SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2019,667,3.9085,4.262,3.584,4.233,34744.76,28895.35,32547.90,36941.62
+"356","Nueces SDA","MACE Event",2016,1145,6.2541,5.390,5.942,6.567,161460.27,124753.51,154226.61,168693.93
+"357","Nueces SDA","MACE Event",2017,1013,6.8144,6.422,6.418,7.210,193878.75,168918.09,183464.23,204293.27
+"358","Nueces SDA","MACE Event",2018,1068,6.7734,5.958,6.416,7.131,200756.50,152702.23,191587.95,209925.05
+"359","Nueces SDA","MACE Event",2019,972,6.7922,6.012,6.414,7.171,207429.77,166106.27,196974.32,217885.22
+"360","Nueces SDA","Schizophrenia spectrum and other psychotic disorders",2016,861,16.6295,44.626,13.644,19.615,28041.81,26087.88,26296.80,29786.82
+"361","Nueces SDA","Schizophrenia spectrum and other psychotic disorders",2017,727,19.8212,85.740,13.578,26.064,30010.26,41402.79,26995.62,33024.90
+"362","Nueces SDA","Schizophrenia spectrum and other psychotic disorders",2018,372,32.0645,120.218,19.808,44.321,34311.56,57674.50,28431.53,40191.59
+"363","Nueces SDA","Schizophrenia spectrum and other psychotic disorders",2019,655,22.2550,219.515,5.413,39.097,32116.07,106240.89,23964.83,40267.31
+"364","Tarrant SDA","Acute myocardial infarction",2016,5235,4.6875,5.035,4.551,4.824,104618.81,108185.49,101687.52,107550.10
+"365","Tarrant SDA","Acute myocardial infarction",2017,5288,4.4852,4.561,4.362,4.608,109993.38,110167.00,107023.40,112963.35
+"366","Tarrant SDA","Acute myocardial infarction",2018,5127,4.5352,4.734,4.406,4.665,117212.13,151730.54,113057.89,121366.38
+"367","Tarrant SDA","Acute myocardial infarction",2019,5185,4.4073,4.769,4.277,4.537,121744.03,255181.46,114796.60,128691.46
+"368","Tarrant SDA","Alcohol-related disorders",2016,2050,5.1290,6.386,4.852,5.406,22662.98,29434.02,21388.07,23937.88
+"369","Tarrant SDA","Alcohol-related disorders",2017,2037,4.7318,4.645,4.530,4.934,25078.57,29935.80,23777.80,26379.35
+"370","Tarrant SDA","Alcohol-related disorders",2018,2070,4.5551,5.313,4.326,4.784,26324.39,65529.34,23499.82,29148.96
+"371","Tarrant SDA","Alcohol-related disorders",2019,1878,4.1097,5.294,3.870,4.349,33380.44,43774.17,31399.38,35361.50
+"372","Tarrant SDA","Cardiac and circulatory congenital anomalies",2016,449,15.7706,29.886,12.999,18.542,345376.68,566065.02,292875.85,397877.50
+"373","Tarrant SDA","Cardiac and circulatory congenital anomalies",2017,394,10.4619,16.033,8.874,12.050,280074.10,501713.51,230381.09,329767.11
+"374","Tarrant SDA","Cardiac and circulatory congenital anomalies",2018,364,11.5769,18.768,9.642,13.511,320621.73,445297.94,274723.23,366520.23
+"375","Tarrant SDA","Cardiac and circulatory congenital anomalies",2019,440,15.3136,26.086,12.869,17.758,381181.31,523539.61,332127.78,430234.84
+"376","Tarrant SDA","Depressive disorders",2016,10053,7.8820,14.148,7.605,8.159,14427.26,11087.54,14210.50,14644.03
+"377","Tarrant SDA","Depressive disorders",2017,10601,7.6186,7.970,7.467,7.770,14953.47,11361.96,14737.16,15169.78
+"378","Tarrant SDA","Depressive disorders",2018,7996,7.8373,31.514,7.146,8.528,15844.28,25142.70,15293.11,16395.46
+"379","Tarrant SDA","Depressive disorders",2019,3688,7.4016,17.254,6.845,7.959,14735.63,34547.86,13620.26,15850.99
+"380","Tarrant SDA","Heart failure",2016,7751,5.6386,6.985,5.483,5.794,57492.50,85855.95,55580.85,59404.15
+"381","Tarrant SDA","Heart failure",2017,8367,5.4583,5.042,5.350,5.566,57800.15,90058.22,55870.19,59730.11
+"382","Tarrant SDA","Heart failure",2018,9247,5.5165,6.250,5.389,5.644,61762.60,109782.33,59524.72,64000.48
+"383","Tarrant SDA","Heart failure",2019,9164,5.3570,5.536,5.244,5.470,64053.27,142573.98,61133.81,66972.74
+"384","Tarrant SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2016,3708,3.9854,4.594,3.838,4.133,23093.45,21110.81,22413.73,23773.16
+"385","Tarrant SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2017,3949,3.8600,3.757,3.743,3.977,23169.36,17760.79,22615.25,23723.48
+"386","Tarrant SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2018,4276,3.7626,3.804,3.649,3.877,24032.73,21016.34,23402.63,24662.83
+"387","Tarrant SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2019,4701,3.8688,3.666,3.764,3.974,26104.42,23658.41,25427.95,26780.89
+"388","Tarrant SDA","MACE Event",2016,5861,5.6801,6.091,5.524,5.836,143940.68,127609.19,140673.05,147208.32
+"389","Tarrant SDA","MACE Event",2017,5115,5.8014,5.660,5.646,5.957,151024.91,136487.05,147283.64,154766.18
+"390","Tarrant SDA","MACE Event",2018,5173,5.8142,6.140,5.647,5.982,159499.39,182033.84,154537.68,164461.09
+"391","Tarrant SDA","MACE Event",2019,5299,5.6326,5.680,5.480,5.786,162042.90,266108.55,154876.37,169209.43
+"392","Tarrant SDA","Schizophrenia spectrum and other psychotic disorders",2016,4248,19.4605,61.599,17.608,21.313,22465.08,29803.30,21568.59,23361.56
+"393","Tarrant SDA","Schizophrenia spectrum and other psychotic disorders",2017,4563,19.9000,68.473,17.912,21.888,24125.70,34290.75,23130.49,25120.92
+"394","Tarrant SDA","Schizophrenia spectrum and other psychotic disorders",2018,3820,24.6822,131.787,20.502,28.863,26440.90,65659.21,24358.09,28523.71
+"395","Tarrant SDA","Schizophrenia spectrum and other psychotic disorders",2019,2215,31.5029,158.494,24.899,38.107,30647.46,74794.71,27530.95,33763.98
+"396","Texas","Acute myocardial infarction",2015,5,2.6000,1.817,0.344,4.856,27458.46,21199.46,1135.86,53781.06
+"397","Texas","Acute myocardial infarction",2016,33106,4.9648,5.901,4.901,5.028,109810.01,117753.71,108541.52,111078.49
+"398","Texas","Acute myocardial infarction",2017,33801,4.8138,5.365,4.757,4.871,111551.03,209769.07,109314.67,113787.38
+"399","Texas","Acute myocardial infarction",2018,34139,4.8291,5.644,4.769,4.889,113303.43,329324.55,109809.92,116796.94
+"400","Texas","Acute myocardial infarction",2019,34243,4.7793,5.416,4.722,4.837,109968.27,473474.37,104953.24,114983.31
+"401","Texas","Alcohol-related disorders",2015,1,11.0000,".",".",".",115487.70,".",".","."
+"402","Texas","Alcohol-related disorders",2016,12042,5.7157,8.390,5.566,5.866,26591.69,41579.69,25848.97,27334.41
+"403","Texas","Alcohol-related disorders",2017,11748,5.5152,8.436,5.363,5.668,26886.03,68239.34,25651.94,28120.11
+"404","Texas","Alcohol-related disorders",2018,13074,5.3933,7.120,5.271,5.515,24373.37,144920.71,21889.01,26857.73
+"405","Texas","Alcohol-related disorders",2019,13074,5.2470,12.954,5.025,5.469,23735.45,182534.08,20606.28,26864.61
+"406","Texas","Cardiac and circulatory congenital anomalies",2015,1,1.0000,".",".",".",7917.53,".",".","."
+"407","Texas","Cardiac and circulatory congenital anomalies",2016,2672,13.5692,25.723,12.593,14.545,288461.11,537659.77,268065.62,308856.61
+"408","Texas","Cardiac and circulatory congenital anomalies",2017,2555,12.9237,30.008,11.760,14.088,305280.23,725561.87,277133.18,333427.29
+"409","Texas","Cardiac and circulatory congenital anomalies",2018,2552,13.4373,25.570,12.445,14.430,327332.16,719415.21,299407.14,355257.18
+"410","Texas","Cardiac and circulatory congenital anomalies",2019,2665,15.2484,28.990,14.147,16.350,318956.90,1196056.39,273526.30,364387.50
+"411","Texas","Depressive disorders",2015,1,11.0000,".",".",".",29634.61,".",".","."
+"412","Texas","Depressive disorders",2016,48363,7.7074,15.794,7.567,7.848,15067.58,16121.73,14923.90,15211.27
+"413","Texas","Depressive disorders",2017,51719,7.5320,12.876,7.421,7.643,15214.22,20655.30,15036.20,15392.24
+"414","Texas","Depressive disorders",2018,56747,7.5556,16.266,7.422,7.689,14544.93,55125.95,14091.36,14998.50
+"415","Texas","Depressive disorders",2019,58529,7.3222,16.649,7.187,7.457,15257.38,37721.74,14951.77,15562.99
+"416","Texas","Heart failure",2015,21,4.8571,2.833,3.567,6.147,37979.07,25180.72,26516.95,49441.20
+"417","Texas","Heart failure",2016,55775,5.7172,6.854,5.660,5.774,60282.34,114966.97,59328.20,61236.47
+"418","Texas","Heart failure",2017,56553,5.5040,6.268,5.452,5.556,59406.07,139717.21,58254.53,60557.61
+"419","Texas","Heart failure",2018,61215,5.4824,6.299,5.432,5.532,59079.51,233424.55,57230.35,60928.67
+"420","Texas","Heart failure",2019,62288,5.5132,6.227,5.464,5.562,58902.94,314338.35,56434.33,61371.54
+"421","Texas","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2015,2,2.0000,1.414,-10.706,14.706,5201.25,1050.76,-4239.46,14641.96
+"422","Texas","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2016,24678,3.6786,3.520,3.635,3.722,24698.83,22394.95,24419.41,24978.26
+"423","Texas","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2017,25963,3.5818,3.250,3.542,3.621,25883.04,22811.24,25605.55,26160.52
+"424","Texas","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2018,27778,3.5972,3.437,3.557,3.638,26741.44,33245.70,26350.46,27132.42
+"425","Texas","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2019,28767,3.5855,3.409,3.546,3.625,26282.04,25092.37,25992.07,26572.02
+"426","Texas","MACE Event",2015,1,1.0000,".",".",".",62281.56,".",".","."
+"427","Texas","MACE Event",2016,37473,5.9787,6.519,5.913,6.045,148022.00,140771.76,146596.66,149447.34
+"428","Texas","MACE Event",2017,32521,6.2452,8.312,6.155,6.336,156945.90,276746.27,153938.00,159953.81
+"429","Texas","MACE Event",2018,33255,6.2075,6.818,6.134,6.281,157132.39,519916.05,151544.23,162720.55
+"430","Texas","MACE Event",2019,33321,6.1893,6.438,6.120,6.258,155628.98,455538.69,150737.61,160520.34
+"431","Texas","Schizophrenia spectrum and other psychotic disorders",2015,2,53.0000,31.113,-226.537,332.537,76744.00,45051.19,-328024.86,481512.86
+"432","Texas","Schizophrenia spectrum and other psychotic disorders",2016,33590,20.2749,96.752,19.240,21.310,24174.93,50500.76,23634.85,24715.01
+"433","Texas","Schizophrenia spectrum and other psychotic disorders",2017,35373,18.6478,86.166,17.750,19.546,23392.53,49343.52,22878.30,23906.76
+"434","Texas","Schizophrenia spectrum and other psychotic disorders",2018,37731,19.9266,99.822,18.919,20.934,22921.17,87629.07,22036.95,23805.39
+"435","Texas","Schizophrenia spectrum and other psychotic disorders",2019,35558,20.2673,120.424,19.016,21.519,23590.11,71412.44,22847.83,24332.39
+"436","Travis SDA","Acute myocardial infarction",2016,3360,4.9283,5.089,4.756,5.100,124118.79,109200.51,120425.10,127812.47
+"437","Travis SDA","Acute myocardial infarction",2017,3342,4.8165,7.188,4.573,5.060,129708.23,126944.58,125402.80,134013.66
+"438","Travis SDA","Acute myocardial infarction",2018,3952,4.7475,5.018,4.591,4.904,136551.98,228071.72,129439.13,143664.84
+"439","Travis SDA","Acute myocardial infarction",2019,3133,4.5605,5.664,4.362,4.759,122235.76,937652.02,89390.14,155081.38
+"440","Travis SDA","Alcohol-related disorders",2016,2245,6.9742,7.376,6.669,7.279,29448.53,42695.82,27681.43,31215.62
+"441","Travis SDA","Alcohol-related disorders",2017,2288,7.0874,7.581,6.777,7.398,30640.02,41371.69,28943.92,32336.13
+"442","Travis SDA","Alcohol-related disorders",2018,4457,6.4333,6.736,6.235,6.631,20352.82,202415.43,14408.69,26296.96
+"443","Travis SDA","Alcohol-related disorders",2019,5027,6.7840,7.570,6.575,6.993,18844.79,217563.66,12829.11,24860.47
+"444","Travis SDA","Cardiac and circulatory congenital anomalies",2016,362,12.4309,28.606,9.474,15.388,292536.40,747509.29,215273.88,369798.92
+"445","Travis SDA","Cardiac and circulatory congenital anomalies",2017,354,13.7345,28.488,10.757,16.712,339195.65,542518.41,282486.58,395904.72
+"446","Travis SDA","Cardiac and circulatory congenital anomalies",2018,357,12.5518,24.200,10.033,15.071,271292.63,1232353.33,143021.71,399563.55
+"447","Travis SDA","Cardiac and circulatory congenital anomalies",2019,325,20.1692,39.911,15.814,24.525,283804.32,3006732.68,-44311.03,611919.67
+"448","Travis SDA","Depressive disorders",2015,1,11.0000,".",".",".",29634.61,".",".","."
+"449","Travis SDA","Depressive disorders",2016,6323,8.8634,19.691,8.378,9.349,15545.58,22677.30,14986.52,16104.64
+"450","Travis SDA","Depressive disorders",2017,6428,9.2828,24.095,8.694,9.872,16346.67,26896.22,15689.04,17004.30
+"451","Travis SDA","Depressive disorders",2018,24202,7.9035,13.217,7.737,8.070,14366.47,41270.47,13846.49,14886.44
+"452","Travis SDA","Depressive disorders",2019,37778,7.6735,18.605,7.486,7.861,15036.21,16598.11,14868.83,15203.59
+"453","Travis SDA","Heart failure",2016,5029,6.0803,7.723,5.867,6.294,76968.19,170074.20,72266.54,81669.84
+"454","Travis SDA","Heart failure",2017,4982,5.8153,7.637,5.603,6.027,69083.96,287897.27,61087.66,77080.27
+"455","Travis SDA","Heart failure",2018,6380,5.7049,6.205,5.553,5.857,56631.64,549296.64,43150.48,70112.79
+"456","Travis SDA","Heart failure",2019,5835,5.6574,6.231,5.498,5.817,61898.52,393913.41,51789.28,72007.76
+"457","Travis SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2016,2031,3.7011,3.785,3.536,3.866,25924.15,34395.22,24427.39,27420.90
+"458","Travis SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2017,2242,3.4331,2.404,3.334,3.533,27356.20,20677.54,26499.83,28212.58
+"459","Travis SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2018,2730,3.4901,3.011,3.377,3.603,24938.68,72893.46,22203.11,27674.25
+"460","Travis SDA","Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium",2019,2402,3.5021,2.597,3.398,3.606,30037.91,20707.87,29209.37,30866.46
+"461","Travis SDA","MACE Event",2016,4195,6.0818,7.840,5.844,6.319,161640.61,171157.37,156459.73,166821.48
+"462","Travis SDA","MACE Event",2017,3536,6.3366,8.922,6.042,6.631,173417.72,188303.78,167209.04,179626.41
+"463","Travis SDA","MACE Event",2018,4116,6.3331,7.095,6.116,6.550,168362.41,1022547.29,137114.45,199610.36
+"464","Travis SDA","MACE Event",2019,3252,6.0855,6.800,5.852,6.319,192470.98,260905.54,183500.45,201441.50
+"465","Travis SDA","Schizophrenia spectrum and other psychotic disorders",2016,3900,24.1344,118.565,20.412,27.857,23935.74,58288.84,22105.80,25765.68
+"466","Travis SDA","Schizophrenia spectrum and other psychotic disorders",2017,4045,20.7293,104.511,17.508,23.951,21807.67,60274.46,19949.64,23665.69
+"467","Travis SDA","Schizophrenia spectrum and other psychotic disorders",2018,16048,16.0546,78.930,14.833,17.276,20584.69,60909.61,19642.25,21527.14
+"468","Travis SDA","Schizophrenia spectrum and other psychotic disorders",2019,22581,16.8485,94.474,15.616,18.081,22390.82,49509.05,21745.04,23036.60
+
