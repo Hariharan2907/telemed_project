@@ -746,9 +746,9 @@ df_hosp = pd.read_csv(url2,error_bad_lines=False)
 df_hosp = df_hosp.rename(columns={'ccsr':'Condition','year':'Year','n_hospitalizations': 'Hospitalization Count','avg_los':'Avg Length of Stay',
                             'std_los':'Std Dev Length of Stay','avg_chrg':'Avg Charges','std_chrg':'Std Dev Charges'})
 df_hosp = df_hosp.drop(['lci_chrg','uci_chrg','lci_los','uci_los','Obs'],axis=1)
-df_hosp['Hospitalization Count'] = df_hosp['Hospitalization Count'].map('{:,.2f}'.format)
-df_hosp['Avg Charges'] = df_hosp['Avg Charges'].map('{:,.0f}'.format)
-df_hosp['Std Dev Charges'] = df_hosp['Std Dev Charges'].map('{:,.0f}'.format)
+#df_hosp['Hospitalization Count'] = df_hosp['Hospitalization Count'].map('{:,.2f}'.format)
+#df_hosp['Avg Charges'] = df_hosp['Avg Charges'].map('{:,.0f}'.format)
+#df_hosp['Std Dev Charges'] = df_hosp['Std Dev Charges'].map('{:,.0f}'.format)
 
 
 sda_hosp = df_hosp['SDA'].unique()
