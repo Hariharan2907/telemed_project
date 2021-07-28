@@ -804,7 +804,5 @@ def heart_conditions():
     return render_template('heart_condition1.html',sda_hosp=sda_hosp, texas_heart=[texas_heart.to_html(index=False)])
 
 
-
-
 if __name__ == "__main__":
     app.run(debug=True) 
