@@ -764,19 +764,44 @@ sda_hosp = np.roll(sda_hosp,2)
 
 texas_hosp = df_hosp[df_hosp['SDA']=='Texas']
 texas_hosp = texas_hosp.drop(['SDA'],axis=1)
+texas_mental = texas_hosp.loc[texas_hosp['Condition'].isin(['Alcohol-related disorders','Depressive disorders',
+                                        'Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium',
+                                        'Schizophrenia spectrum and other psychotic disorders'])]
 
-
-@app.route('/hospitalization', methods = ["GET","POST"])
-def hospitilization():
+@app.route('/mental-health', methods = ["GET","POST"])
+def mental_health():
     if request.method == "POST":
         sda_hosp_name = request.form.get('sda_hosp',None)
         region_hosp = df_hosp[df_hosp['SDA']==sda_hosp_name]
         region_hosp = region_hosp.drop(['SDA'],axis=1)
+        region_mental = region_hosp.loc[region_hosp['Condition'].isin(['Alcohol-related disorders','Depressive disorders',
+                                        'Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium',
+                                        'Schizophrenia spectrum and other psychotic disorders'])]
+
         if sda_hosp_name != None:
-            return render_template('hospitalization.html',sda_hosp=sda_hosp,sda_hosp_name=sda_hosp_name, region_hosp = [region_hosp.to_html(index=False)])
+            return render_template('mental_health.html',sda_hosp=sda_hosp,sda_hosp_name=sda_hosp_name, region_mental = [region_mental.to_html(index=False)])
 
-    return render_template('hospitalization1.html',sda_hosp=sda_hosp, texas_hosp=[texas_hosp.to_html(index=False)])
+    return render_template('mental_health1.html',sda_hosp=sda_hosp, texas_mental=[texas_mental.to_html(index=False)])
 
+
+texas_heart =  texas_hosp.loc[texas_hosp['Condition'].isin(['Acute myocardial infarction','Cardiac and circulatory congenital anomalies',
+                                        'Heart failure','MACE Event'])]
+
+@app.route('/heart-conditions',methods = ["GET","POST"])
+def heart_conditions():
+    if request.method == "POST":
+        sda_hosp_name = request.form.get('sda_hosp',None)
+        region_hosp = df_hosp[df_hosp['SDA']==sda_hosp_name]
+        region_hosp = region_hosp.drop(['SDA'],axis=1)
+        region_heart = region_hosp.loc[region_hosp['Condition'].isin(['Acute myocardial infarction','Cardiac and circulatory congenital anomalies',
+                                        'Heart failure','MACE Event'])]
+        
+        
+        if sda_hosp_name != None:
+            return render_template('heart_condition.html',sda_hosp=sda_hosp,sda_hosp_name=sda_hosp_name, region_heart = [region_heart.to_html(index=False)])
+
+
+    return render_template('heart_condition1.html',sda_hosp=sda_hosp, texas_heart=[texas_heart.to_html(index=False)])
 
 
 

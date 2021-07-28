@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+    <head>    
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type = text/css href="{{ url_for('static', filename= 'css/main.css') }}">
+        <title>Hospitilization Cost Lookup</title>
+        
+    </head>
+
+
+    <body>  
+      <form name="Item_1" action="/heart-conditions" method="POST">
+        <div class = "fixed">
+        <label for="exampleFormControlFile2">Choose Region</label>
+          <select name="sda_hosp">
+              <option value = ""></option>
+            {% for district in sda_hosp %}
+              <option value="{{district}}">{{ district }}</option>
+            {% endfor %}     
+          </select>
+          <input type ="submit" value="Submit">
+        </div>
+    </form>
+
+      <div class="navbar" id="Top">
+        <a href="https://sites.google.com/view/pinformatics/data-science/cost-study-resources?authuser=0" target="_blank">Documents</a>
+        <a href="https://sites.google.com/view/pinformatics/data-science/public-data-resources?authuser=0" target="_blank">Other Data Resources</a>
+        <div class="dropdown">
+          <button class="dropbtn">Hospitalization Cost Lookup
+            <i class="fa fa-caret-down"></i>
+          </button>
+        <div class="dropdown-content">
+          <a href="mental-health">Mental Health</a>
+          <a href="heart-conditions">Heart conditions</a>
+        </div>
+        </div>
+        
+        <div class="dropdown">
+          <button class="dropbtn">Cost Study 
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="demographics">Demographics</a>
+            <a href="medcost">Total Medical Cost</a>
+            <a href="inpatcost">Inpatient Care Cost</a>
+            <a href="edcost">ED Cost</a>
+            <a href="outpatcost">Outpatient Care Cost</a>
+          </div>
+        </div>  
+        <a href="{{url_for('download_file')}}" target="_blank">CEA</a>
+    
+        </div>
+        <center><h1 >Hospitilization Cost Lookup for Texas</h1></center>
+        <hr color = "black" style="width:50%;text-align:center;border-bottom: 4px double">
+        <br>
+        <div class="hosp">
+          <center>
+          {% for table in texas_heart %}
+            {{table|safe}}         
+          {% endfor %}</center> 
+          <br>
+          </div>
+          </body>
+          </html>
