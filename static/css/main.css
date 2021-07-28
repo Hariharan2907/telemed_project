@@ -271,6 +271,41 @@ table.demographics {
   width: 20%;
 }
 
+table.hosp {
+  border-collapse: collapse;
+  border: 1px solid black;
+  text-align:center;
+  padding: 10px;
+  font-size: 16px;
+  border:none;
+  table-layout: auto;
+  max-width: 80%;  
+  
+}
+
+.hosp th, .hosp td {
+  border: 1px solid black;
+  text-align:center;
+  width: 10%;
+  padding: 10px;
+  
+  overflow: visible;
+  
+}
+.hosp td:nth-child(2), .hosp th:nth-child(2) {
+  border-left: 1px solid rgb(0, 0, 0);
+  width: 8%;
+  
+}
+.hosp td:nth-child(6), .hosp th:nth-child(6) {
+  border-left: 1px solid rgb(0, 0, 0);
+  width: 10%;
+  
+}
+.hosp tr:nth-of-type(4n) td {
+  border-bottom: 3px solid rgb(0, 0, 0);
+}
+
 .sidenav {
   width: 230px;
   position: fixed;

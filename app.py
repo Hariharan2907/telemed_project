@@ -4,7 +4,7 @@ import json
 import pandas as pd
 import numpy as np
 
-
+pd.options.mode.chained_assignment = None  # default='warn'
 app = Flask(__name__)
 
 url = "cost.csv"
@@ -746,15 +746,24 @@ df_hosp = pd.read_csv(url2,error_bad_lines=False)
 df_hosp = df_hosp.rename(columns={'ccsr':'Condition','year':'Year','n_hospitalizations': 'Hospitalization Count','avg_los':'Avg Length of Stay',
                             'std_los':'Std Dev Length of Stay','avg_chrg':'Avg Charges','std_chrg':'Std Dev Charges'})
 df_hosp = df_hosp.drop(['lci_chrg','uci_chrg','lci_los','uci_los','Obs'],axis=1)
-#df_hosp['Hospitalization Count'] = df_hosp['Hospitalization Count'].map('{:,.2f}'.format)
-#df_hosp['Avg Charges'] = df_hosp['Avg Charges'].map('{:,.0f}'.format)
-#df_hosp['Std Dev Charges'] = df_hosp['Std Dev Charges'].map('{:,.0f}'.format)
+
+
+df_hosp=df_hosp.replace(to_replace=".", value =0)
+df_hosp['Std Dev Length of Stay'] = df_hosp['Std Dev Length of Stay'].astype(float)
+df_hosp['Std Dev Charges'] = df_hosp['Std Dev Charges'].astype(float)
+df_hosp['Hospitalization Count'] = df_hosp['Hospitalization Count'].map('{:,.0f}'.format)
+df_hosp['Avg Charges'] = df_hosp['Avg Charges'].map('${:,.0f}'.format)
+df_hosp['Avg Length of Stay'] = df_hosp['Avg Length of Stay'].map('{:,.2f}'.format)
+df_hosp['Std Dev Length of Stay'] = df_hosp['Std Dev Length of Stay'].map('{:,.2f}'.format)
+df_hosp['Std Dev Charges'] = df_hosp['Std Dev Charges'].map('${:,.0f}'.format)
+
 
 
 sda_hosp = df_hosp['SDA'].unique()
 sda_hosp = np.roll(sda_hosp,2)
 
 texas_hosp = df_hosp[df_hosp['SDA']=='Texas']
+texas_hosp = texas_hosp.drop(['SDA'],axis=1)
 
 
 @app.route('/hospitalization', methods = ["GET","POST"])
@@ -762,6 +771,7 @@ def hospitilization():
     if request.method == "POST":
         sda_hosp_name = request.form.get('sda_hosp',None)
         region_hosp = df_hosp[df_hosp['SDA']==sda_hosp_name]
+        region_hosp = region_hosp.drop(['SDA'],axis=1)
         if sda_hosp_name != None:
             return render_template('hospitalization.html',sda_hosp=sda_hosp,sda_hosp_name=sda_hosp_name, region_hosp = [region_hosp.to_html(index=False)])
 
