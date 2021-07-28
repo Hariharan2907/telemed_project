@@ -765,7 +765,6 @@ sda_hosp = np.roll(sda_hosp,2)
 texas_hosp = df_hosp[df_hosp['SDA']=='Texas']
 texas_hosp = texas_hosp.drop(['SDA'],axis=1)
 texas_mental = texas_hosp.loc[texas_hosp['Condition'].isin(['Alcohol-related disorders','Depressive disorders',
-                                        'Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium',
                                         'Schizophrenia spectrum and other psychotic disorders'])]
 
 @app.route('/mental-health', methods = ["GET","POST"])
@@ -775,7 +774,6 @@ def mental_health():
         region_hosp = df_hosp[df_hosp['SDA']==sda_hosp_name]
         region_hosp = region_hosp.drop(['SDA'],axis=1)
         region_mental = region_hosp.loc[region_hosp['Condition'].isin(['Alcohol-related disorders','Depressive disorders',
-                                        'Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium',
                                         'Schizophrenia spectrum and other psychotic disorders'])]
 
         if sda_hosp_name != None:
@@ -785,7 +783,7 @@ def mental_health():
 
 
 texas_heart =  texas_hosp.loc[texas_hosp['Condition'].isin(['Acute myocardial infarction','Cardiac and circulatory congenital anomalies',
-                                        'Heart failure','MACE Event'])]
+                                        'Heart failure','Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium','MACE Event'])]
 
 @app.route('/heart-conditions',methods = ["GET","POST"])
 def heart_conditions():
@@ -794,7 +792,7 @@ def heart_conditions():
         region_hosp = df_hosp[df_hosp['SDA']==sda_hosp_name]
         region_hosp = region_hosp.drop(['SDA'],axis=1)
         region_heart = region_hosp.loc[region_hosp['Condition'].isin(['Acute myocardial infarction','Cardiac and circulatory congenital anomalies',
-                                        'Heart failure','MACE Event'])]
+                                        'Heart failure','Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium','MACE Event'])]
         
         
         if sda_hosp_name != None:
