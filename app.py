@@ -422,7 +422,7 @@ def cea_results():
 
 @app.route('/download')
 def download_file():
-    path = "doc/cea_tamu.xlsx"
+    path = "doc/CEA-tool-v10-1.xlsx"
     return send_file(path,as_attachment=True)
 
 @app.route('/', methods=["GET","POST"])
