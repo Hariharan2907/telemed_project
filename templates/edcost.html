@@ -8,35 +8,9 @@
     </head>
     <body>  
 
-        <div class="navbar" id="Top">
-            <a href="https://sites.google.com/view/pinformatics/data-science/cost-study-resources?authuser=0" target="_blank">Documents</a>
-            <a href="https://sites.google.com/view/pinformatics/data-science/public-data-resources?authuser=0" target="_blank">Other Data Resources</a>
-            <a>Download</a>
-            <div class="dropdown">
-              <button class="dropbtn">Inpatient Costs
-                <i class="fa fa-caret-down"></i>
-              </button>
-            <div class="dropdown-content">
-              <a href="mental-health">Mental Health</a>
-              <a href="heart-conditions">Heart Conditions</a>
-            </div>
-            </div>
-            
-            <div class="dropdown">
-              <button class="dropbtn">Cost Study 
-                <i class="fa fa-caret-down"></i>
-              </button>
-              <div class="dropdown-content">
-                <a href="demographics">Demographics</a>
-                <a href="medcost">Total Medical Cost</a>
-                <a href="inpatcost">Inpatient Care Cost</a>
-                <a href="edcost">ED Cost</a>
-                <a href="outpatcost">Outpatient Care Cost</a>
-              </div>
-            </div>  
-            <a href="{{url_for('download_file')}}" target="_blank">CEA</a>
-        
-            </div>
+
+        {% extends "base1.html" %}
+        {% block content %}
         
         <div class="sidenav">
             <a href="#Clients">Number of Clients</a>
@@ -227,6 +201,7 @@
         <br><br>
     </div>
 </body>
+{% endblock content %}
 </html>
 
 
