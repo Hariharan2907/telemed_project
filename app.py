@@ -23,7 +23,7 @@ sda = (df['Region'].unique())
 sda = np.roll(sda,2)
 sda = sda[sda!=0]
 nclients = df[df['meas']=='nclient']
-nclients.loc[nclients['Telemonitoring'] <= 5.0 , ['Telemonitoring']] = np.nan
+#nclients.loc[nclients['Telemonitoring'] <= 5.0 , ['Telemonitoring']] = np.nan
 
 
 #----------------------------------------------------Medical Cost------------------------------------------#
@@ -37,12 +37,15 @@ med_df_postcost = med_df[med_df['post']==1]
 texas_nclient = nclients[nclients['Region']=='Texas']
 texas_nclient=texas_nclient.drop(['type','post','meas'],axis=1)
 texas_nclient = texas_nclient.sort_values(by=['treat'])
+texas_nclient.loc[texas_nclient['Telemonitoring'] <= 5.0 , ['Telemonitoring']] = '---'
 texas_nclient['Child'] = texas_nclient['Child'].map('{:,.0f}'.format)
 texas_nclient['Blind/Disabled'] = texas_nclient['Blind/Disabled'].map('{:,.0f}'.format)
 texas_nclient['Telemonitoring'] = texas_nclient['Telemonitoring'].map('{:,.0f}'.format)
 texas_nclient['Televisits'] = texas_nclient['Televisits'].map('{:,.0f}'.format)
 texas_nclient['Other'] = texas_nclient['Other'].map('{:,.0f}'.format)
+
 texas_nclient = texas_nclient.rename(columns={'Telemonitoring':'Total ','Televisits':'Total'})
+
 texas_nclient_tele = texas_nclient[texas_nclient['treat']==1]
 texas_nclient_nontele = texas_nclient[texas_nclient['treat']==0]
 texas_nclient_tele=texas_nclient_tele.drop(['treat','Region'],axis=1)
@@ -433,12 +436,17 @@ def medcost():
         num_client = nclients[nclients['Region']==sda_name]
         num_client = num_client.sort_values(by=['treat'])
         num_client=num_client.drop(['type','post','meas'],axis=1)
-        num_client['Child'] = num_client['Child'].map('{:,.0f}'.format)
-        num_client['Blind/Disabled'] = num_client['Blind/Disabled'].map('{:,.0f}'.format)
         
+        num_client['Child'] = num_client['Child'].map('{:,.0f}'.format)
+        num_client['Blind/Disabled'] = num_client['Blind/Disabled'].map('{:,.0f}'.format)        
         num_client['Telemonitoring'] = num_client['Telemonitoring'].map('{:,.0f}'.format)
         num_client['Televisits'] = num_client['Televisits'].map('{:,.0f}'.format)
         num_client['Other'] = num_client['Other'].map('{:,.0f}'.format)
+        num_client['Telemonitoring'] = num_client['Telemonitoring'].astype(str)
+        nclients.loc[nclients['Telemonitoring'] <= 5.0 , ['Telemonitoring']] = np.nan
+
+
+        
         
         num_client = num_client.rename(columns={'Telemonitoring':'Total ','Televisits':'Total'})
         numclient_tele = num_client[num_client['treat']==1]
@@ -700,6 +708,7 @@ texas_demo['Telemonitoring-Treat'] = texas_demo['Telemonitoring-Treat'].map('{:,
 texas_demo['Telemonitoring-Comp'] = texas_demo['Telemonitoring-Comp'].map('{:,.2f}'.format)
 texas_demo = texas_demo.rename(columns={'Child-Treat':'Treatment', 'Child-Comp':'Comparison',  'Blind/Disabled-Treat':'Treatment','Blind/Disabled-Comp':'Comparison',
                                 'Telemonitoring-Treat':'Treatment','Telemonitoring-Comp': 'Comparison'})
+texas_demo = texas_demo.replace(to_replace = "0.00", value ="---")
 texas_demo = texas_demo.drop(['Region'],axis=1)
 
 texas_2013 = texas_demo[texas_demo['Year']==2013]
@@ -724,6 +733,7 @@ def demographics():
         region_demo['Telemonitoring-Comp'] = region_demo['Telemonitoring-Comp'].map('{:,.2f}'.format)
         region_demo = region_demo.rename(columns={'Child-Treat':'Treatment', 'Child-Comp':'Comparison',  'Blind/Disabled-Treat':'Treatment','Blind/Disabled-Comp':'Comparison',
                                 'Telemonitoring-Treat':'Treatment','Telemonitoring-Comp': 'Comparison'})
+        region_demo = region_demo.replace(to_replace = "0.00", value ="---")
         region_demo = region_demo.drop(['Region'],axis=1)                                
         region_2013 = region_demo[region_demo['Year']==2013]
         region_2014 = region_demo[region_demo['Year']==2014]
