@@ -75,38 +75,23 @@ div.a{
 table.mytable{
   
   border-collapse: collapse;
-    
-  font-size: 16px;
-  padding: 10px 20px 10px 20px;
-  table-layout: fixed;
+  border: 1px solid black;
   text-align:center;
-  width: 100%;
+  padding: 10px;  
+  font-size: 16px;
+  border:none;
+  table-layout: fixed;
+  width: 90%;
+  
 }
 .mytable th,.mytable td{
     border: 1px solid black;
     border-collapse: collapse;
-    text-align:center;
-    padding: 10px 20px 10px 20px;
+    text-align:center;   
+    border-bottom:none;
     
 }
 
-.mytable td:nth-child(1), .mytable th:nth-child(1) {
-  
-  width: 53.5px;
- }
- .mytable td:nth-child(2), .mytable th:nth-child(2) {
-  
-  width: 460px;
- }
-.mytable td:nth-child(3), .mytable th:nth-child(3) {
-  border-left: double rgb(0, 0, 0);
-  width: 88.5px;
-  padding-right:0.75cm;
-  
- }
-.mytable tr:first-child {
-  border-top: solid 1px rgb(0, 0, 0);
- }
 table.result{
   border-collapse: collapse;
   font-size: 16px;
@@ -145,56 +130,28 @@ table.ceatable{
   
 }
 table.dataframe {
-  /*border: 3px solid black;*/
   border-collapse: collapse;
+  border: 1px solid black;
   text-align:center;
   padding: 10px;  
   font-size: 16px;
   border:none;
   table-layout: fixed;
-  width: 100%;
+  width: 90%;
 }
 
 .dataframe th, .dataframe td {
-  /*border: 1px solid black;*/
-  border-collapse: collapse;
+  border: 1px solid black;
   text-align:center;
+  width: 10%;
   padding: 10px;
-  border: none;
-  
+  border-collapse: collapse;
 }
-.dataframe td:nth-child(1), .dataframe th:nth-child(1) {
-  border-left: solid 1px rgb(0, 0, 0);
-  width: 75px;
- }
-
-.dataframe td:nth-child(2), .dataframe th:nth-child(2) {
-  border-left: solid 1px rgb(0, 0, 0);
-  min-width: min-content;
- }
-
-.dataframe td:nth-child(5), .dataframe th:nth-child(5) {
-  border-left: solid 1px rgb(0, 0, 0);
- }
-
-.dataframe td:nth-child(6), .dataframe th:nth-child(6) {
-  border-left: double rgb(0, 0, 0);
-  width: 100px;
- }
-.dataframe td:nth-child(6), .dataframe th:nth-child(6) {
+.dataframe td:nth-child(10), .dataframe th:nth-child(10) {
   border-right: solid 1px rgb(0, 0, 0);
-  width: 120px;
   
- }
-
- 
-.dataframe tr:first-child{
-  border-top: solid 1px rgb(0, 0, 0);
- }
- 
-.dataframe tr:last-child{
-  border-bottom: solid 1px rgb(0, 0, 0);
- }
+  
+ } 
 
 table.demo{
   border-collapse: collapse;
@@ -203,10 +160,11 @@ table.demo{
   padding: 10px;  
   font-size: 16px;
   border:none;
-  table-layout: fixed;
+  table-layout: auto;
   width: 80%;
   
 }
+
 
 .demo th, .demo td {
   border: 1px solid black;
