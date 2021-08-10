@@ -71,136 +71,108 @@
         </div>
         <br>
 
-        <div class = "solid" >
+        
         <center><u><h2 id="Clients">Number of Clients for Texas</h2></u></center>
 
-        <center><p class="text-border"><b>Treatment Group: Teleservices</b></p></center> 
-        <center>
-        <table class='mytable'>
- 
-            <tr>
-            <td>&nbsp;</td>
-
-            <td colspan="4"><b>Tele Visit</b></td>               
-            <td style = "text-align: left;"><b>Telemonitoring</b></td>
-            
-            </tr>
-           </table>
-        </center>
-        <center>
         
-        {% for table in texas_nclient_tele %}
-        <center> {{table|safe}}</center>        
+        <center>
+            <table class="mytable" >     
+                <tr>
+                <td>&nbsp;</td>
+    
+                <td colspan="8"><b>Tele Visits</b></td>
+                        
+                <td colspan="2"><b>Telemonitoring</b></td>
+                
+                </tr>
+            </table>
+
+            <table class = 'mytable'>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td colspan="2"><b>Blind/Disabled</b></td>
+                    <td colspan="2"><b>Child</b></td>
+                    <td colspan="2"><b>Other</b></td>
+                    <td colspan="2"><b>Total</b></td>
+                    <td colspan="2">&nbsp;</td>
+
+                </tr>
+            </table>
+     
+        
+        {% for table in texas_numclient %}
+        {{table|safe}}  
         {% endfor %}
 
         </center> 
         <br><br>    
-        <center><p class="text-border"><b>Comparison Group: Non-Teleservices</b></p></center>
-        <center>
-            <table class='mytable'>
-     
-                <tr>
-                <td>&nbsp;</td>
-    
-                <td colspan="4"><b>Non-Tele Visit</b></td>               
-                <td style = "text-align: left;"><b>Non-Telemonitoring</b></td>
-                
-                </tr>
-               </table>
-            </center>
-        
-        <center>
-        {% for table in texas_nclient_nontele %}
-        <center> {{table|safe}}</center>           
-        {% endfor %}</center> 
-        <br>
-        </div>    
-        <br>
+\
 
         
 
-        <div class = "solid" >
-        <center><u><h2 id="Post_Cost">Post Cost Table for Texas</h2></u></center>
+        
+        <center><u><h2 id="Post_Cost">Post Cost Table for Texas</h2></u></center>      
         <center>
-        <center><p class="text-border"><b>Treatment Group: Teleservices</p></b></center>
-        <center>
-            <table class='mytable'>
-     
+            <table class="mytable" >     
                 <tr>
                 <td>&nbsp;</td>
     
-                <td colspan="4"><b>Tele Visit</b></td>               
-                <td style = "text-align: left;"><b>Telemonitoring</b></td>
+                <td colspan="8"><b>Tele Visits</b></td>
+                        
+                <td colspan="2"><b>Telemonitoring</b></td>
                 
                 </tr>
-               </table>
-            </center>
-        {% for table in texas_postcost_tele_outpat %}
-            {{table|safe}}
-        {% endfor %}</center> 
-        <br><br>
-        <center><p class="text-border"><b>Comparison Group: Non-Teleservices</p></b></center>
-        <center>
-            <table class='mytable'>
-     
-                <tr>
-                <td>&nbsp;</td>
-    
-                <td colspan="4"><b>Non-Tele Visit</b></td>               
-                <td style = "text-align: left;"><b>Non-Telemonitoring</b></td>
-                
-                </tr>
-               </table>
-            </center>
-        <center>
-        {% for table in texas_postcost_nontele_outpat %}
-            {{table|safe}}
-        {% endfor %}</center> 
+            </table>
 
-        <br><br>
-    </div>
+            <table class = 'mytable'>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td colspan="2"><b>Blind/Disabled</b></td>
+                    <td colspan="2"><b>Child</b></td>
+                    <td colspan="2"><b>Other</b></td>
+                    <td colspan="2"><b>Total</b></td>
+                    <td colspan="2">&nbsp;</td>
+
+                </tr>
+            </table>
+            
+        {% for table in texas_postcost_outpat_final %}
+            {{table|safe}}
+        {% endfor %}</center> 
     <br>
 
-    <div class = "solid" >
+    
         <center><u><h2 id="Outpat_visit">Outpatient Visits Table for Texas</h2></u></center>
+        
         <center>
-        <center><p class="text-border"><b>Treatment Group: Teleservices</p></b></center>
-        <center>
-            <table class='mytable'>
-     
+            <table class="mytable" >     
                 <tr>
                 <td>&nbsp;</td>
     
-                <td colspan="4"><b>Tele Visit</b></td>               
-                <td style = "text-align: left;"><b>Telemonitoring</b></td>
+                <td colspan="8"><b>Tele Visits</b></td>
+                        
+                <td colspan="2"><b>Telemonitoring</b></td>
                 
                 </tr>
-               </table>
-            </center>
-        {% for table in texas_outpat_visits_tele %}
-            {{table|safe}}
-        {% endfor %}</center> 
-        <br><br>
-        <center><p class="text-border"><b>Comparison Group: Non-Teleservices</p></b></center>
-        <center>
-            <table class='mytable'>
-     
-                <tr>
-                <td>&nbsp;</td>
-    
-                <td colspan="4"><b>Non-Tele Visit</b></td>               
-                <td style = "text-align: left;"><b>Non-Telemonitoring</b></td>
-                
-                </tr>
-               </table>
-            </center>
-        <center>
-        {% for table in texas_outpat_visits_nontele %}
-            {{table|safe}}
-        {% endfor %}</center> 
+            </table>
 
+            <table class = 'mytable'>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td colspan="2"><b>Blind/Disabled</b></td>
+                    <td colspan="2"><b>Child</b></td>
+                    <td colspan="2"><b>Other</b></td>
+                    <td colspan="2"><b>Total</b></td>
+                    <td colspan="2">&nbsp;</td>
+
+                </tr>
+            </table>
+            
+        {% for table in texas_outpat_visits_final %}
+            {{table|safe}}
+        {% endfor %}</center> 
         <br><br>
-    </div>
+
 
 </body>
 {% endblock content %}

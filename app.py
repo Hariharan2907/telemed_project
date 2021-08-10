@@ -150,11 +150,22 @@ texas_postcost_inpat['Blind/Disabled'] = texas_postcost_inpat['Blind/Disabled'].
 texas_postcost_inpat['Telemonitoring'] = texas_postcost_inpat['Telemonitoring'].map('${:,.0f}'.format) 
 texas_postcost_inpat['Televisits'] = texas_postcost_inpat['Televisits'].map('${:,.0f}'.format)
 texas_postcost_inpat['Other'] = texas_postcost_inpat['Other'].map('${:,.0f}'.format)
-texas_postcost_inpat = texas_postcost_inpat.rename(columns={'Telemonitoring':'Total ','Televisits':'Total'})
+
+#texas_postcost_inpat = texas_postcost_inpat.rename(columns={'Telemonitoring':'Total ','Televisits':'Total'})
 texas_postcost_tele_inpat = texas_postcost_inpat[texas_postcost_inpat['treat']==1]
 texas_postcost_nontele_inpat = texas_postcost_inpat[texas_postcost_inpat['treat']==0]
 texas_postcost_tele_inpat=texas_postcost_tele_inpat.drop(['treat','Region'],axis=1)
-texas_postcost_nontele_inpat=texas_postcost_nontele_inpat.drop(['treat','Region'],axis=1)
+texas_postcost_nontele_inpat=texas_postcost_nontele_inpat.drop(['treat','Region','Year'],axis=1)
+texas_postcost_nontele_inpat = texas_postcost_nontele_inpat.rename(columns ={'Blind/Disabled':'Blind/Disabled_Comp','Child':'Child_Comp','Other':'Other_Comp',
+                                                        'Televisits':'Televisits_Comp','Telemonitoring':'Telemonitoring_Comp'})
+texas_postcost_tele_inpat.reset_index(drop=True,inplace=True)
+texas_postcost_nontele_inpat.reset_index(drop=True, inplace=True)
+texas_postcost_inpat_final = pd.concat([texas_postcost_tele_inpat,texas_postcost_nontele_inpat],axis=1)     
+texas_postcost_inpat_final = texas_postcost_inpat_final[["Year","Blind/Disabled","Blind/Disabled_Comp","Child","Child_Comp","Other","Other_Comp","Televisits","Televisits_Comp","Telemonitoring","Telemonitoring_Comp"]]
+texas_postcost_inpat_final = texas_postcost_inpat_final.rename(columns ={'Blind/Disabled':'Treatment','Blind/Disabled_Comp':'Comparison','Child':'Treatment','Child_Comp':'Comparison','Other':'Treatment',
+                                                        'Other_Comp':'Comparison','Televisits':'Treatment','Televisits':'Treatment','Televisits_Comp':'Comparison','Telemonitoring':'Treatment',
+                                                        'Telemonitoring_Comp':'Comparison'})     
+
 
 texas_inpat_encount_df = inpat_encount[inpat_encount['Region']=='Texas']
 texas_inpat_encount_df = texas_inpat_encount_df.sort_values(by=['treat'])
@@ -164,11 +175,25 @@ texas_inpat_encount_df['Blind/Disabled'] = texas_inpat_encount_df['Blind/Disable
 texas_inpat_encount_df['Telemonitoring'] = texas_inpat_encount_df['Telemonitoring'].map('{:,.3f}'.format)
 texas_inpat_encount_df['Televisits'] = texas_inpat_encount_df['Televisits'].map('{:,.3f}'.format)
 texas_inpat_encount_df['Other'] = texas_inpat_encount_df['Other'].map('{:,.3f}'.format)        
-texas_inpat_encount_df = texas_inpat_encount_df.rename(columns={'Telemonitoring':'Total','Televisits':'Total'})
+#texas_inpat_encount_df = texas_inpat_encount_df.rename(columns={'Telemonitoring':'Total','Televisits':'Total'})
+
+
 texas_inpat_encount_tele = texas_inpat_encount_df[texas_inpat_encount_df['treat']==1]
 texas_inpat_encount_nontele = texas_inpat_encount_df[texas_inpat_encount_df['treat']==0]
 texas_inpat_encount_tele=texas_inpat_encount_tele.drop(['treat','Region'],axis=1)
-texas_inpat_encount_nontele=texas_inpat_encount_nontele.drop(['treat','Region'],axis=1)
+texas_inpat_encount_nontele = texas_inpat_encount_nontele.drop(['treat','Region','Year'],axis=1)
+texas_inpat_encount_nontele = texas_inpat_encount_nontele.rename(columns ={'Blind/Disabled':'Blind/Disabled_Comp','Child':'Child_Comp','Other':'Other_Comp',
+                                                        'Televisits':'Televisits_Comp','Telemonitoring':'Telemonitoring_Comp'})
+
+texas_inpat_encount_tele.reset_index(drop=True,inplace=True)
+texas_inpat_encount_nontele.reset_index(drop=True, inplace=True)       
+texas_inpat_encount_final = pd.concat([texas_inpat_encount_tele,texas_inpat_encount_nontele],axis=1)     
+texas_inpat_encount_final = texas_inpat_encount_final[["Year","Blind/Disabled","Blind/Disabled_Comp","Child","Child_Comp","Other","Other_Comp","Televisits","Televisits_Comp","Telemonitoring","Telemonitoring_Comp"]]
+texas_inpat_encount_final = texas_inpat_encount_final.rename(columns ={'Blind/Disabled':'Treatment','Blind/Disabled_Comp':'Comparison','Child':'Treatment','Child_Comp':'Comparison','Other':'Treatment',
+                                                        'Other_Comp':'Comparison','Televisits':'Treatment','Televisits':'Treatment','Televisits_Comp':'Comparison','Telemonitoring':'Treatment',
+                                                        'Telemonitoring_Comp':'Comparison'})     
+
+
 
 
 #----------------------------------------------------ED Cost------------------------------------------#
@@ -196,11 +221,22 @@ texas_postcost_ed['Blind/Disabled'] = texas_postcost_ed['Blind/Disabled'].map('$
 texas_postcost_ed['Telemonitoring'] = texas_postcost_ed['Telemonitoring'].map('${:,.0f}'.format) 
 texas_postcost_ed['Televisits'] = texas_postcost_ed['Televisits'].map('${:,.0f}'.format)
 texas_postcost_ed['Other'] = texas_postcost_ed['Other'].map('${:,.0f}'.format)
-texas_postcost_ed = texas_postcost_ed.rename(columns={'Telemonitoring':'Total ','Televisits':'Total'})
+#texas_postcost_ed = texas_postcost_ed.rename(columns={'Telemonitoring':'Total ','Televisits':'Total'})
+
 texas_postcost_tele_ed = texas_postcost_ed[texas_postcost_ed['treat']==1]
 texas_postcost_nontele_ed = texas_postcost_ed[texas_postcost_ed['treat']==0]
 texas_postcost_tele_ed=texas_postcost_tele_ed.drop(['treat','Region'],axis=1)
-texas_postcost_nontele_ed=texas_postcost_nontele_ed.drop(['treat','Region'],axis=1)
+texas_postcost_nontele_ed=texas_postcost_nontele_ed.drop(['treat','Region','Year'],axis=1)
+texas_postcost_nontele_ed = texas_postcost_nontele_ed.rename(columns ={'Blind/Disabled':'Blind/Disabled_Comp','Child':'Child_Comp','Other':'Other_Comp',
+                                                        'Televisits':'Televisits_Comp','Telemonitoring':'Telemonitoring_Comp'})
+texas_postcost_tele_ed.reset_index(drop=True,inplace=True)
+texas_postcost_nontele_ed.reset_index(drop=True, inplace=True)
+texas_postcost_ed_final = pd.concat([texas_postcost_tele_ed,texas_postcost_nontele_ed],axis=1)     
+texas_postcost_ed_final = texas_postcost_ed_final[["Year","Blind/Disabled","Blind/Disabled_Comp","Child","Child_Comp","Other","Other_Comp","Televisits","Televisits_Comp","Telemonitoring","Telemonitoring_Comp"]]
+texas_postcost_ed_final = texas_postcost_ed_final.rename(columns ={'Blind/Disabled':'Treatment','Blind/Disabled_Comp':'Comparison','Child':'Treatment','Child_Comp':'Comparison','Other':'Treatment',
+                                                        'Other_Comp':'Comparison','Televisits':'Treatment','Televisits':'Treatment','Televisits_Comp':'Comparison','Telemonitoring':'Treatment',
+                                                        'Telemonitoring_Comp':'Comparison'})     
+
 
 texas_ed_visits_df = ed_visits[ed_visits['Region']=='Texas']
 texas_ed_visits_df = texas_ed_visits_df.sort_values(by=['treat'])
@@ -210,11 +246,24 @@ texas_ed_visits_df['Blind/Disabled'] = texas_ed_visits_df['Blind/Disabled'].map(
 texas_ed_visits_df['Telemonitoring'] = texas_ed_visits_df['Telemonitoring'].map('{:,.3f}'.format)
 texas_ed_visits_df['Televisits'] = texas_ed_visits_df['Televisits'].map('{:,.3f}'.format)
 texas_ed_visits_df['Other'] = texas_ed_visits_df['Other'].map('{:,.3f}'.format)        
-texas_ed_visits_df = texas_ed_visits_df.rename(columns={'Telemonitoring':'Total','Televisits':'Total'})
+#texas_ed_visits_df = texas_ed_visits_df.rename(columns={'Telemonitoring':'Total','Televisits':'Total'})
+
 texas_ed_visits_tele = texas_ed_visits_df[texas_ed_visits_df['treat']==1]
 texas_ed_visits_nontele = texas_ed_visits_df[texas_ed_visits_df['treat']==0]
 texas_ed_visits_tele=texas_ed_visits_tele.drop(['treat','Region'],axis=1)
-texas_ed_visits_nontele=texas_ed_visits_nontele.drop(['treat','Region'],axis=1)
+texas_ed_visits_nontele=texas_ed_visits_nontele.drop(['treat','Region','Year'],axis=1)
+
+texas_ed_visits_nontele = texas_ed_visits_nontele.rename(columns ={'Blind/Disabled':'Blind/Disabled_Comp','Child':'Child_Comp','Other':'Other_Comp',
+                                                        'Televisits':'Televisits_Comp','Telemonitoring':'Telemonitoring_Comp'})
+texas_ed_visits_tele.reset_index(drop=True,inplace=True)
+texas_ed_visits_nontele.reset_index(drop=True, inplace=True)
+texas_ed_visits_final = pd.concat([texas_ed_visits_tele,texas_ed_visits_nontele],axis=1)     
+texas_ed_visits_final = texas_ed_visits_final[["Year","Blind/Disabled","Blind/Disabled_Comp","Child","Child_Comp","Other","Other_Comp","Televisits","Televisits_Comp","Telemonitoring","Telemonitoring_Comp"]]
+texas_ed_visits_final = texas_ed_visits_final.rename(columns ={'Blind/Disabled':'Treatment','Blind/Disabled_Comp':'Comparison','Child':'Treatment','Child_Comp':'Comparison','Other':'Treatment',
+                                                        'Other_Comp':'Comparison','Televisits':'Treatment','Televisits':'Treatment','Televisits_Comp':'Comparison','Telemonitoring':'Treatment',
+                                                        'Telemonitoring_Comp':'Comparison'})     
+
+
 
 #----------------------------------------------------Outpatient Cost------------------------------------------#
 outpat_df = df[df['type']=='out']
@@ -240,11 +289,24 @@ texas_postcost_outpat['Blind/Disabled'] = texas_postcost_outpat['Blind/Disabled'
 texas_postcost_outpat['Telemonitoring'] = texas_postcost_outpat['Telemonitoring'].map('${:,.0f}'.format) 
 texas_postcost_outpat['Televisits'] = texas_postcost_outpat['Televisits'].map('${:,.0f}'.format)
 texas_postcost_outpat['Other'] = texas_postcost_outpat['Other'].map('${:,.0f}'.format)
-texas_postcost_outpat = texas_postcost_outpat.rename(columns={'Telemonitoring':'Total ','Televisits':'Total'})
+#texas_postcost_outpat = texas_postcost_outpat.rename(columns={'Telemonitoring':'Total ','Televisits':'Total'})
+
 texas_postcost_tele_outpat = texas_postcost_outpat[texas_postcost_outpat['treat']==1]
 texas_postcost_nontele_outpat = texas_postcost_outpat[texas_postcost_outpat['treat']==0]
 texas_postcost_tele_outpat=texas_postcost_tele_outpat.drop(['treat','Region'],axis=1)
-texas_postcost_nontele_outpat=texas_postcost_nontele_outpat.drop(['treat','Region'],axis=1)
+texas_postcost_nontele_outpat=texas_postcost_nontele_outpat.drop(['treat','Region','Year'],axis=1)
+texas_postcost_nontele_outpat = texas_postcost_nontele_outpat.rename(columns ={'Blind/Disabled':'Blind/Disabled_Comp','Child':'Child_Comp','Other':'Other_Comp',
+                                                        'Televisits':'Televisits_Comp','Telemonitoring':'Telemonitoring_Comp'})
+texas_postcost_tele_outpat.reset_index(drop=True,inplace=True)
+texas_postcost_nontele_outpat.reset_index(drop=True, inplace=True)
+texas_postcost_outpat_final = pd.concat([texas_postcost_tele_ed,texas_postcost_nontele_ed],axis=1)     
+texas_postcost_outpat_final = texas_postcost_outpat_final[["Year","Blind/Disabled","Blind/Disabled_Comp","Child","Child_Comp","Other","Other_Comp","Televisits","Televisits_Comp","Telemonitoring","Telemonitoring_Comp"]]
+texas_postcost_outpat_final = texas_postcost_outpat_final.rename(columns ={'Blind/Disabled':'Treatment','Blind/Disabled_Comp':'Comparison','Child':'Treatment','Child_Comp':'Comparison','Other':'Treatment',
+                                                        'Other_Comp':'Comparison','Televisits':'Treatment','Televisits':'Treatment','Televisits_Comp':'Comparison','Telemonitoring':'Treatment',
+                                                        'Telemonitoring_Comp':'Comparison'})     
+
+
+
 
 texas_outpat_visits_df = outpat_visits[outpat_visits['Region']=='Texas']
 texas_outpat_visits_df = texas_outpat_visits_df.sort_values(by=['treat'])
@@ -254,12 +316,21 @@ texas_outpat_visits_df['Blind/Disabled'] = texas_outpat_visits_df['Blind/Disable
 texas_outpat_visits_df['Telemonitoring'] = texas_outpat_visits_df['Telemonitoring'].map('{:,.3f}'.format)
 texas_outpat_visits_df['Televisits'] = texas_outpat_visits_df['Televisits'].map('{:,.3f}'.format)
 texas_outpat_visits_df['Other'] = texas_outpat_visits_df['Other'].map('{:,.3f}'.format)        
-texas_outpat_visits_df = texas_outpat_visits_df.rename(columns={'Telemonitoring':'Total','Televisits':'Total'})
+#texas_outpat_visits_df = texas_outpat_visits_df.rename(columns={'Telemonitoring':'Total','Televisits':'Total'})
+
 texas_outpat_visits_tele = texas_outpat_visits_df[texas_outpat_visits_df['treat']==1]
 texas_outpat_visits_nontele = texas_outpat_visits_df[texas_outpat_visits_df['treat']==0]
 texas_outpat_visits_tele=texas_outpat_visits_tele.drop(['treat','Region'],axis=1)
-texas_outpat_visits_nontele=texas_outpat_visits_nontele.drop(['treat','Region'],axis=1)
-
+texas_outpat_visits_nontele=texas_outpat_visits_nontele.drop(['treat','Region','Year'],axis=1)
+texas_outpat_visits_nontele = texas_outpat_visits_nontele.rename(columns ={'Blind/Disabled':'Blind/Disabled_Comp','Child':'Child_Comp','Other':'Other_Comp',
+                                                        'Televisits':'Televisits_Comp','Telemonitoring':'Telemonitoring_Comp'})
+texas_outpat_visits_tele.reset_index(drop=True,inplace=True)
+texas_outpat_visits_nontele.reset_index(drop=True, inplace=True)
+texas_outpat_visits_final = pd.concat([texas_outpat_visits_tele,texas_outpat_visits_nontele],axis=1)     
+texas_outpat_visits_final = texas_outpat_visits_final[["Year","Blind/Disabled","Blind/Disabled_Comp","Child","Child_Comp","Other","Other_Comp","Televisits","Televisits_Comp","Telemonitoring","Telemonitoring_Comp"]]
+texas_outpat_visits_final = texas_outpat_visits_final.rename(columns ={'Blind/Disabled':'Treatment','Blind/Disabled_Comp':'Comparison','Child':'Treatment','Child_Comp':'Comparison','Other':'Treatment',
+                                                        'Other_Comp':'Comparison','Televisits':'Treatment','Televisits':'Treatment','Televisits_Comp':'Comparison','Telemonitoring':'Treatment',
+                                                        'Telemonitoring_Comp':'Comparison'})     
 
 '''
 
@@ -592,8 +663,8 @@ def inpatcost():
     
     
     
-    return render_template('inpatient1.html',sda=sda, texas_nclient_tele=[texas_nclient_tele.to_html(index=False)], texas_nclient_nontele=[texas_nclient_nontele.to_html(index=False)], texas_postcost_tele_inpat=[texas_postcost_tele_inpat.to_html(index = False)],  texas_postcost_nontele_inpat=[texas_postcost_nontele_inpat.to_html(index = False)],
-                            texas_inpat_encount_tele=[texas_inpat_encount_tele.to_html(index=False)],texas_inpat_encount_nontele=[texas_inpat_encount_nontele.to_html(index=False)])
+    return render_template('inpatient1.html',sda=sda, texas_numclient=[texas_numclient.to_html(index=False)], texas_postcost_inpat_final=[texas_postcost_inpat_final.to_html(index=False)], 
+                            texas_inpat_encount_final=[texas_inpat_encount_final.to_html(index=False)])
 
 
 @app.route('/edcost', methods=["GET", "POST"])
@@ -651,8 +722,8 @@ def edcost():
             return render_template("edcost.html", sda_name=sda_name, sda=sda, numclient_tele=[numclient_tele.to_html(index = False)],numclient_nontele=[numclient_nontele.to_html(index = False)],
                                     postcost_tele_ed=[postcost_tele_ed.to_html(index = False)], postcost_nontele_ed=[postcost_nontele_ed.to_html(index = False)], ed_visits_tele=[ed_visits_tele.to_html(index = False)],ed_visits_nontele=[ed_visits_nontele.to_html(index = False)])
     
-    return render_template('edcost1.html',sda=sda, texas_nclient_tele=[texas_nclient_tele.to_html(index=False)], texas_nclient_nontele=[texas_nclient_nontele.to_html(index=False)], texas_postcost_tele_ed=[texas_postcost_tele_ed.to_html(index = False)],  texas_postcost_nontele_ed=[texas_postcost_nontele_ed.to_html(index = False)],
-                            texas_ed_visits_tele=[texas_ed_visits_tele.to_html(index=False)],texas_ed_visits_nontele=[texas_ed_visits_nontele.to_html(index=False)])
+    return render_template('edcost1.html',sda=sda, texas_numclient=[texas_numclient.to_html(index=False)], texas_postcost_ed_final=[texas_postcost_ed_final.to_html(index = False)]
+                                        ,texas_ed_visits_final=[texas_ed_visits_final.to_html(index=False)])
 
 
 @app.route('/outpatcost', methods=["GET", "POST"])
@@ -715,8 +786,8 @@ def outpatcost():
             return render_template("outpatient.html", sda_name=sda_name, sda=sda, numclient_tele=[numclient_tele.to_html(index = False)],numclient_nontele=[numclient_nontele.to_html(index = False)],
                                     postcost_tele_outpat=[postcost_tele_outpat.to_html(index = False)], postcost_nontele_outpat=[postcost_nontele_outpat.to_html(index = False)], outpat_visits_tele=[outpat_visits_tele.to_html(index = False)],outpat_visits_nontele=[outpat_visits_nontele.to_html(index = False)])
     
-    return render_template('outpatient1.html',sda=sda, texas_nclient_tele=[texas_nclient_tele.to_html(index=False)], texas_nclient_nontele=[texas_nclient_nontele.to_html(index=False)], texas_postcost_tele_outpat=[texas_postcost_tele_outpat.to_html(index = False)],  texas_postcost_nontele_outpat=[texas_postcost_nontele_outpat.to_html(index = False)],
-                            texas_outpat_visits_tele=[texas_outpat_visits_tele.to_html(index=False)],texas_outpat_visits_nontele=[texas_outpat_visits_nontele.to_html(index=False)])
+    return render_template('outpatient1.html',sda=sda, texas_numclient=[texas_numclient.to_html(index=False)],   texas_postcost_outpat_final=[texas_postcost_outpat_final.to_html(index = False)],
+                            texas_outpat_visits_final=[texas_outpat_visits_final.to_html(index=False)])
 
 
 
