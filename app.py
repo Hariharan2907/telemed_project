@@ -542,24 +542,28 @@ def medcost():
         sda_name = request.form.get("sda", None)
         num_client = nclients[nclients['Region']==sda_name]
         num_client = num_client.sort_values(by=['treat'])
-        num_client=num_client.drop(['type','post','meas'],axis=1)
-        
+        num_client=num_client.drop(['type','post','meas'],axis=1)        
         num_client['Child'] = num_client['Child'].map('{:,.0f}'.format)
         num_client['Blind/Disabled'] = num_client['Blind/Disabled'].map('{:,.0f}'.format)        
         num_client['Telemonitoring'] = num_client['Telemonitoring'].map('{:,.0f}'.format)
         num_client['Televisits'] = num_client['Televisits'].map('{:,.0f}'.format)
         num_client['Other'] = num_client['Other'].map('{:,.0f}'.format)
-        num_client['Telemonitoring'] = num_client['Telemonitoring'].astype(str)
-        nclients.loc[nclients['Telemonitoring'] <= 5.0 , ['Telemonitoring']] = np.nan
-
-
-        
-        
-        num_client = num_client.rename(columns={'Telemonitoring':'Total ','Televisits':'Total'})
+        num_client['Telemonitoring'] = num_client['Telemonitoring'].astype(str)                             
         numclient_tele = num_client[num_client['treat']==1]
         numclient_nontele = num_client[num_client['treat']==0]
         numclient_tele=numclient_tele.drop(['treat','Region'],axis=1)
-        numclient_nontele=numclient_nontele.drop(['treat','Region'],axis=1)
+        numclient_nontele=numclient_nontele.drop(['treat','Region','Year'],axis=1)
+        numclient_nontele = numclient_nontele.rename(columns ={'Blind/Disabled':'Blind/Disabled_Comp','Child':'Child_Comp','Other':'Other_Comp',
+                                                        'Televisits':'Televisits_Comp','Telemonitoring':'Telemonitoring_Comp'})
+        numclient_tele.reset_index(drop=True,inplace=True)
+        numclient_nontele.reset_index(drop=True, inplace=True)
+        numclient_final = pd.concat([numclient_tele,numclient_nontele],axis=1)
+        numclient_final = numclient_final[["Year","Blind/Disabled","Blind/Disabled_Comp","Child","Child_Comp","Other","Other_Comp","Televisits","Televisits_Comp","Telemonitoring","Telemonitoring_Comp"]]
+        numclient_final = numclient_final.rename(columns ={'Blind/Disabled':'Treatment','Blind/Disabled_Comp':'Comparison','Child':'Treatment','Child_Comp':'Comparison','Other':'Treatment',
+                                                                'Other_Comp':'Comparison','Televisits':'Treatment','Televisits':'Treatment','Televisits_Comp':'Comparison','Telemonitoring':'Treatment',
+                                                        'Telemonitoring_Comp':'Comparison'})
+
+
         
 
         df_precost = med_df_precost[med_df_precost['Region']==sda_name]
@@ -574,11 +578,21 @@ def medcost():
         df_precost['Telemonitoring'] = df_precost['Telemonitoring'].map('${:,.0f}'.format)
         df_precost['Televisits'] = df_precost['Televisits'].map('${:,.0f}'.format)
         df_precost['Other'] = df_precost['Other'].map('${:,.0f}'.format)
-        df_precost = df_precost.rename(columns={'Telemonitoring':'Total','Televisits':'Total'})
+        #df_precost = df_precost.rename(columns={'Telemonitoring':'Total','Televisits':'Total'})
         precost_tele = df_precost[df_precost['treat']==1]
         precost_nontele = df_precost[df_precost['treat']==0]
         precost_tele=precost_tele.drop(['treat','Region'],axis=1)
-        precost_nontele=precost_nontele.drop(['treat','Region'],axis=1)
+        precost_nontele=precost_nontele.drop(['treat','Region','Year'],axis=1)
+        precost_nontele = precost_nontele.rename(columns ={'Blind/Disabled':'Blind/Disabled_Comp','Child':'Child_Comp','Other':'Other_Comp',
+                                                        'Televisits':'Televisits_Comp','Telemonitoring':'Telemonitoring_Comp'})
+        precost_tele.reset_index(drop=True,inplace=True)
+        precost_nontele.reset_index(drop=True, inplace=True)
+        precost_final = pd.concat([precost_tele,precost_nontele],axis=1)
+        precost_final = precost_final[["Year","Blind/Disabled","Blind/Disabled_Comp","Child","Child_Comp","Other","Other_Comp","Televisits","Televisits_Comp","Telemonitoring","Telemonitoring_Comp"]]
+        precost_final = precost_final.rename(columns ={'Blind/Disabled':'Treatment','Blind/Disabled_Comp':'Comparison','Child':'Treatment','Child_Comp':'Comparison','Other':'Treatment',
+                                                                'Other_Comp':'Comparison','Televisits':'Treatment','Televisits':'Treatment','Televisits_Comp':'Comparison','Telemonitoring':'Treatment',
+                                                        'Telemonitoring_Comp':'Comparison'})
+
 
         df_postcost = med_df_postcost[med_df_postcost['Region']==sda_name]
         df_postcost = df_postcost.sort_values(by=['treat'])
@@ -592,15 +606,22 @@ def medcost():
         df_postcost['Telemonitoring'] = df_postcost['Telemonitoring'].map('${:,.0f}'.format)     
         df_postcost['Televisits'] = df_postcost['Televisits'].map('${:,.0f}'.format)
         df_postcost['Other'] = df_postcost['Other'].map('${:,.0f}'.format)
-        df_postcost = df_postcost.rename(columns={'Telemonitoring':'Total ','Televisits':'Total'})
         postcost_tele = df_postcost[df_postcost['treat']==1]
         postcost_nontele = df_postcost[df_postcost['treat']==0]
         postcost_tele=postcost_tele.drop(['treat','Region'],axis=1)
-        postcost_nontele=postcost_nontele.drop(['treat','Region'],axis=1)
-
+        postcost_nontele=postcost_nontele.drop(['treat','Region','Year'],axis=1)
+        postcost_nontele = postcost_nontele.rename(columns ={'Blind/Disabled':'Blind/Disabled_Comp','Child':'Child_Comp','Other':'Other_Comp',
+                                                        'Televisits':'Televisits_Comp','Telemonitoring':'Telemonitoring_Comp'})
+        postcost_tele.reset_index(drop=True,inplace=True)
+        postcost_nontele.reset_index(drop=True, inplace=True)
+        postcost_final = pd.concat([postcost_tele,postcost_nontele],axis=1)
+        postcost_final = postcost_final[["Year","Blind/Disabled","Blind/Disabled_Comp","Child","Child_Comp","Other","Other_Comp","Televisits","Televisits_Comp","Telemonitoring","Telemonitoring_Comp"]]
+        postcost_final = postcost_final.rename(columns ={'Blind/Disabled':'Treatment','Blind/Disabled_Comp':'Comparison','Child':'Treatment','Child_Comp':'Comparison','Other':'Treatment',
+                                                                'Other_Comp':'Comparison','Televisits':'Treatment','Televisits':'Treatment','Televisits_Comp':'Comparison','Telemonitoring':'Treatment',
+                                                        'Telemonitoring_Comp':'Comparison'})
         if sda_name != None:
-            return render_template("medcost.html", sda_name=sda_name, sda=sda, numclient_tele=[numclient_tele.to_html(index = False)],numclient_nontele=[numclient_nontele.to_html(index = False)],
-                                    precost_tele=[precost_tele.to_html(index = False)], precost_nontele=[precost_nontele.to_html(index = False)],postcost_tele=[postcost_tele.to_html(index = False)], postcost_nontele=[postcost_nontele.to_html(index = False)])
+            return render_template("medcost.html", sda_name=sda_name, sda=sda, numclient_final=[numclient_final.to_html(index = False)],
+                                    precost_final=[precost_final.to_html(index = False)], postcost_final=[postcost_final.to_html(index = False)])
     
     return render_template('medcost1.html',sda=sda, texas_numclient=[texas_numclient.to_html(index=False)], texas_precost_final=[texas_precost_final.to_html(index=False)], 
                             texas_postcost_final=[texas_postcost_final.to_html(index = False)])
@@ -612,17 +633,27 @@ def inpatcost():
         sda_name = request.form.get("sda", None)
         num_client = nclients[nclients['Region']==sda_name]
         num_client = num_client.sort_values(by=['treat'])
-        num_client=num_client.drop(['type','post','meas'],axis=1)
+        num_client=num_client.drop(['type','post','meas'],axis=1)        
         num_client['Child'] = num_client['Child'].map('{:,.0f}'.format)
-        num_client['Blind/Disabled'] = num_client['Blind/Disabled'].map('{:,.0f}'.format)
+        num_client['Blind/Disabled'] = num_client['Blind/Disabled'].map('{:,.0f}'.format)        
         num_client['Telemonitoring'] = num_client['Telemonitoring'].map('{:,.0f}'.format)
         num_client['Televisits'] = num_client['Televisits'].map('{:,.0f}'.format)
         num_client['Other'] = num_client['Other'].map('{:,.0f}'.format)
-        num_client = num_client.rename(columns={'Telemonitoring':'Total ','Televisits':'Total'})
+        num_client['Telemonitoring'] = num_client['Telemonitoring'].astype(str)                      
         numclient_tele = num_client[num_client['treat']==1]
         numclient_nontele = num_client[num_client['treat']==0]
         numclient_tele=numclient_tele.drop(['treat','Region'],axis=1)
-        numclient_nontele=numclient_nontele.drop(['treat','Region'],axis=1)
+        numclient_nontele=numclient_nontele.drop(['treat','Region','Year'],axis=1)
+        numclient_nontele = numclient_nontele.rename(columns ={'Blind/Disabled':'Blind/Disabled_Comp','Child':'Child_Comp','Other':'Other_Comp',
+                                                        'Televisits':'Televisits_Comp','Telemonitoring':'Telemonitoring_Comp'})
+        numclient_tele.reset_index(drop=True,inplace=True)
+        numclient_nontele.reset_index(drop=True, inplace=True)
+        numclient_final = pd.concat([numclient_tele,numclient_nontele],axis=1)
+        numclient_final = numclient_final[["Year","Blind/Disabled","Blind/Disabled_Comp","Child","Child_Comp","Other","Other_Comp","Televisits","Televisits_Comp","Telemonitoring","Telemonitoring_Comp"]]
+        numclient_final = numclient_final.rename(columns ={'Blind/Disabled':'Treatment','Blind/Disabled_Comp':'Comparison','Child':'Treatment','Child_Comp':'Comparison','Other':'Treatment',
+                                                                'Other_Comp':'Comparison','Televisits':'Treatment','Televisits':'Treatment','Televisits_Comp':'Comparison','Telemonitoring':'Treatment',
+                                                        'Telemonitoring_Comp':'Comparison'})
+
 
         postcost_inpat = inpat_df_postcost[inpat_df_postcost['Region']==sda_name]
         postcost_inpat = postcost_inpat.sort_values(by=['treat'])
@@ -636,11 +667,19 @@ def inpatcost():
         postcost_inpat['Telemonitoring'] = postcost_inpat['Telemonitoring'].map('${:,.0f}'.format)
         postcost_inpat['Televisits'] = postcost_inpat['Televisits'].map('${:,.0f}'.format)
         postcost_inpat['Other'] = postcost_inpat['Other'].map('${:,.0f}'.format)
-        postcost_inpat = postcost_inpat.rename(columns={'Telemonitoring':'Total','Televisits':'Total'})
         postcost_tele_inpat = postcost_inpat[postcost_inpat['treat']==1]
         postcost_nontele_inpat = postcost_inpat[postcost_inpat['treat']==0]
         postcost_tele_inpat=postcost_tele_inpat.drop(['treat','Region'],axis=1)
-        postcost_nontele_inpat=postcost_nontele_inpat.drop(['treat','Region'],axis=1)
+        postcost_nontele_inpat=postcost_nontele_inpat.drop(['treat','Region','Year'],axis=1)
+        postcost_nontele_inpat = postcost_nontele_inpat.rename(columns ={'Blind/Disabled':'Blind/Disabled_Comp','Child':'Child_Comp','Other':'Other_Comp',
+                                                        'Televisits':'Televisits_Comp','Telemonitoring':'Telemonitoring_Comp'})
+        postcost_tele_inpat.reset_index(drop=True,inplace=True)
+        postcost_nontele_inpat.reset_index(drop=True, inplace=True)
+        postcost_final_inpat = pd.concat([postcost_tele_inpat,postcost_nontele_inpat],axis=1)
+        postcost_final_inpat = postcost_final_inpat[["Year","Blind/Disabled","Blind/Disabled_Comp","Child","Child_Comp","Other","Other_Comp","Televisits","Televisits_Comp","Telemonitoring","Telemonitoring_Comp"]]
+        postcost_final_inpat = postcost_final_inpat.rename(columns ={'Blind/Disabled':'Treatment','Blind/Disabled_Comp':'Comparison','Child':'Treatment','Child_Comp':'Comparison','Other':'Treatment',
+                                                                'Other_Comp':'Comparison','Televisits':'Treatment','Televisits':'Treatment','Televisits_Comp':'Comparison','Telemonitoring':'Treatment',
+                                                        'Telemonitoring_Comp':'Comparison'})
 
         inpat_encount_df = inpat_encount[inpat_encount['Region']==sda_name]
         inpat_encount_df = inpat_encount_df.sort_values(by=['treat'])
@@ -649,20 +688,25 @@ def inpatcost():
         inpat_encount_df['Blind/Disabled'] = inpat_encount_df['Blind/Disabled'].map('{:,.3f}'.format)
         inpat_encount_df['Telemonitoring'] = inpat_encount_df['Telemonitoring'].map('{:,.3f}'.format)
         inpat_encount_df['Televisits'] = inpat_encount_df['Televisits'].map('{:,.3f}'.format)
-        inpat_encount_df['Other'] = inpat_encount_df['Other'].map('{:,.3f}'.format)        
-        inpat_encount_df = inpat_encount_df.rename(columns={'Telemonitoring':'Total','Televisits':'Total'})
+        inpat_encount_df['Other'] = inpat_encount_df['Other'].map('{:,.3f}'.format)                
         inpat_encount_tele = inpat_encount_df[inpat_encount_df['treat']==1]
         inpat_encount_nontele = inpat_encount_df[inpat_encount_df['treat']==0]
         inpat_encount_tele=inpat_encount_tele.drop(['treat','Region'],axis=1)
-        inpat_encount_nontele=inpat_encount_nontele.drop(['treat','Region'],axis=1)
+        inpat_encount_nontele = inpat_encount_nontele.drop(['treat','Region','Year'],axis=1)
+        inpat_encount_nontele = inpat_encount_nontele.rename(columns ={'Blind/Disabled':'Blind/Disabled_Comp','Child':'Child_Comp','Other':'Other_Comp',
+                                                        'Televisits':'Televisits_Comp','Telemonitoring':'Telemonitoring_Comp'})     
+        inpat_encount_tele.reset_index(drop=True,inplace=True)
+        inpat_encount_nontele.reset_index(drop=True, inplace=True)   
+        inpat_encount_final = pd.concat([inpat_encount_tele,inpat_encount_nontele],axis=1)      
+        inpat_encount_final = inpat_encount_final[["Year","Blind/Disabled","Blind/Disabled_Comp","Child","Child_Comp","Other","Other_Comp","Televisits","Televisits_Comp","Telemonitoring","Telemonitoring_Comp"]]
+        inpat_encount_final = inpat_encount_final.rename(columns ={'Blind/Disabled':'Treatment','Blind/Disabled_Comp':'Comparison','Child':'Treatment','Child_Comp':'Comparison','Other':'Treatment',
+                                                                'Other_Comp':'Comparison','Televisits':'Treatment','Televisits':'Treatment','Televisits_Comp':'Comparison','Telemonitoring':'Treatment',
+                                                        'Telemonitoring_Comp':'Comparison'})  
 
-    
         if sda_name != None:
-            return render_template("inpatient.html", sda_name=sda_name, sda=sda, numclient_tele=[numclient_tele.to_html(index = False)],numclient_nontele=[numclient_nontele.to_html(index = False)],
-                                    postcost_tele_inpat=[postcost_tele_inpat.to_html(index = False)], postcost_nontele_inpat=[postcost_nontele_inpat.to_html(index = False)], inpat_encount_tele=[inpat_encount_tele.to_html(index = False)],inpat_encount_nontele=[inpat_encount_nontele.to_html(index = False)])
-    
-    
-    
+            return render_template("inpatient.html", sda_name=sda_name, sda=sda, numclient_final=[numclient_final.to_html(index = False)],
+                                    postcost_final_inpat=[postcost_final_inpat.to_html(index = False)],inpat_encount_final=[inpat_encount_final.to_html(index = False)])  
+        
     return render_template('inpatient1.html',sda=sda, texas_numclient=[texas_numclient.to_html(index=False)], texas_postcost_inpat_final=[texas_postcost_inpat_final.to_html(index=False)], 
                             texas_inpat_encount_final=[texas_inpat_encount_final.to_html(index=False)])
 
@@ -673,17 +717,26 @@ def edcost():
         sda_name = request.form.get("sda", None)
         num_client = nclients[nclients['Region']==sda_name]
         num_client = num_client.sort_values(by=['treat'])
-        num_client=num_client.drop(['type','post','meas'],axis=1)
+        num_client=num_client.drop(['type','post','meas'],axis=1)        
         num_client['Child'] = num_client['Child'].map('{:,.0f}'.format)
-        num_client['Blind/Disabled'] = num_client['Blind/Disabled'].map('{:,.0f}'.format)
+        num_client['Blind/Disabled'] = num_client['Blind/Disabled'].map('{:,.0f}'.format)        
         num_client['Telemonitoring'] = num_client['Telemonitoring'].map('{:,.0f}'.format)
         num_client['Televisits'] = num_client['Televisits'].map('{:,.0f}'.format)
         num_client['Other'] = num_client['Other'].map('{:,.0f}'.format)
-        num_client = num_client.rename(columns={'Telemonitoring':'Total ','Televisits':'Total'})
+        num_client['Telemonitoring'] = num_client['Telemonitoring'].astype(str)                      
         numclient_tele = num_client[num_client['treat']==1]
         numclient_nontele = num_client[num_client['treat']==0]
         numclient_tele=numclient_tele.drop(['treat','Region'],axis=1)
-        numclient_nontele=numclient_nontele.drop(['treat','Region'],axis=1)
+        numclient_nontele=numclient_nontele.drop(['treat','Region','Year'],axis=1)
+        numclient_nontele = numclient_nontele.rename(columns ={'Blind/Disabled':'Blind/Disabled_Comp','Child':'Child_Comp','Other':'Other_Comp',
+                                                        'Televisits':'Televisits_Comp','Telemonitoring':'Telemonitoring_Comp'})
+        numclient_tele.reset_index(drop=True,inplace=True)
+        numclient_nontele.reset_index(drop=True, inplace=True)
+        numclient_final = pd.concat([numclient_tele,numclient_nontele],axis=1)
+        numclient_final = numclient_final[["Year","Blind/Disabled","Blind/Disabled_Comp","Child","Child_Comp","Other","Other_Comp","Televisits","Televisits_Comp","Telemonitoring","Telemonitoring_Comp"]]
+        numclient_final = numclient_final.rename(columns ={'Blind/Disabled':'Treatment','Blind/Disabled_Comp':'Comparison','Child':'Treatment','Child_Comp':'Comparison','Other':'Treatment',
+                                                                'Other_Comp':'Comparison','Televisits':'Treatment','Televisits':'Treatment','Televisits_Comp':'Comparison','Telemonitoring':'Treatment',
+                                                        'Telemonitoring_Comp':'Comparison'})
 
         postcost_ed = ed_df_postcost[ed_df_postcost['Region']==sda_name]
         postcost_ed = postcost_ed.sort_values(by=['treat'])
@@ -697,11 +750,19 @@ def edcost():
         postcost_ed['Telemonitoring'] = postcost_ed['Telemonitoring'].map('${:,.0f}'.format)
         postcost_ed['Televisits'] = postcost_ed['Televisits'].map('${:,.0f}'.format)
         postcost_ed['Other'] = postcost_ed['Other'].map('${:,.0f}'.format)
-        postcost_ed = postcost_ed.rename(columns={'Telemonitoring':'Total','Televisits':'Total'})
         postcost_tele_ed = postcost_ed[postcost_ed['treat']==1]
         postcost_nontele_ed = postcost_ed[postcost_ed['treat']==0]
         postcost_tele_ed=postcost_tele_ed.drop(['treat','Region'],axis=1)
-        postcost_nontele_ed=postcost_nontele_ed.drop(['treat','Region'],axis=1)
+        postcost_nontele_ed=postcost_nontele_ed.drop(['treat','Region','Year'],axis=1)
+        postcost_nontele_ed = postcost_nontele_ed.rename(columns ={'Blind/Disabled':'Blind/Disabled_Comp','Child':'Child_Comp','Other':'Other_Comp',
+                                                        'Televisits':'Televisits_Comp','Telemonitoring':'Telemonitoring_Comp'})
+        postcost_tele_ed.reset_index(drop=True,inplace=True)
+        postcost_nontele_ed.reset_index(drop=True, inplace=True)
+        postcost_final_ed = pd.concat([postcost_tele_ed,postcost_nontele_ed],axis=1)
+        postcost_final_ed = postcost_final_ed[["Year","Blind/Disabled","Blind/Disabled_Comp","Child","Child_Comp","Other","Other_Comp","Televisits","Televisits_Comp","Telemonitoring","Telemonitoring_Comp"]]
+        postcost_final_ed = postcost_final_ed.rename(columns ={'Blind/Disabled':'Treatment','Blind/Disabled_Comp':'Comparison','Child':'Treatment','Child_Comp':'Comparison','Other':'Treatment',
+                                                                'Other_Comp':'Comparison','Televisits':'Treatment','Televisits':'Treatment','Televisits_Comp':'Comparison','Telemonitoring':'Treatment',
+                                                        'Telemonitoring_Comp':'Comparison'})
 
         ed_visits_df = ed_visits[ed_visits['Region']==sda_name]
         ed_visits_df = ed_visits_df.sort_values(by=['treat'])
@@ -710,17 +771,24 @@ def edcost():
         ed_visits_df['Blind/Disabled'] = ed_visits_df['Blind/Disabled'].map('{:,.3f}'.format)
         ed_visits_df['Telemonitoring'] = ed_visits_df['Telemonitoring'].map('{:,.3f}'.format)
         ed_visits_df['Televisits'] = ed_visits_df['Televisits'].map('{:,.3f}'.format)
-        ed_visits_df['Other'] = ed_visits_df['Other'].map('{:,.3f}'.format)        
-        ed_visits_df = ed_visits_df.rename(columns={'Telemonitoring':'Total','Televisits':'Total'})
+        ed_visits_df['Other'] = ed_visits_df['Other'].map('{:,.3f}'.format)                
         ed_visits_tele = ed_visits_df[ed_visits_df['treat']==1]
         ed_visits_nontele = ed_visits_df[ed_visits_df['treat']==0]
         ed_visits_tele=ed_visits_tele.drop(['treat','Region'],axis=1)
-        ed_visits_nontele=ed_visits_nontele.drop(['treat','Region'],axis=1)
+        ed_visits_nontele=ed_visits_nontele.drop(['treat','Region','Year'],axis=1)
+        ed_visits_nontele = ed_visits_nontele.rename(columns ={'Blind/Disabled':'Blind/Disabled_Comp','Child':'Child_Comp','Other':'Other_Comp',
+                                                        'Televisits':'Televisits_Comp','Telemonitoring':'Telemonitoring_Comp'})
+        ed_visits_tele.reset_index(drop=True,inplace=True)
+        ed_visits_nontele.reset_index(drop=True, inplace=True)
+        ed_visits_final = pd.concat([ed_visits_tele,ed_visits_nontele],axis=1)
+        ed_visits_final = ed_visits_final[["Year","Blind/Disabled","Blind/Disabled_Comp","Child","Child_Comp","Other","Other_Comp","Televisits","Televisits_Comp","Telemonitoring","Telemonitoring_Comp"]]
+        ed_visits_final = ed_visits_final.rename(columns ={'Blind/Disabled':'Treatment','Blind/Disabled_Comp':'Comparison','Child':'Treatment','Child_Comp':'Comparison','Other':'Treatment',
+                                                                'Other_Comp':'Comparison','Televisits':'Treatment','Televisits':'Treatment','Televisits_Comp':'Comparison','Telemonitoring':'Treatment',
+                                                        'Telemonitoring_Comp':'Comparison'})
 
-    
         if sda_name != None:
-            return render_template("edcost.html", sda_name=sda_name, sda=sda, numclient_tele=[numclient_tele.to_html(index = False)],numclient_nontele=[numclient_nontele.to_html(index = False)],
-                                    postcost_tele_ed=[postcost_tele_ed.to_html(index = False)], postcost_nontele_ed=[postcost_nontele_ed.to_html(index = False)], ed_visits_tele=[ed_visits_tele.to_html(index = False)],ed_visits_nontele=[ed_visits_nontele.to_html(index = False)])
+            return render_template("edcost.html", sda_name=sda_name, sda=sda, numclient_final=[numclient_final.to_html(index = False)],postcost_final_ed=[postcost_final_ed.to_html(index = False)],
+                                    ed_visits_final=[ed_visits_final.to_html(index = False)])
     
     return render_template('edcost1.html',sda=sda, texas_numclient=[texas_numclient.to_html(index=False)], texas_postcost_ed_final=[texas_postcost_ed_final.to_html(index = False)]
                                         ,texas_ed_visits_final=[texas_ed_visits_final.to_html(index=False)])
@@ -733,18 +801,28 @@ def outpatcost():
         num_client = nclients[nclients['Region']==sda_name]
         num_client = num_client.sort_values(by=['treat'])
         num_client=num_client.drop(['type','post','meas'],axis=1)
+        
         num_client['Child'] = num_client['Child'].map('{:,.0f}'.format)
-        num_client['Blind/Disabled'] = num_client['Blind/Disabled'].map('{:,.0f}'.format)
+        num_client['Blind/Disabled'] = num_client['Blind/Disabled'].map('{:,.0f}'.format)        
         num_client['Telemonitoring'] = num_client['Telemonitoring'].map('{:,.0f}'.format)
         num_client['Televisits'] = num_client['Televisits'].map('{:,.0f}'.format)
         num_client['Other'] = num_client['Other'].map('{:,.0f}'.format)
-        
-        num_client = num_client.rename(columns={'Telemonitoring':'Total ','Televisits':'Total'})
+        num_client['Telemonitoring'] = num_client['Telemonitoring'].astype(str)
+                      
         numclient_tele = num_client[num_client['treat']==1]
         numclient_nontele = num_client[num_client['treat']==0]
         numclient_tele=numclient_tele.drop(['treat','Region'],axis=1)
-        numclient_nontele=numclient_nontele.drop(['treat','Region'],axis=1)
-        
+        numclient_nontele=numclient_nontele.drop(['treat','Region','Year'],axis=1)
+        numclient_nontele = numclient_nontele.rename(columns ={'Blind/Disabled':'Blind/Disabled_Comp','Child':'Child_Comp','Other':'Other_Comp',
+                                                        'Televisits':'Televisits_Comp','Telemonitoring':'Telemonitoring_Comp'})
+        numclient_tele.reset_index(drop=True,inplace=True)
+        numclient_nontele.reset_index(drop=True, inplace=True)
+        numclient_final = pd.concat([numclient_tele,numclient_nontele],axis=1)
+
+        numclient_final = numclient_final[["Year","Blind/Disabled","Blind/Disabled_Comp","Child","Child_Comp","Other","Other_Comp","Televisits","Televisits_Comp","Telemonitoring","Telemonitoring_Comp"]]
+        numclient_final = numclient_final.rename(columns ={'Blind/Disabled':'Treatment','Blind/Disabled_Comp':'Comparison','Child':'Treatment','Child_Comp':'Comparison','Other':'Treatment',
+                                                                'Other_Comp':'Comparison','Televisits':'Treatment','Televisits':'Treatment','Televisits_Comp':'Comparison','Telemonitoring':'Treatment',
+                                                        'Telemonitoring_Comp':'Comparison'})        
 
         postcost_outpat = outpat_df_postcost[outpat_df_postcost['Region']==sda_name]
         postcost_outpat = postcost_outpat.sort_values(by=['treat'])
@@ -758,12 +836,19 @@ def outpatcost():
         postcost_outpat['Telemonitoring'] = postcost_outpat['Telemonitoring'].map('${:,.0f}'.format)
         postcost_outpat['Televisits'] = postcost_outpat['Televisits'].map('${:,.0f}'.format)
         postcost_outpat['Other'] = postcost_outpat['Other'].map('${:,.0f}'.format)
-        postcost_outpat = postcost_outpat.rename(columns={'Telemonitoring':'Total','Televisits':'Total'})
         postcost_tele_outpat = postcost_outpat[postcost_outpat['treat']==1]
         postcost_nontele_outpat = postcost_outpat[postcost_outpat['treat']==0]
         postcost_tele_outpat=postcost_tele_outpat.drop(['treat','Region'],axis=1)
-        postcost_nontele_outpat=postcost_nontele_outpat.drop(['treat','Region'],axis=1)
-
+        postcost_nontele_outpat=postcost_nontele_outpat.drop(['treat','Region','Year'],axis=1)
+        postcost_nontele_outpat = postcost_nontele_outpat.rename(columns ={'Blind/Disabled':'Blind/Disabled_Comp','Child':'Child_Comp','Other':'Other_Comp',
+                                                        'Televisits':'Televisits_Comp','Telemonitoring':'Telemonitoring_Comp'})
+        postcost_tele_outpat.reset_index(drop=True,inplace=True)
+        postcost_nontele_outpat.reset_index(drop=True, inplace=True)
+        postcost_final_outpat = pd.concat([postcost_tele_outpat,postcost_nontele_outpat],axis=1)
+        postcost_final_outpat = postcost_final_outpat[["Year","Blind/Disabled","Blind/Disabled_Comp","Child","Child_Comp","Other","Other_Comp","Televisits","Televisits_Comp","Telemonitoring","Telemonitoring_Comp"]]
+        postcost_final_outpat = postcost_final_outpat.rename(columns ={'Blind/Disabled':'Treatment','Blind/Disabled_Comp':'Comparison','Child':'Treatment','Child_Comp':'Comparison','Other':'Treatment',
+                                                                'Other_Comp':'Comparison','Televisits':'Treatment','Televisits':'Treatment','Televisits_Comp':'Comparison','Telemonitoring':'Treatment',
+                                                        'Telemonitoring_Comp':'Comparison'})
 
         outpat_visits_df = outpat_visits[outpat_visits['Region']==sda_name]
         outpat_visits_df = outpat_visits_df.sort_values(by=['treat'])
@@ -773,18 +858,23 @@ def outpatcost():
         outpat_visits_df['Telemonitoring'] = outpat_visits_df['Telemonitoring'].map('{:,.3f}'.format)
         outpat_visits_df['Televisits'] = outpat_visits_df['Televisits'].map('{:,.3f}'.format)
         outpat_visits_df['Other'] = outpat_visits_df['Other'].map('{:,.3f}'.format)        
-        outpat_visits_df = outpat_visits_df.rename(columns={'Telemonitoring':'Total','Televisits':'Total'})
         outpat_visits_tele = outpat_visits_df[outpat_visits_df['treat']==1]
         outpat_visits_nontele = outpat_visits_df[outpat_visits_df['treat']==0]
-        outpat_visits_tele=outpat_visits_tele.drop(['treat','Region'],axis=1)
-        outpat_visits_nontele=outpat_visits_nontele.drop(['treat','Region'],axis=1)
-
-
-
+        outpat_visits_tele = outpat_visits_tele.drop(['treat','Region'],axis=1)
+        outpat_visits_nontele = outpat_visits_nontele.drop(['treat','Region','Year'],axis=1)
+        outpat_visits_nontele = outpat_visits_nontele.rename(columns ={'Blind/Disabled':'Blind/Disabled_Comp','Child':'Child_Comp','Other':'Other_Comp',
+                                                        'Televisits':'Televisits_Comp','Telemonitoring':'Telemonitoring_Comp'})
+        outpat_visits_tele.reset_index(drop=True,inplace=True)
+        outpat_visits_nontele.reset_index(drop=True, inplace=True)
+        outpat_visits_final = pd.concat([outpat_visits_tele,outpat_visits_nontele],axis=1)
+        outpat_visits_final = outpat_visits_final[["Year","Blind/Disabled","Blind/Disabled_Comp","Child","Child_Comp","Other","Other_Comp","Televisits","Televisits_Comp","Telemonitoring","Telemonitoring_Comp"]]
+        outpat_visits_final = outpat_visits_final.rename(columns ={'Blind/Disabled':'Treatment','Blind/Disabled_Comp':'Comparison','Child':'Treatment','Child_Comp':'Comparison','Other':'Treatment',
+                                                                'Other_Comp':'Comparison','Televisits':'Treatment','Televisits':'Treatment','Televisits_Comp':'Comparison','Telemonitoring':'Treatment',
+                                                        'Telemonitoring_Comp':'Comparison'})
     
         if sda_name != None:
-            return render_template("outpatient.html", sda_name=sda_name, sda=sda, numclient_tele=[numclient_tele.to_html(index = False)],numclient_nontele=[numclient_nontele.to_html(index = False)],
-                                    postcost_tele_outpat=[postcost_tele_outpat.to_html(index = False)], postcost_nontele_outpat=[postcost_nontele_outpat.to_html(index = False)], outpat_visits_tele=[outpat_visits_tele.to_html(index = False)],outpat_visits_nontele=[outpat_visits_nontele.to_html(index = False)])
+            return render_template("outpatient.html", sda_name=sda_name, sda=sda, numclient_final=[numclient_final.to_html(index = False)],
+            postcost_final_outpat=[postcost_final_outpat.to_html(index = False)], outpat_visits_final=[outpat_visits_final.to_html(index = False)])
     
     return render_template('outpatient1.html',sda=sda, texas_numclient=[texas_numclient.to_html(index=False)],   texas_postcost_outpat_final=[texas_postcost_outpat_final.to_html(index = False)],
                             texas_outpat_visits_final=[texas_outpat_visits_final.to_html(index=False)])
