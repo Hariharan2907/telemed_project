@@ -160,7 +160,7 @@ table.demo{
   padding: 10px;  
   font-size: 16px;
   border:none;
-  table-layout: auto;
+  table-layout: fixed;
   width: 80%;
   
 }
@@ -175,21 +175,6 @@ table.demo{
   
 }
 
-.demo td:nth-child(1), .demo th:nth-child(1) {
-  
-  width: 10%;
-}
-
-.demo td:nth-child(2), .demo th:nth-child(2) {
-  
-  width: 10%;
-}
-
-.demo td:nth-child(5), .demo th:nth-child(5) {
-  
-  width: 10%;
-}
-
 
 .demo td:nth-child(6), .demo th:nth-child(6) {
   border-left: 1px solid rgb(0, 0, 0);
@@ -200,34 +185,21 @@ table.demographics {
   border-collapse: collapse;
   border: 1px solid black;
   text-align:center;
-  padding: 10px;
+  padding: 10px;  
   font-size: 16px;
   border:none;
   table-layout: fixed;
-  width: 80%;  
+  width: 80%;
+   
 }
 
 .demographics th, .demographics td {
-  border: 1px solid black;  
-  border-bottom: none !important;
-  
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align:center;   
+  border-bottom:none;
 }
 
-.demographics th:nth-child(1) {
-  width: 20%;
-}
-
-.demographics th:nth-child(2) {
-  width: 20%;
-}
-
-.demographics th:nth-child(3) {
-  width: 20%;
-}
-
-.demographics th:nth-child(4) {
-  width: 20%;
-}
 
 table.hosp {
   border-collapse: collapse;
@@ -252,8 +224,7 @@ table.hosp {
 }
 .hosp td:nth-child(2), .hosp th:nth-child(2) {
   border-left: 1px solid rgb(0, 0, 0);
-  width: 8%;
-  
+  width: 8%; 
 }
 .hosp td:nth-child(6), .hosp th:nth-child(6) {
   border-left: 1px solid rgb(0, 0, 0);

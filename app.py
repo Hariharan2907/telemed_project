@@ -904,7 +904,7 @@ texas_demo['Blind/Disabled-Comp'] = texas_demo['Blind/Disabled-Comp'].map('{:,.2
 texas_demo['Telemonitoring-Treat'] = texas_demo['Telemonitoring-Treat'].map('{:,.2f}'.format)
 texas_demo['Telemonitoring-Comp'] = texas_demo['Telemonitoring-Comp'].map('{:,.2f}'.format)
 texas_demo = texas_demo.rename(columns={'Child-Treat':'Treatment', 'Child-Comp':'Comparison',  'Blind/Disabled-Treat':'Treatment','Blind/Disabled-Comp':'Comparison',
-                                'Telemonitoring-Treat':'Treatment','Telemonitoring-Comp': 'Comparison'})
+                                'Telemonitoring-Treat':'Treatment','Telemonitoring-Comp': 'Comparison','Demographic':'Characterisitcs'})
 texas_demo = texas_demo.replace(to_replace = "0.00", value ="---")
 texas_demo = texas_demo.drop(['Region'],axis=1)
 
@@ -929,7 +929,7 @@ def demographics():
         region_demo['Telemonitoring-Treat'] = region_demo['Telemonitoring-Treat'].map('{:,.2f}'.format)
         region_demo['Telemonitoring-Comp'] = region_demo['Telemonitoring-Comp'].map('{:,.2f}'.format)
         region_demo = region_demo.rename(columns={'Child-Treat':'Treatment', 'Child-Comp':'Comparison',  'Blind/Disabled-Treat':'Treatment','Blind/Disabled-Comp':'Comparison',
-                                'Telemonitoring-Treat':'Treatment','Telemonitoring-Comp': 'Comparison'})
+                                'Telemonitoring-Treat':'Treatment','Telemonitoring-Comp': 'Comparison','Demographic':'Characterisitcs'})
         region_demo = region_demo.replace(to_replace = "0.00", value ="---")
         region_demo = region_demo.drop(['Region'],axis=1)                                
         region_2013 = region_demo[region_demo['Year']==2013]
