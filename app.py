@@ -332,14 +332,29 @@ def index():
         return render_template('data_entry.html')       
     return render_template('index.html')
     '''
+@app.route('/', methods=["GET","POST"])
+@app.route('/home',methods=["GET","POST"])
+def home():
+    return render_template("home.html")
 
-
-@app.route('/download')
+@app.route('/download_cea')
 def download_file():
     path = "doc/CEA-tool-v10-1.xlsx"
     return send_file(path,as_attachment=True)
 
-@app.route('/', methods=["GET","POST"])
+@app.route('/download_cost_study')
+def download_excel():
+    path = "doc/cost-study-data.xlsx"
+    return send_file(path,as_attachment=True)
+
+@app.route('/download_inpatcost')
+def download_excel1():
+    path = "doc/inpatient-costs-data.xlsx"
+    return send_file(path,as_attachment=True)
+
+
+
+
 @app.route('/medcost', methods=["GET", "POST"])
 def medcost():
     if request.method == "POST":
@@ -704,7 +719,7 @@ def outpatcost():
 
 
 
-url1 = "demo.csv"
+url1 = "modifiedDemo.csv"
 sda_demo = []
 
 df_demo = pd.read_csv(url1,error_bad_lines=False)

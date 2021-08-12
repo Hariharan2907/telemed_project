@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<center><h1>Homepage</h1></center>
+<div style="margin-left:20%">
+<h2>Download Data Files: </h2>
+<h3>Click on the links to download the excel files: </h3>
+
+<a href="{{ url_for('download_file')}}" target="_blank">CEA-basic tool</a> <br> <br>
+<a href="{{url_for('download_excel')}}" target="_blank">Cost Study Data</a> <br> <br>
+<a href="{{url_for('download_excel1')}}" target="_blank">Inpatient Costs Data</a>
+</div>
+
+{% endblock content %} 
