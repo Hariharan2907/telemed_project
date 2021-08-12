@@ -339,7 +339,7 @@ def home():
 
 @app.route('/download_cea')
 def download_file():
-    path = "doc/CEA-basic-tool-v14.xlsx"
+    path = "doc/CEA-basic-tool-v14-1.xlsx"
     return send_file(path,as_attachment=True)
 
 @app.route('/download_cost_study')
