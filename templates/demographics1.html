@@ -26,7 +26,7 @@
     <div class="navbar" id="Top">
       <a href="https://sites.google.com/view/pinformatics/data-science/cost-study-resources?authuser=0" target="_blank">Documents</a>
       <a href="https://sites.google.com/view/pinformatics/data-science/public-data-resources?authuser=0" target="_blank">Other Data Resources</a>
-      <a>Download</a>
+      
       <div class="dropdown">
         <button class="dropbtn">Inpatient Costs
           <i class="fa fa-caret-down"></i>
@@ -49,7 +49,14 @@
           <a href="outpatcost">Outpatient Care Cost</a>
         </div>
       </div>  
-      <a href="{{url_for('download_file')}}" target="_blank">CEA</a>
+      <div class="dropdown">
+        <button class="dropbtn">Home 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="{{url_for('download_file')}}" target="_blank">CEA</a>
+        </div>
+      </div> 
   
       </div>
         <center><h1 >Demographics for Texas</h1></center>
