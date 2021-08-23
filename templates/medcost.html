@@ -15,30 +15,31 @@
       {% block content %}
       
         
-        
-            <div class="sidenav">
-              <a href="#Clients">Number of Clients</a>
-              <a href="#Pre_Cost">Pre Cost Table</a>
-              <a href="#Post_Cost">Post Cost Table</a>       
-              <a href = "#Top">Back to Top</a>     
-          </div>
-
-        <center><h1>Cost Study: Total Medical Cost</h1></center>
-        <hr color = "black" style="width:50%;text-align:center;border-bottom: 4px double">
-        <center>
-        <form name="Item_1" action="/medcost" method="POST">
-            <div class = "fixed">
+      <div class="sidenav">
+            
+        <a href="#Clients">Number of Clients</a>
+        <a href="#Pre_Cost">Pre Cost Table</a>
+        <a href="#Post_Cost">Post Cost Table</a>      
+        <a href = "#Top">Back to Top</a> 
+      
+        <a><form name="Item_1" action="/medcost" method="POST">
+            
             <label for="exampleFormControlFile2">Choose Region</label>
               <select name="sda">
-                <option value = ""></option>
+                  <option value = ""></option>
                 {% for district in sda %}
-                  <option value="{{ district}}">{{ district }}</option>
+                  <option value="{{district}}">{{ district }}</option>
                 {% endfor %}     
               </select>
               <input type ="submit" value="Submit">
-            </div>
-        </form>
+            
+        </form></a>
 
+    </div>
+
+        <center><h1>Cost Study: Total Medical Cost</h1></center>
+        <hr color = "black" style="width:50%;text-align:center;border-bottom: 4px double">
+       <center>
         <center><h2>Term Definitions</h2></center>
         <div style="margin: 15px 20px 10px 275px">
             <div style="display: inline-block; text-align: left;">
@@ -77,7 +78,7 @@
         <br>
 
         </center>
-        
+        <div style="margin-left: 210px;">
         <center><u><h2 id="Clients">Number of Clients for {{sda_name}}</h2></u></center>
         
         <center>
@@ -172,9 +173,8 @@
         {% for table in postcost_final %}
             {{table|safe}}
         {% endfor %}</center> 
-
-
         <br><br>
+      </div>
       </body>
       {% endblock content %}
       </html>

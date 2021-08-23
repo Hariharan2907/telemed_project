@@ -19,23 +19,20 @@
             <a href="#Post_Cost">Post Cost Table</a>
             <a href="#Inpat_encount">Inpatient Encounter Table</a>       
             <a href = "#Top">Back to Top</a>     
+            <a> <form name="Item_1" action="/inpatcost" method="POST">
+                <label for="exampleFormControlFile2">Choose Region</label>
+                  <select name="sda">
+                      <option value = ""></option>
+                    {% for district in sda %}
+                      <option value="{{district}}">{{ district }}</option>
+                    {% endfor %}     
+                  </select>
+                  <input type ="submit" value="Submit">
+                </form></a>
         </div>
-    
-        <center><h1 >Cost Study: Inpatient Care Cost</h1></center>
-        <hr color = "black" style="width:50%;text-align:center;border-bottom: 4px double">
         
-        <form name="Item_1" action="/inpatcost" method="POST">
-            <div class = "fixed">
-            <label for="exampleFormControlFile2">Choose Region</label>
-              <select name="sda">
-                  <option value = ""></option>
-                {% for district in sda %}
-                  <option value="{{district}}">{{ district }}</option>
-                {% endfor %}     
-              </select>
-              <input type ="submit" value="Submit">
-            </div>
-        </form>
+        <center><h1 >Cost Study: Inpatient Care Cost</h1></center>
+        <hr color = "black" style="width:50%;text-align:center;border-bottom: 4px double">      
         
         <center><h2>Term Definitions</h2></center>
         <div style="margin: 15px 20px 10px 275px">
@@ -73,10 +70,8 @@
         </div>
         <br>
 
-        
-        <center><u><h2 id="Clients">Number of Clients for Texas</h2></u></center>
-
-        
+        <div style="margin-left: 210px;">
+        <center><u><h2 id="Clients">Number of Clients for Texas</h2></u></center>        
         <center>
             <table class="mytable" >     
                 <tr>
@@ -110,9 +105,6 @@
         </center> 
         <br><br>    
 
-        
-
-        
         <center><u><h2 id="Post_Cost">Post Cost Table for Texas</h2></u></center>
  
         <center>
@@ -179,7 +171,7 @@
             {{table|safe}}
         {% endfor %}</center> 
         <br><br>
-
+    </div>
 </body>
 {% endblock content %}
 </html>

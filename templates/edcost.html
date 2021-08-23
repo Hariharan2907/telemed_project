@@ -17,22 +17,19 @@
             <a href="#Post_Cost">Post Cost Table</a>       
             <a href="#ED_Cost">Emergency Department Visits</a>
             <a href = "#Top">Back to Top</a>     
+            <a><form name="Item_1" action="/edcost" method="POST">
+                <label for="exampleFormControlFile2">Choose Region</label>
+                  <select name="sda">
+                      <option value = ""></option>
+                    {% for district in sda %}
+                      <option value="{{district}}">{{ district }}</option>
+                    {% endfor %}     
+                  </select>
+                  <input type ="submit" value="Submit">
+            </form></a>
         </div>
         <center><h1 >Cost Study: Emergency Department Cost</h1></center>
         <hr color = "black" style="width:50%;text-align:center;border-bottom: 4px double">
-        
-        <form name="Item_1" action="/edcost" method="POST">
-            <div class = "fixed">
-            <label for="exampleFormControlFile2">Choose Region</label>
-              <select name="sda">
-                  <option value = ""></option>
-                {% for district in sda %}
-                  <option value="{{district}}">{{ district }}</option>
-                {% endfor %}     
-              </select>
-              <input type ="submit" value="Submit">
-            </div>
-        </form>
         
         <center><h2>Term Definitions</h2></center>
         <div style="margin: 15px 20px 10px 275px">
@@ -65,15 +62,12 @@
             <b>Pre-cost: </b> Total medical or pharmaceutical costs for the six-month period preceding an index month. Does not include the index month</a>. <br>				
             <b>Post-cost:</b> Total medical or pharmaceutical costs for the six-month period following an index month. Does not include the index month</a>.							
             
-            
             </div>
         </div>
         <br>
 
-        
+        <div style="margin-left: 210px;">
         <center><u><h2 id="Clients">Number of Clients for {{sda_name}}</h2></u></center>
-
-        
         <center>
             <table class="mytable" >     
                 <tr>
@@ -103,13 +97,8 @@
         {% endfor %}
         </center>
         <br><br>
-
-        
-
-        
         <center><u><h2 id="Post_Cost">Post Cost Table for {{sda_name}}</h2></u></center>
-        <center>
-        
+               
         <center>
             <table class="mytable" >     
                 <tr>
@@ -139,12 +128,8 @@
         {% endfor %}</center> 
         <br><br>
         
-    
-
-    
         <center><u><h2 id="ED_Cost">Emergency Department Visits Table for {{sda_name}}</h2></u></center>
-        
-        
+                
         <center>
             <table class="mytable" >     
                 <tr>
@@ -172,7 +157,7 @@
             {{table|safe}}
         {% endfor %}</center> 
         <br><br>
-        
+    </div>
 </body>
 {% endblock content %}
 </html>

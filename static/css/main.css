@@ -75,12 +75,11 @@ div.a{
 }
 
 .sidenav {
-  height: 100%;
+  height: 40%;
   width: 200px;
   position: fixed;
-  z-index: 1;
+  z-index: 1;  
   
-  left: 0;
   background-color: rgb(121, 0, 0);
   overflow-x: hidden;
   padding-top: 20px;

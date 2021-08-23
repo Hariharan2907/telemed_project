@@ -16,6 +16,16 @@
             <a href="#Post_Cost">Post Cost Table</a>
             <a href="#Inpat_encount">Inpatient Encounter Table</a>       
             <a href = "#Top">Back to Top</a>     
+            <a> <form name="Item_1" action="/inpatcost" method="POST">
+                <label for="exampleFormControlFile2">Choose Region</label>
+                  <select name="sda">
+                      <option value = ""></option>
+                    {% for district in sda %}
+                      <option value="{{district}}">{{ district }}</option>
+                    {% endfor %}     
+                  </select>
+                  <input type ="submit" value="Submit">
+                </form></a>
         </div>
     
         <center><h1 >Cost Study: Inpatient Care Cost</h1></center>
@@ -70,7 +80,7 @@
         </div>
         <br>
 
-        
+        <div style="margin-left: 210px;">
         <center><u><h2 id="Clients">Number of Clients for {{sda_name}}</h2></u></center>
 
         <center>

@@ -15,25 +15,22 @@
             <a href="#Clients">Number of Clients</a>
             <a href="#Post_Cost">Post Cost Table</a>       
             <a href="#ED_Cost">Emergency Department Visits</a>
-            <a href = "#Top">Back to Top</a>     
+            <a href = "#Top">Back to Top</a>    
+            <a><form name="Item_1" action="/edcost" method="POST">
+                <label for="exampleFormControlFile2">Choose Region</label>
+                  <select name="sda">
+                      <option value = ""></option>
+                    {% for district in sda %}
+                      <option value="{{district}}">{{ district }}</option>
+                    {% endfor %}     
+                  </select>
+                  <input type ="submit" value="Submit">
+            </form></a> 
         </div>
     
         <center><h1 >Cost Study: Emergency Department Cost</h1></center>
         <hr color = "black" style="width:50%;text-align:center;border-bottom: 4px double">
-        
-        <form name="Item_1" action="/edcost" method="POST">
-            <div class = "fixed">
-            <label for="exampleFormControlFile2">Choose Region</label>
-              <select name="sda">
-                  <option value = ""></option>
-                {% for district in sda %}
-                  <option value="{{district}}">{{ district }}</option>
-                {% endfor %}     
-              </select>
-              <input type ="submit" value="Submit">
-            </div>
-        </form>
-        
+               
         <center><h2>Term Definitions</h2></center>
         <div style="margin: 15px 20px 10px 275px">
             <div style="display: inline-block; text-align: left;">
@@ -70,10 +67,8 @@
         </div>
         <br>
 
-        
-        <center><u><h2 id="Clients">Number of Clients for Texas</h2></u></center>
-
-        
+        <div style="margin-left: 210px;">
+        <center><u><h2 id="Clients">Number of Clients for Texas</h2></u></center>        
         <center>
             <table class="mytable" >     
                 <tr>
@@ -106,15 +101,7 @@
 
         </center> 
         <br><br>    
-  
-        <br>
-
-        
-
-        
         <center><u><h2 id="Post_Cost">Post Cost Table for Texas</h2></u></center>
-        <center>
-        
         <center>
             <table class="mytable" >     
                 <tr>
@@ -138,7 +125,6 @@
 
                 </tr>
             </table>
-        </center>
         {% for table in texas_postcost_ed_final %}
             {{table|safe}}
         {% endfor %}</center> 
@@ -146,42 +132,36 @@
 
     <br>
 
-    
-        <center><u><h2 id="ED_Cost">Emergency Department Visits Table for Texas</h2></u></center>
-        <center>
-        
-        <center>
-            <table class="mytable" >     
-                <tr>
+    <center><u><h2 id="ED_Cost">Emergency Department Visits Table for Texas</h2></u></center>
+    <center>
+        <table class="mytable" >     
+            <tr>
+            <td>&nbsp;</td>
+
+            <td colspan="8"><b>Tele Visits</b></td>
+                    
+            <td colspan="2"><b>Telemonitoring</b></td>
+            
+            </tr>
+        </table>
+
+        <table class = 'mytable'>
+            <tr>
                 <td>&nbsp;</td>
+                <td colspan="2"><b>Blind/Disabled</b></td>
+                <td colspan="2"><b>Child</b></td>
+                <td colspan="2"><b>Other</b></td>
+                <td colspan="2"><b>Total</b></td>
+                <td colspan="2"><b>Total</b></td>
+
+            </tr>
+        </table>
     
-                <td colspan="8"><b>Tele Visits</b></td>
-                        
-                <td colspan="2"><b>Telemonitoring</b></td>
-                
-                </tr>
-            </table>
-
-            <table class = 'mytable'>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td colspan="2"><b>Blind/Disabled</b></td>
-                    <td colspan="2"><b>Child</b></td>
-                    <td colspan="2"><b>Other</b></td>
-                    <td colspan="2"><b>Total</b></td>
-                    <td colspan="2"><b>Total</b></td>
-
-                </tr>
-            </table>
-        </center>
-        {% for table in texas_ed_visits_final %}
-            {{table|safe}}
-        {% endfor %}</center> 
-        <br><br>
-        
-
-
-    
+    {% for table in texas_ed_visits_final %}
+        {{table|safe}}
+    {% endfor %}</center> 
+    <br><br>
+</div>   
 </body>
 {% endblock content %}
 </html>

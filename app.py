@@ -731,7 +731,7 @@ df_demo = df_demo.drop(['ord'],axis=1)
 sda_demo = (df_demo['Region'].unique())
 sda_demo = np.roll(sda_demo,2)
 sda_demo = sda_demo[sda_demo!=0]
-df_demo.loc[df_demo.Demographic == "N","Demographic"] = "Cohort Size"
+df_demo.loc[df_demo.Demographic == "N","Demographic"] = "Number of Clients"
 
 texas_demo = df_demo[df_demo['Region']=='Texas']
 texas_demo['Child-Treat'] = texas_demo['Child-Treat'].map('{:,.2f}'.format)
