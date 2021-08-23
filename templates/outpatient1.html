@@ -14,10 +14,6 @@
       {% extends "base1.html" %}
       {% block content %}
         <div class="sidenav">
-            <a href="#Clients">Number of Clients</a>
-            <a href="#Post_Cost">Post Cost Table</a>
-            <a href="#Outpat_visit">Outpatient Visits Table</a>       
-            <a href = "#Top">Back to Top</a> 
             <a><form name="Item_1" action="/outpatcost" method="POST">
                 <label for="exampleFormControlFile2">Choose Region</label>
                   <select name="sda">
@@ -28,6 +24,11 @@
                   </select>
                   <input type ="submit" value="Submit">
             </form></a>
+            <a href="#Clients">Number of Clients</a>
+            <a href="#Post_Cost">Post Cost Table</a>
+            <a href="#Outpat_visit">Outpatient Visits Table</a>       
+            <a href = "#Top">Back to Top</a> 
+
         </div>
         <center><h1 >Cost Study: Outpatient Care Cost</h1></center>
         <hr color = "black" style="width:50%;text-align:center;border-bottom: 4px double">

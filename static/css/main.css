@@ -5,6 +5,8 @@ body {
 .navbar {
   overflow: hidden;
   background-color: rgb(121, 0, 0);
+  
+
 }
 
 .navbar a {
@@ -75,11 +77,10 @@ div.a{
 }
 
 .sidenav {
-  height: 40%;
+  height: 100%;
   width: 200px;
   position: fixed;
   z-index: 1;  
-  
   background-color: rgb(121, 0, 0);
   overflow-x: hidden;
   padding-top: 20px;

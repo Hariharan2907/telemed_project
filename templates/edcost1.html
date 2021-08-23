@@ -12,10 +12,6 @@
         {% block content %}
         
         <div class="sidenav">
-            <a href="#Clients">Number of Clients</a>
-            <a href="#Post_Cost">Post Cost Table</a>       
-            <a href="#ED_Cost">Emergency Department Visits</a>
-            <a href = "#Top">Back to Top</a>    
             <a><form name="Item_1" action="/edcost" method="POST">
                 <label for="exampleFormControlFile2">Choose Region</label>
                   <select name="sda">
@@ -25,7 +21,12 @@
                     {% endfor %}     
                   </select>
                   <input type ="submit" value="Submit">
-            </form></a> 
+            </form></a>
+            <a href="#Clients">Number of Clients</a>
+            <a href="#Post_Cost">Post Cost Table</a>       
+            <a href="#ED_Cost">Emergency Department Visits</a>
+            <a href = "#Top">Back to Top</a>    
+ 
         </div>
     
         <center><h1 >Cost Study: Emergency Department Cost</h1></center>

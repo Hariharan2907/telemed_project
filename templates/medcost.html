@@ -16,14 +16,7 @@
       
         
       <div class="sidenav">
-            
-        <a href="#Clients">Number of Clients</a>
-        <a href="#Pre_Cost">Pre Cost Table</a>
-        <a href="#Post_Cost">Post Cost Table</a>      
-        <a href = "#Top">Back to Top</a> 
-      
-        <a><form name="Item_1" action="/medcost" method="POST">
-            
+        <a><form name="Item_1" action="/medcost" method="POST">            
             <label for="exampleFormControlFile2">Choose Region</label>
               <select name="sda">
                   <option value = ""></option>
@@ -31,9 +24,15 @@
                   <option value="{{district}}">{{ district }}</option>
                 {% endfor %}     
               </select>
-              <input type ="submit" value="Submit">
-            
+              <input type ="submit" value="Submit">            
         </form></a>
+            
+        <a href="#Clients">Number of Clients</a>
+        <a href="#Pre_Cost">Pre Cost Table</a>
+        <a href="#Post_Cost">Post Cost Table</a>      
+        <a href = "#Top">Back to Top</a> 
+      
+
 
     </div>
 

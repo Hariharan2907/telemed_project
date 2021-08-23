@@ -11,8 +11,8 @@
     <body>  
       {% extends "base1.html" %}
       {% block content %}
-      <form name="Item_1" action="/heart-conditions" method="POST">
-        <div class = "fixed">
+      <div class="sidenav">
+      <a><form name="Item_1" action="/heart-conditions" method="POST">
         <label for="exampleFormControlFile2">Choose Region</label>
           <select name="sda_hosp">
               <option value = ""></option>
@@ -21,10 +21,10 @@
             {% endfor %}     
           </select>
           <input type ="submit" value="Submit">
-        </div>
-    </form>
+    </form></a>
+  </div>
 
-  
+  <div style="margin-left: 210px;">      
         <center><h1 >Heart Condition Cost Lookup for Texas</h1></center>
         <hr color = "black" style="width:50%;text-align:center;border-bottom: 4px double">
         <br>
@@ -36,5 +36,6 @@
           <br>
           </div>
           </body>
+        </div>
           {% endblock content %}
           </html>
