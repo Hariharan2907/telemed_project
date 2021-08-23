@@ -9,18 +9,20 @@
 
 
     <body>  
-      <form name="Item_1" action="/demographics" method="POST">
-        <div class = "fixed">
-        <label for="exampleFormControlFile2">Choose Region</label>
-          <select name="sda_demo">
-              <option value = ""></option>
-            {% for district in sda_demo %}
-              <option value="{{district}}">{{ district }}</option>
-            {% endfor %}     
-          </select>
-          <input type ="submit" value="Submit">
-        </div>
-    </form>
+      <div class="sidenav">
+        <br>
+         <a><form name="Item_1" action="/demographics" method="POST">
+          <label for="exampleFormControlFile2">Choose Region</label>
+            <select name="sda_demo">
+                <option value = ""></option>
+              {% for district in sda_demo %}
+                <option value="{{district}}">{{ district }}</option>
+              {% endfor %}     
+            </select>
+            <input type ="submit" value="Submit">
+      </form>
+      </a>
+      </div>
 
 
     
@@ -52,6 +54,7 @@
     </div>  
     <a href="home">Home</a>      
    </div>
+   <div style="margin-left: 210px;">
         <center><h1 >Demographics for {{sda_demo_name}}</h1></center>
         <hr color = "black" style="width:50%;text-align:center;border-bottom: 4px double">
         <br>
@@ -219,7 +222,7 @@
             </div>
             <br><br>
     
-
+          </div>
     </body>
     </html>
 
