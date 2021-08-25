@@ -23,5 +23,5 @@ inpatcost_df = inpatcost_df.drop(['uci_los','lci_los','lci_chrg','uci_chrg','Obs
 inpatcost_df.to_excel("doc/inpatient-costs-data.xlsx",index=False)
 
 with pd.ExcelWriter('doc/cost-study-data.xlsx') as writer:
-    cost_df.to_excel(writer,sheet_name='cost-study>total-medical-cost',index=False)
-    demo_df.to_excel(writer,sheet_name='cost-study>demographics',index=False)
+    cost_df.to_excel(writer,sheet_name='costs',index=False)
+    demo_df.to_excel(writer,sheet_name='demographics',index=False)
