@@ -1,8 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="sidenav">
+
+    <a href="#CEA">CEA Basic Tool </a>
+    <a href="#cost_study">Cost Study</a>
+    <a href="#inpat_cost">Inpatient Costs</a>      
+    <a href = "#Top">Back to Top</a>         
+
+</div>
 <center><h1>Homepage</h1></center>
 <div style="margin-left:20%">
-<h4> CEA Basic Tool: </h4> 
+<h4 id="CEA"> CEA Basic Tool: </h4> 
 <a href="{{ url_for('download_file')}}" target="_blank">Excel File</a> <br> 
 <h4>Tutorial: </h4>
 <ul>
@@ -11,34 +19,34 @@
 
 <li>Individual Videos:</li>
 <ul>
-    <li><a href="https://drive.google.com/file/d/1B-fqtCBj8KRrabZP6Mo6TKQlSfPt3SyM/view" target="_blank">1 - CEA Basic Tool Overview</a></li>
+    <li><a href="https://drive.google.com/file/d/1-51quRMZoBBbtdzh0Gi_USWJibjhBhRH/view?usp=sharing" target="_blank">1 - CEA Basic Tool Overview</a></li>
     <a>This video provides a brief overview of each sheet in the CEA-basic tool.</a><br>
     <br>
-    <li><a href="https://drive.google.com/file/d/1AYIn-gYLGrvWeifOkX59LiH2vvWEymJO/view" target="_blank">2 - Readme & Interpretation</a></li>
+    <li><a href="https://drive.google.com/file/d/1-EBrTgXda1EgvyfALa68D0RtvDzf82tU/view?usp=sharing" target="_blank">2 - Readme & Interpretation</a></li>
     <a>This video discusses the details of the Readme sheet and the Interpretation sheet.</a><br>
     <br>
-    <li><a href="https://drive.google.com/file/d/1B-Ap9zdCqUQRgMopizMTbnPvhCr4TZjP/view" target="_blank">3 - Case Study Overview</a></li>
+    <li><a href="https://drive.google.com/file/d/1-GJC5SDdzxCiLp75QzDb1zZ29FNEbDzn/view?usp=sharing" target="_blank">3 - Case Study Overview</a></li>
     <a>This video goes over the details of the case study we created for this tutorial, as well as an important disclaimer at the top of the CEA Plan sheet.</a><br>
     <br>
-    <li><a href="https://drive.google.com/file/d/1AkxvOKORDUcNpYyrKn4vIC8jIP19zbjb/view" target="_blank">4 - CEA Plan, Sections 1 & 2</a></li>
+    <li><a href="https://drive.google.com/file/d/1-QMKpO7Ydm2w5uhfPYrAlgPhS7z2Nduh/view?usp=sharing" target="_blank">4 - CEA Plan, Sections 1 & 2</a></li>
     <a>This video discusses sections 1 & 2 of the CEA Plan within the context of the case study.  </a><br>
     <br>
-    <li><a href="https://drive.google.com/file/d/1Anc9RSI2mD04iX8z46k8dLoagWBsQS42/view" target="_blank">5 - CEA Plan, Sections 3 - 5</a></li>
+    <li><a href="https://drive.google.com/file/d/1-QpTE05xKBzO4orLSp9r8bzgotyhskyK/view?usp=sharing" target="_blank">5 - CEA Plan, Sections 3 - 5</a></li>
     <a>This video discusses sections 3 - 5 of the CEA Plan sheet within the context of the case study.</a><br>
     <br>
-    <li><a href="https://drive.google.com/file/d/1BBLwaUjhhz_qTsDQ2cm6bLzUu2aQuTyD/view" target="_blank">6 - CEA Data Entry</a></li>
+    <li><a href="https://drive.google.com/file/d/1Ct0HbyY321BwXTFsQKB6-jfuUEnYQK10/view?usp=sharing" target="_blank">6 - CEA Data Entry</a></li>
     <a>This video discusses how to enter data in the CEA Data Entry sheet within the context of the case study. Additionally, it discusses how to interpret the Average Incremental Cost Effectiveness Ratio (ICER).</a><br>
     <br>
 </ul>
 </ul>
 
-<h4>Cost Study</h4> 
+<h4 id="cost_study">Cost Study</h4> 
 <ul>
     <li><a href="{{url_for('download_excel')}}" target="_blank">Cost Study Data</a></li> 
     <li>Data Dictionary</li>
 </ul>
 
-<h3>Inpatient Costs</h3>
+<h4 id="inpat_cost">Inpatient Costs</h3>
 <ul>
     <li><a href="{{url_for('download_excel1')}}" target="_blank">Inpatient Costs Data</a></li>
     <li>Data Dictionary</li>

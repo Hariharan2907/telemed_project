@@ -174,8 +174,7 @@ table.dataframe {
 }
 .dataframe td:nth-child(10), .dataframe th:nth-child(10) {
   border-right: solid 1px rgb(0, 0, 0);
-  
-  
+
  } 
 
 table.demo{
@@ -200,7 +199,9 @@ table.demo{
   
 }
 
-
+.demo td:nth-child(2), .demo th:nth-child(2) {
+  border-right: solid 2px rgb(0, 0, 0);
+ } 
 .demo td:nth-child(6), .demo th:nth-child(6) {
   border-left: 1px solid rgb(0, 0, 0);
   width: 10%;
@@ -224,6 +225,8 @@ table.demographics {
   text-align:center;   
   border-bottom:none;
 }
+
+
 
 
 table.hosp {
