@@ -16,7 +16,7 @@ body {
 }
 
 .wrapper .sidebar{
-    width: 240px;
+    width: 210px;
     height: 100%;
     top: 0;
     left: 0;
@@ -29,7 +29,7 @@ body {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: 200px;
+    width: 160px;
     height: 100%;
     background-color: rgb(121, 0, 0);
 }
@@ -65,6 +65,7 @@ body {
 }
 
 .wrapper .navbar ul {
+  width: 85%;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -139,41 +140,28 @@ div.fixed{
 div.a{
   line-height: 2;
 }
+
+
 table.mytable{
-  
+
   border-collapse: collapse;
-  padding: 20px;  
-  font-size: 16px;
-  padding: 10px 20px 10px 20px;
-  table-layout: fixed;
+  border: 1px solid black;
   text-align:center;
-  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border:none;
+  table-layout: fixed;
+  width: 90%;
+
 }
 .mytable th,.mytable td{
     border: 1px solid black;
     border-collapse: collapse;
     text-align:center;
-    padding: 10px 20px 10px 20px;
-    
+    border-bottom:none;
+
 }
 
-.mytable td:nth-child(1), .mytable th:nth-child(1) {
-  
-  width: 53.5px;
- }
- .mytable td:nth-child(2), .mytable th:nth-child(2) {
-  
-  width: 460px;
- }
-.mytable td:nth-child(3), .mytable th:nth-child(3) {
-  border-left: double rgb(0, 0, 0);
-  width: 88.5px;
-  padding-right:0.75cm;
-  
- }
-.mytable tr:first-child {
-  border-top: solid 1px rgb(0, 0, 0);
- }
 table.result{
   border-collapse: collapse;
   font-size: 16px;
@@ -182,7 +170,7 @@ table.result{
   text-align:center;
   width: 50%;
   empty-cells: hide;
-  
+
 }
 .result th,.result td{
   border: 1px solid black;
@@ -191,12 +179,12 @@ table.result{
   padding: 10px 20px 10px 20px;
   white-space: nowrap;
   empty-cells: hide;
-  
+
 }
 table.ceatable{
-  
+
   border-collapse: collapse;
-  padding: 20px;  
+  padding: 20px;
   font-size: 16px;
   padding: 10px 10px 10px 10px;
   table-layout: auto;
@@ -209,71 +197,44 @@ table.ceatable{
   border-collapse: collapse;
   text-align:center;
   padding: 10px 10px 10px 10px;
-  
+
 }
 table.dataframe {
-  /*border: 3px solid black;*/
   border-collapse: collapse;
+  border: 1px solid black;
   text-align:center;
-  padding: 10px;  
+  padding: 10px;
   font-size: 16px;
   border:none;
   table-layout: fixed;
-  width: 100%;
+  width: 90%;
 }
 
 .dataframe th, .dataframe td {
-  /*border: 1px solid black;*/
-  border-collapse: collapse;
+  border: 1px solid black;
   text-align:center;
+  width: 10%;
   padding: 10px;
-  border: none;
-  
+  border-collapse: collapse;
 }
-.dataframe td:nth-child(1), .dataframe th:nth-child(1) {
-  border-left: solid 1px rgb(0, 0, 0);
-  width: 75px;
- }
-
-.dataframe td:nth-child(2), .dataframe th:nth-child(2) {
-  border-left: solid 1px rgb(0, 0, 0);
-  min-width: min-content;
- }
-
-.dataframe td:nth-child(5), .dataframe th:nth-child(5) {
-  border-left: solid 1px rgb(0, 0, 0);
- }
-
-.dataframe td:nth-child(6), .dataframe th:nth-child(6) {
-  border-left: double rgb(0, 0, 0);
-  width: 100px;
- }
-.dataframe td:nth-child(6), .dataframe th:nth-child(6) {
+.dataframe td:nth-child(10), .dataframe th:nth-child(10) {
   border-right: solid 1px rgb(0, 0, 0);
-  width: 120px;
-  
- }
 
- 
-.dataframe tr:first-child{
-  border-top: solid 1px rgb(0, 0, 0);
- }
- 
-.dataframe tr:last-child{
-  border-bottom: solid 1px rgb(0, 0, 0);
+
  }
 
 table.demo{
   border-collapse: collapse;
   border: 1px solid black;
   text-align:center;
-  padding: 10px;  
+  padding: 10px;
   font-size: 16px;
   border:none;
   table-layout: fixed;
   width: 80%;
-  
+
 }
+
 
 .demo th, .demo td {
   border: 1px solid black;
@@ -281,22 +242,7 @@ table.demo{
   width: 10%;
   padding: 10px;
   border-collapse: collapse;
-  
-}
 
-.demo td:nth-child(1), .demo th:nth-child(1) {
-  
-  width: 10%;
-}
-
-.demo td:nth-child(2), .demo th:nth-child(2) {
-  
-  width: 10%;
-}
-
-.demo td:nth-child(5), .demo th:nth-child(5) {
-  
-  width: 10%;
 }
 
 
@@ -313,70 +259,64 @@ table.demographics {
   font-size: 16px;
   border:none;
   table-layout: fixed;
-  width: 80%;  
+  width: 80%;
+
 }
 
 .demographics th, .demographics td {
-  border: 1px solid black;  
-  border-bottom: none !important;
-  
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align:center;
+  border-bottom:none;
 }
 
-.demographics th:nth-child(1) {
-  width: 20%;
+
+table.hosp {
+  border-collapse: collapse;
+  border: 1px solid black;
+  text-align:center;
+  padding: 10px;
+  font-size: 16px;
+  border:none;
+  table-layout: auto;
+  max-width: 80%;
+
 }
 
-.demographics th:nth-child(2) {
-  width: 20%;
+.hosp th, .hosp td {
+  border: 1px solid black;
+  text-align:center;
+  width: 10%;
+  padding: 10px;
+
+  overflow: visible;
+
+}
+.hosp td:nth-child(2), .hosp th:nth-child(2) {
+  border-left: 1px solid rgb(0, 0, 0);
+  width: 8%;
+}
+.hosp td:nth-child(6), .hosp th:nth-child(6) {
+  border-left: 1px solid rgb(0, 0, 0);
+  width: 10%;
+
+}
+.hosp tr:nth-of-type(4n) td {
+  border-bottom: 3px solid rgb(0, 0, 0);
 }
 
-.demographics th:nth-child(3) {
-  width: 20%;
-}
-
-.demographics th:nth-child(4) {
-  width: 20%;
-}
-
-.sidenav {
-  width: 230px;
-  position: fixed;
-  z-index: 1;
-  top: 100px;
-  left: 10px;
-  background: #eee;  
-  padding: 20px 0;
-}
-
-.sidenav a, .dropdown-btn {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 18px;
-  color: #000000;
-  display: block;
-  border: none;
-  background: none;
-  width: 100%;
-  text-align: left;
-  cursor: pointer;
-  outline: none;
-}
-
-.sidenav a:hover, .dropdown-btn:hover {
-  color: #580000;
-}
 
 .solid {
   width: 750px;
   padding: 25px;
   border: 2px solid black;
-  margin-left: 200px;
+  margin-left: auto;
   margin-right: auto;
-   
+
 }
 
 .text-border{
-  border-top: solid 2px black; 
+  border-top: solid 2px black;
   padding:10px;
   width:300px;
   border-bottom: solid 2px black;
