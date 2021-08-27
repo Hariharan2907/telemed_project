@@ -1,228 +1,206 @@
 <!doctype html>
 <html lang="en">
-    <head>    
-        <meta charset="UTF-8">
-        <link rel="stylesheet" type = text/css href="{{ url_for('static', filename= 'css/main.css') }}">
-        <title>Demographics</title>
-        
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type = text/css href="{{ url_for('static', filename= 'css/main.css') }}">
+    <title>Demographics</title>
+
+</head>
 
 
-    <body>  
-      <div class="sidenav">
-        <br>
-         <a><form name="Item_1" action="/demographics" method="POST">
-          <label for="exampleFormControlFile2">Choose Region</label>
+<body>
+{% extends "base1.html" %}
+{% block sidebar %}
+<li>
+    <form name="Item_1" action="/demographics" method="POST">
+        <div>
+            <label for="exampleFormControlFile2">Choose Region</label>
             <select name="sda_demo">
                 <option value = ""></option>
-              {% for district in sda_demo %}
+                {% for district in sda_demo %}
                 <option value="{{district}}">{{ district }}</option>
-              {% endfor %}     
+                {% endfor %}
             </select>
             <input type ="submit" value="Submit">
-      </form>
-      </a>
-      </div>
-      
+        </div>
+    </form>
+</li>
+<br>
+{% endblock sidebar %}
 
-    
-  <div class="navbar" id="Top">
-    <a href="https://sites.google.com/view/pinformatics/data-science/cost-study-resources?authuser=0" target="_blank">Documents</a>
-    <a href="https://sites.google.com/view/pinformatics/data-science/public-data-resources?authuser=0" target="_blank">Other Data Resources</a>
-    
-    <div class="dropdown">
-      <button class="dropbtn">Inpatient Costs
-        <i class="fa fa-caret-down"></i>
-      </button>
-    <div class="dropdown-content">
-      <a href="mental-health">Mental Health</a>
-      <a href="heart-conditions">Heart Conditions</a>
-    </div>
-    </div>
-    
-    <div class="dropdown">
-      <button class="dropbtn">Cost Study 
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <a href="demographics">Demographics</a>
-        <a href="medcost">Total Medical Cost</a>
-        <a href="inpatcost">Inpatient Care Cost</a>
-        <a href="edcost">ED Cost</a>
-        <a href="outpatcost">Outpatient Care Cost</a>
-      </div>
-    </div>  
-    <a href="home">Home</a>      
-   </div>
-   <div style="margin-left: 210px;">
-        <center><h1 >Demographics for Texas</h1></center>
-        <hr color = "black" style="width:50%;text-align:center;border-bottom: 4px double">
-        <br>
 
-        
-        <center>
+{% block content %}
+
+<div style="margin-left: 80px;">
+    <center><h1 style="margin-top: 100px;">Demographics for Texas</h1></center>
+    <hr color = "black" style="width:50%;text-align:center;border-bottom: 4px double">
+    <br>
+
+
+    <center>
         <table class='demographics'>
-          <tr>
-            <td colspan="2">&nbsp;</td>            
-            <td colspan="4"><b>Tele Visits</b></td>
-            <td colspan="2"><b>Telemonitoring</b></td>
-          </tr>
+            <tr>
+                <td colspan="2">&nbsp;</td>
+                <td colspan="4"><b>Tele Visits</b></td>
+                <td colspan="2"><b>Telemonitoring</b></td>
+            </tr>
         </table>
 
         <table class="demographics">
-          <tr>
-            <td>&nbsp;</th>
-            <td><b>Patient</b></th>
-            <td colspan="2"><b>Child</b></th>
-            <td colspan="2"><b>Blind/Disabled</b></th>
-            <td colspan="2"><b>Total</b></th>
-          </tr>
+            <tr>
+                <td>&nbsp;</th>
+                <td><b>Patient</b></th>
+                <td colspan="2"><b>Child</b></th>
+                <td colspan="2"><b>Blind/Disabled</b></th>
+                <td colspan="2"><b>Total</b></th>
+            </tr>
         </table>
-        </center>
-        <div class="demo">
+    </center>
+    <div class="demo">
         <center>
-        {% for table in texas_2013 %}
-          {{table|safe}}         
-        {% endfor %}</center> 
+            {% for table in texas_2013 %}
+            {{table|safe}}
+            {% endfor %}</center>
         <br><br>
-        </div>
-        
-        <center>
-        <table class='demographics'>
-          <tr>
-            <td colspan="2">&nbsp;</td>            
-            <td colspan="4"><b>Tele Visits</b></td>
-            <td colspan="2"><b>Telemonitoring</b></td>
-          </tr>
-        </table>
-        
-        <table class="demographics">
-          <tr>
-            <td>&nbsp;</th>
-            <td><b>Patient</b></th>
-            <td colspan="2"><b>Child</b></th>
-            <td colspan="2"><b>Blind/Disabled</b></th>
-            <td colspan="2"><b>Total</b></th>
-          </tr>
-        </table>
-          </center>
-        <div class="demo">
-        <center>
-        {% for table in texas_2014 %}
-          {{table|safe}}         
-        {% endfor %}</center> 
-        <br><br>
-        </div>
-
-        <center>
-          <table class='demographics'>
-            <tr>
-              <td colspan="2">&nbsp;</td>            
-              <td colspan="4"><b>Tele Visits</b></td>
-              <td colspan="2"><b>Telemonitoring</b></td>
-            </tr>
-          </table>
-          
-          <table class="demographics">
-            <tr>
-              <td>&nbsp;</th>
-              <td><b>Patient</b></th>
-              <td colspan="2"><b>Child</b></th>
-              <td colspan="2"><b>Blind/Disabled</b></th>
-              <td colspan="2"><b>Total</b></th>
-            </tr>
-          </table>
-          </center>
-        <div class="demo">
-        <center>
-        {% for table in texas_2015 %}
-          {{table|safe}}         
-        {% endfor %}</center> 
-        <br><br>
-        </div>
-
-        <center>
-          <table class='demographics'>
-            <tr>
-              <td colspan="2">&nbsp;</td>            
-              <td colspan="4"><b>Tele Visits</b></td>
-              <td colspan="2"><b>Telemonitoring</b></td>
-            </tr>
-          </table>
-          
-          <table class="demographics">
-            <tr>
-              <td>&nbsp;</th>
-              <td><b>Patient</b></th>
-              <td colspan="2"><b>Child</b></th>
-              <td colspan="2"><b>Blind/Disabled</b></th>
-              <td colspan="2"><b>Total</b></th>
-            </tr>
-          </table>
-          </center>
-        <div class="demo">
-        <center>
-        {% for table in texas_2016 %}
-          {{table|safe}}         
-        {% endfor %}</center> 
-        <br><br>
-        </div>
-
-      <center>
-        <table class='demographics'>
-          <tr>
-            <td colspan="2">&nbsp;</td>            
-            <td colspan="4"><b>Tele Visits</b></td>
-            <td colspan="2"><b>Telemonitoring</b></td>
-          </tr>
-        </table>
-        
-        <table class="demographics">
-          <tr>
-            <td>&nbsp;</th>
-            <td><b>Patient</b></th>
-            <td colspan="2"><b>Child</b></th>
-            <td colspan="2"><b>Blind/Disabled</b></th>
-            <td colspan="2"><b>Total</b></th>
-          </tr>
-        </table>
-        </center>
-        <div class="demo">
-        <center>
-        {% for table in texas_2017 %}
-          {{table|safe}}         
-        {% endfor %}</center> 
-        <br><br>
-        </div>
-
-        <center>
-          <table class='demographics'>
-            <tr>
-              <td colspan="2">&nbsp;</td>            
-              <td colspan="4"><b>Tele Visits</b></td>
-              <td colspan="2"><b>Telemonitoring</b></td>
-            </tr>
-          </table>
-          
-          <table class="demographics">
-            <tr>
-              <td>&nbsp;</th>
-              <td><b>Patient</b></th>
-              <td colspan="2"><b>Child</b></th>
-              <td colspan="2"><b>Blind/Disabled</b></th>
-              <td colspan="2"><b>Total</b></th>
-            </tr>
-          </table>
-        </center>
-        <div class="demo">
-        <center>
-        {% for table in texas_2018 %}
-          {{table|safe}}         
-        {% endfor %}</center>  
-        </div>
-        <br><br>
-
     </div>
 
-    </body>
-    </html>
+    <center>
+        <table class='demographics'>
+            <tr>
+                <td colspan="2">&nbsp;</td>
+                <td colspan="4"><b>Tele Visits</b></td>
+                <td colspan="2"><b>Telemonitoring</b></td>
+            </tr>
+        </table>
+
+        <table class="demographics">
+            <tr>
+                <td>&nbsp;</th>
+                <td><b>Patient</b></th>
+                <td colspan="2"><b>Child</b></th>
+                <td colspan="2"><b>Blind/Disabled</b></th>
+                <td colspan="2"><b>Total</b></th>
+            </tr>
+        </table>
+    </center>
+    <div class="demo">
+        <center>
+            {% for table in texas_2014 %}
+            {{table|safe}}
+            {% endfor %}</center>
+        <br><br>
+    </div>
+
+    <center>
+        <table class='demographics'>
+            <tr>
+                <td colspan="2">&nbsp;</td>
+                <td colspan="4"><b>Tele Visits</b></td>
+                <td colspan="2"><b>Telemonitoring</b></td>
+            </tr>
+        </table>
+
+        <table class="demographics">
+            <tr>
+                <td>&nbsp;</th>
+                <td><b>Patient</b></th>
+                <td colspan="2"><b>Child</b></th>
+                <td colspan="2"><b>Blind/Disabled</b></th>
+                <td colspan="2"><b>Total</b></th>
+            </tr>
+        </table>
+    </center>
+    <div class="demo">
+        <center>
+            {% for table in texas_2015 %}
+            {{table|safe}}
+            {% endfor %}</center>
+        <br><br>
+    </div>
+
+    <center>
+        <table class='demographics'>
+            <tr>
+                <td colspan="2">&nbsp;</td>
+                <td colspan="4"><b>Tele Visits</b></td>
+                <td colspan="2"><b>Telemonitoring</b></td>
+            </tr>
+        </table>
+
+        <table class="demographics">
+            <tr>
+                <td>&nbsp;</th>
+                <td><b>Patient</b></th>
+                <td colspan="2"><b>Child</b></th>
+                <td colspan="2"><b>Blind/Disabled</b></th>
+                <td colspan="2"><b>Total</b></th>
+            </tr>
+        </table>
+    </center>
+    <div class="demo">
+        <center>
+            {% for table in texas_2016 %}
+            {{table|safe}}
+            {% endfor %}</center>
+        <br><br>
+    </div>
+
+    <center>
+        <table class='demographics'>
+            <tr>
+                <td colspan="2">&nbsp;</td>
+                <td colspan="4"><b>Tele Visits</b></td>
+                <td colspan="2"><b>Telemonitoring</b></td>
+            </tr>
+        </table>
+
+        <table class="demographics">
+            <tr>
+                <td>&nbsp;</th>
+                <td><b>Patient</b></th>
+                <td colspan="2"><b>Child</b></th>
+                <td colspan="2"><b>Blind/Disabled</b></th>
+                <td colspan="2"><b>Total</b></th>
+            </tr>
+        </table>
+    </center>
+    <div class="demo">
+        <center>
+            {% for table in texas_2017 %}
+            {{table|safe}}
+            {% endfor %}</center>
+        <br><br>
+    </div>
+
+    <center>
+        <table class='demographics'>
+            <tr>
+                <td colspan="2">&nbsp;</td>
+                <td colspan="4"><b>Tele Visits</b></td>
+                <td colspan="2"><b>Telemonitoring</b></td>
+            </tr>
+        </table>
+
+        <table class="demographics">
+            <tr>
+                <td>&nbsp;</th>
+                <td><b>Patient</b></th>
+                <td colspan="2"><b>Child</b></th>
+                <td colspan="2"><b>Blind/Disabled</b></th>
+                <td colspan="2"><b>Total</b></th>
+            </tr>
+        </table>
+    </center>
+    <div class="demo">
+        <center>
+            {% for table in texas_2018 %}
+            {{table|safe}}
+            {% endfor %}</center>
+    </div>
+    <br><br>
+
+</div>
+
+</body>
+{% endblock content %}
+</html>
