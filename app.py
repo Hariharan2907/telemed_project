@@ -333,7 +333,7 @@ def index():
     return render_template('index.html')
     '''
 @app.route('/', methods=["GET","POST"])
-@app.route('/cea/home',methods=["GET","POST"])
+@app.route('/home',methods=["GET","POST"])
 def home():
     return render_template("home.html")
 
@@ -354,7 +354,7 @@ def download_excel1():
 
 
 
-
+@app.route('/medcost', methods=["GET", "POST"])
 @app.route('/cea/medcost', methods=["GET", "POST"])
 def medcost():
     if request.method == "POST":
@@ -448,7 +448,7 @@ def medcost():
     return render_template('medcost1.html',sda=sda, texas_numclient=[texas_numclient.to_html(index=False)], texas_precost_final=[texas_precost_final.to_html(index=False)], 
                             texas_postcost_final=[texas_postcost_final.to_html(index = False)])
     
-    
+@app.route('/inpatcost', methods=["GET", "POST"])    
 @app.route('/cea/inpatcost', methods=["GET", "POST"])
 def inpatcost():
     if request.method == "POST":
@@ -537,7 +537,7 @@ def inpatcost():
     return render_template('inpatient1.html',sda=sda, texas_numclient=[texas_numclient.to_html(index=False)], texas_postcost_inpat_final=[texas_postcost_inpat_final.to_html(index=False)], 
                             texas_inpat_encount_final=[texas_inpat_encount_final.to_html(index=False)])
 
-
+@app.route('/edcost', methods=["GET", "POST"])
 @app.route('/cea/edcost', methods=["GET", "POST"])
 def edcost():
     if request.method == "POST":
@@ -625,7 +625,7 @@ def edcost():
     return render_template('edcost1.html',sda=sda, texas_numclient=[texas_numclient.to_html(index=False)], texas_postcost_ed_final=[texas_postcost_ed_final.to_html(index = False)]
                                         ,texas_ed_visits_final=[texas_ed_visits_final.to_html(index=False)])
 
-
+@app.route('/outpatcost', methods=["GET", "POST"])
 @app.route('/cea/outpatcost', methods=["GET", "POST"])
 def outpatcost():
     if request.method == "POST":
@@ -753,7 +753,7 @@ texas_2017 = texas_demo[texas_demo['Year']==2017]
 texas_2018 = texas_demo[texas_demo['Year']==2018]
 
 
-
+@app.route('/demographics', methods = ["GET","POST"])
 @app.route('/cea/demographics', methods = ["GET","POST"])
 def demographics(): 
     if request.method == "POST":
@@ -810,7 +810,7 @@ texas_hosp = df_hosp[df_hosp['SDA']=='Texas']
 texas_hosp = texas_hosp.drop(['SDA'],axis=1)
 texas_mental = texas_hosp.loc[texas_hosp['Condition'].isin(['Alcohol-related disorders','Depressive disorders',
                                         'Schizophrenia spectrum and other psychotic disorders'])]
-
+@app.route('/mental-health', methods = ["GET","POST"])
 @app.route('/cea/mental-health', methods = ["GET","POST"])
 def mental_health():
     if request.method == "POST":
@@ -828,7 +828,7 @@ def mental_health():
 
 texas_heart =  texas_hosp.loc[texas_hosp['Condition'].isin(['Acute myocardial infarction','Cardiac and circulatory congenital anomalies',
                                         'Heart failure','Hypertension and hypertensive-related conditions complicating pregnancy; childbirth; and the puerperium','MACE Event'])]
-
+@app.route('/heart-conditions',methods = ["GET","POST"])
 @app.route('/cea/heart-conditions',methods = ["GET","POST"])
 def heart_conditions():
     if request.method == "POST":
