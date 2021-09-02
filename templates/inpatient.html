@@ -35,18 +35,6 @@
 <center><h1 style="margin-top: 100px;">Cost Study: Inpatient Care Cost</h1></center>
 <hr color = "black" style="width:50%;text-align:center;border-bottom: 4px double">
 
-<form name="Item_1" action="/inpatcost" method="POST">
-    <div class = "fixed">
-        <label for="exampleFormControlFile2">Choose Region</label>
-        <select name="sda">
-            <option value = ""></option>
-            {% for district in sda %}
-            <option value="{{district}}">{{ district }}</option>
-            {% endfor %}
-        </select>
-        <input type ="submit" value="Submit">
-    </div>
-</form>
 
 <center><h2>Term Definitions</h2></center>
 <div style="margin: 15px 20px 10px 100px">
