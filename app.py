@@ -337,17 +337,17 @@ def index():
 def home():
     return render_template("home.html")
 
-@app.route('/cea/download_cea')
+@app.route('/download_cea')
 def download_file():
     path = "doc/CEA-basic-tool-v16.xlsx"
     return send_file(path,as_attachment=True)
 
-@app.route('/cea/download_cost_study')
+@app.route('/download_cost_study')
 def download_excel():
     path = "doc/cost-study-data.xlsx"
     return send_file(path,as_attachment=True)
 
-@app.route('/cea/download_inpatcost')
+@app.route('/download_inpatcost')
 def download_excel1():
     path = "doc/inpatient-costs-data.xlsx"
     return send_file(path,as_attachment=True)
