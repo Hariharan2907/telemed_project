@@ -737,14 +737,63 @@ sda_demo = (df_demo['Region'].unique())
 sda_demo = np.roll(sda_demo,2)
 sda_demo = sda_demo[sda_demo!=0]
 df_demo.loc[df_demo.Demographic == "N","Demographic"] = "Number of Clients"
-
 texas_demo = df_demo[df_demo['Region']=='Texas']
+
+values = []
+format_values = []
+values=[texas_demo['Child-Treat'].iloc[0],texas_demo['Child-Treat'].iloc[8],texas_demo['Child-Treat'].iloc[16],texas_demo['Child-Treat'].iloc[24],texas_demo['Child-Treat'].iloc[32],
+        texas_demo['Child-Treat'].iloc[40],texas_demo['Child-Comp'].iloc[0],texas_demo['Child-Comp'].iloc[8],texas_demo['Child-Comp'].iloc[16],texas_demo['Child-Comp'].iloc[24],texas_demo['Child-Comp'].iloc[32],
+        texas_demo['Child-Comp'].iloc[40],texas_demo['Blind/Disabled-Treat'].iloc[0],texas_demo['Blind/Disabled-Treat'].iloc[8],texas_demo['Blind/Disabled-Treat'].iloc[16],texas_demo['Blind/Disabled-Treat'].iloc[24],texas_demo['Blind/Disabled-Treat'].iloc[32],
+        texas_demo['Blind/Disabled-Treat'].iloc[40],texas_demo['Blind/Disabled-Comp'].iloc[0],texas_demo['Blind/Disabled-Comp'].iloc[8],texas_demo['Blind/Disabled-Comp'].iloc[16],texas_demo['Blind/Disabled-Comp'].iloc[24],texas_demo['Blind/Disabled-Comp'].iloc[32],
+        texas_demo['Blind/Disabled-Comp'].iloc[40],texas_demo['Telemonitoring-Treat'].iloc[0],texas_demo['Telemonitoring-Treat'].iloc[8],texas_demo['Telemonitoring-Treat'].iloc[16],texas_demo['Telemonitoring-Treat'].iloc[24],texas_demo['Telemonitoring-Treat'].iloc[32],
+        texas_demo['Telemonitoring-Treat'].iloc[40],texas_demo['Telemonitoring-Comp'].iloc[0],texas_demo['Telemonitoring-Comp'].iloc[8],texas_demo['Telemonitoring-Comp'].iloc[16],texas_demo['Telemonitoring-Comp'].iloc[24],texas_demo['Telemonitoring-Comp'].iloc[32],
+        texas_demo['Telemonitoring-Comp'].iloc[40]]
+for i in values: 
+    i = round(i,2)
+    i = "{:,.0f}".format(i)
+    format_values.append(i)
 texas_demo['Child-Treat'] = texas_demo['Child-Treat'].map('{:,.2f}'.format)
+x = 0
+j = 0
+for i in range(6):
+    texas_demo['Child-Treat'].iloc[x] = format_values[j]
+    x+=8
+    j+=1
 texas_demo['Child-Comp'] = texas_demo['Child-Comp'].map('{:,.2f}'.format)
+x = 0
+j = 6
+for i in range(6):
+    texas_demo['Child-Comp'].iloc[x] = format_values[j]
+    x+=8
+    j+=1
 texas_demo['Blind/Disabled-Treat'] = texas_demo['Blind/Disabled-Treat'].map('{:,.2f}'.format)
+x = 0
+j = 12
+for i in range(6):
+    texas_demo['Blind/Disabled-Treat'].iloc[x] = format_values[j]
+    x+=8
+    j+=1
 texas_demo['Blind/Disabled-Comp'] = texas_demo['Blind/Disabled-Comp'].map('{:,.2f}'.format)
+x = 0
+j = 18
+for i in range(6):
+    texas_demo['Blind/Disabled-Comp'].iloc[x] = format_values[j]
+    x+=8
+    j+=1
 texas_demo['Telemonitoring-Treat'] = texas_demo['Telemonitoring-Treat'].map('{:,.2f}'.format)
+x = 0
+j = 24
+for i in range(6):
+    texas_demo['Telemonitoring-Treat'].iloc[x] = format_values[j]
+    x+=8
+    j+=1
 texas_demo['Telemonitoring-Comp'] = texas_demo['Telemonitoring-Comp'].map('{:,.2f}'.format)
+x = 0
+j = 30
+for i in range(6):
+    texas_demo['Telemonitoring-Comp'].iloc[x] = format_values[j]
+    x+=8
+    j+=1
 texas_demo = texas_demo.rename(columns={'Child-Treat':'Treatment', 'Child-Comp':'Comparison',  'Blind/Disabled-Treat':'Treatment','Blind/Disabled-Comp':'Comparison',
                                 'Telemonitoring-Treat':'Treatment','Telemonitoring-Comp': 'Comparison','Demographic':'Characteristics'})
 texas_demo = texas_demo.replace(to_replace = "0.00", value ="---")
@@ -758,13 +807,31 @@ texas_2017 = texas_demo[texas_demo['Year']==2017]
 texas_2018 = texas_demo[texas_demo['Year']==2018]
 
 
-
+values1 = []
+format_values1 = []
 @app.route('/demographics', methods = ["GET","POST"])
 def demographics(): 
     if request.method == "POST":
         sda_demo_name = request.form.get('sda_demo',None)
         region_demo = df_demo[df_demo['Region']==sda_demo_name]
+        values1=[region_demo['Child-Treat'].iloc[0],region_demo['Child-Treat'].iloc[8],region_demo['Child-Treat'].iloc[16],region_demo['Child-Treat'].iloc[24],region_demo['Child-Treat'].iloc[32],
+        region_demo['Child-Treat'].iloc[40],region_demo['Child-Comp'].iloc[0],region_demo['Child-Comp'].iloc[8],region_demo['Child-Comp'].iloc[16],region_demo['Child-Comp'].iloc[24],region_demo['Child-Comp'].iloc[32],
+        region_demo['Child-Comp'].iloc[40],region_demo['Blind/Disabled-Treat'].iloc[0],region_demo['Blind/Disabled-Treat'].iloc[8],region_demo['Blind/Disabled-Treat'].iloc[16],region_demo['Blind/Disabled-Treat'].iloc[24],region_demo['Blind/Disabled-Treat'].iloc[32],
+        region_demo['Blind/Disabled-Treat'].iloc[40],region_demo['Blind/Disabled-Comp'].iloc[0],region_demo['Blind/Disabled-Comp'].iloc[8],region_demo['Blind/Disabled-Comp'].iloc[16],region_demo['Blind/Disabled-Comp'].iloc[24],region_demo['Blind/Disabled-Comp'].iloc[32],
+        region_demo['Blind/Disabled-Comp'].iloc[40],region_demo['Telemonitoring-Treat'].iloc[0],region_demo['Telemonitoring-Treat'].iloc[8],region_demo['Telemonitoring-Treat'].iloc[16],region_demo['Telemonitoring-Treat'].iloc[24],region_demo['Telemonitoring-Treat'].iloc[32],
+        region_demo['Telemonitoring-Treat'].iloc[40],region_demo['Telemonitoring-Comp'].iloc[0],region_demo['Telemonitoring-Comp'].iloc[8],region_demo['Telemonitoring-Comp'].iloc[16],region_demo['Telemonitoring-Comp'].iloc[24],region_demo['Telemonitoring-Comp'].iloc[32],
+        region_demo['Telemonitoring-Comp'].iloc[40]]
+        for i in values1: 
+            i = round(i,2)
+            i = "{:,.0f}".format(i)
+            format_values.append(i)
         region_demo['Child-Treat'] = region_demo['Child-Treat'].map('{:,.2f}'.format)
+        x = 0
+        j = 0
+        for i in range(6):
+            region_demo['Child-Treat'].iloc[x] = format_values[j]
+            x+=8
+            j+=1
         region_demo['Child-Comp'] = region_demo['Child-Comp'].map('{:,.2f}'.format)
         region_demo['Blind/Disabled-Treat'] = region_demo['Blind/Disabled-Treat'].map('{:,.2f}'.format)
         region_demo['Blind/Disabled-Comp'] = region_demo['Blind/Disabled-Comp'].map('{:,.2f}'.format)
