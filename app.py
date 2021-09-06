@@ -850,7 +850,7 @@ def demographics():
         x = 0
         j = 18
         for i in range(6):
-            texas_demo['Blind/Disabled-Comp'].iloc[x] = format_values[j]
+            region_demo['Blind/Disabled-Comp'].iloc[x] = format_values[j]
             x+=8
             j+=1       
         region_demo['Telemonitoring-Treat'] = region_demo['Telemonitoring-Treat'].map('{:,.2f}'.format)
