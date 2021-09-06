@@ -352,6 +352,11 @@ def download_excel1():
     path = "doc/inpatient-costs-data.xlsx"
     return send_file(path,as_attachment=True)
 
+@app.route('/download_ceatool')
+def download_ceatool():
+    path = "doc/CEA-Tool-TAMU.pdf"
+    return send_file(path,as_attachment=True)
+
 
 
 
