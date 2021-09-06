@@ -833,10 +833,40 @@ def demographics():
             x+=8
             j+=1
         region_demo['Child-Comp'] = region_demo['Child-Comp'].map('{:,.2f}'.format)
+        x = 0
+        j = 6
+        for i in range(6):
+            region_demo['Child-Comp'].iloc[x] = format_values[j]
+            x+=8
+            j+=1
         region_demo['Blind/Disabled-Treat'] = region_demo['Blind/Disabled-Treat'].map('{:,.2f}'.format)
+        x = 0
+        j = 12
+        for i in range(6):
+            region_demo['Blind/Disabled-Treat'].iloc[x] = format_values[j]
+            x+=8
+            j+=1
         region_demo['Blind/Disabled-Comp'] = region_demo['Blind/Disabled-Comp'].map('{:,.2f}'.format)
+        x = 0
+        j = 18
+        for i in range(6):
+            texas_demo['Blind/Disabled-Comp'].iloc[x] = format_values[j]
+            x+=8
+            j+=1       
         region_demo['Telemonitoring-Treat'] = region_demo['Telemonitoring-Treat'].map('{:,.2f}'.format)
+        x = 0
+        j = 24
+        for i in range(6):
+            region_demo['Telemonitoring-Treat'].iloc[x] = format_values[j]
+            x+=8
+            j+=1
         region_demo['Telemonitoring-Comp'] = region_demo['Telemonitoring-Comp'].map('{:,.2f}'.format)
+        x = 0
+        j = 30
+        for i in range(6):
+            region_demo['Telemonitoring-Comp'].iloc[x] = format_values[j]
+            x+=8
+            j+=1
         region_demo = region_demo.rename(columns={'Child-Treat':'Treatment', 'Child-Comp':'Comparison',  'Blind/Disabled-Treat':'Treatment','Blind/Disabled-Comp':'Comparison',
                                 'Telemonitoring-Treat':'Treatment','Telemonitoring-Comp': 'Comparison','Demographic':'Characteristics'})
         region_demo = region_demo.replace(to_replace = "0.00", value ="---")
