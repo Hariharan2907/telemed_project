@@ -5,9 +5,9 @@ import numpy as np
 cost_df = pd.read_csv("modifiedCost.csv")
 cost_df = cost_df[cost_df['SDA'].notna()]
 cost_df = cost_df.rename(columns={'SDA':'region','type':'category','post':'post-cost','meas':'measurement','treat':'treatment','sfy':'state-fiscal-yr',
-                                'rgrp3':'child', 'rgrp4': 'blind/disabled','rgrp6':'telemonitoring','tot_tvst':'total-telesvc'})
-cost_df['other-telesvc'] = cost_df['total-telesvc']-cost_df['blind/disabled']-cost_df['child']           
-cost_df = cost_df[['region','category','post-cost','measurement','treatment','state-fiscal-yr','blind/disabled','child','other-telesvc','total-telesvc','telemonitoring']]                     
+                                'rgrp3':'child', 'rgrp4': 'blind/disabled','rgrp6':'telemonitoring','tot_tvst':'total-televisits'})
+cost_df['other-televisits'] = cost_df['total-televisits']-cost_df['blind/disabled']-cost_df['child']           
+cost_df = cost_df[['region','category','post-cost','measurement','treatment','state-fiscal-yr','blind/disabled','child','other-televisits','total-televisits','telemonitoring']]                     
 
 demo_df = pd.read_csv('modifiedDemo.csv')
 demo_df = demo_df[demo_df['SDA'].notna()]
@@ -23,5 +23,6 @@ inpatcost_df = inpatcost_df.drop(['uci_los','lci_los','lci_chrg','uci_chrg','Obs
 inpatcost_df.to_excel("doc/inpatient-costs-data.xlsx",index=False)
 
 with pd.ExcelWriter('doc/cost-study-data.xlsx') as writer:
-    cost_df.to_excel(writer,sheet_name='costs',index=False)
     demo_df.to_excel(writer,sheet_name='demographics',index=False)
+    cost_df.to_excel(writer,sheet_name='costs',index=False)
+    
