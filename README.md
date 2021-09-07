@@ -1,6 +1,7 @@
 # telemed_project
 
 Once repository is cloned into directory on vidal (var/www/cea), enter this command to give permission for files:
+
 chmod o+rx /var/www/cea/telemed_project
 find /var/www/cea/telemed_project/static -type d -exec chmod o=rx {} \; -print
 find /var/www/cea/telemed_project/static -type f -exec chmod o=r {} \; -print
