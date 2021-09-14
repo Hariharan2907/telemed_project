@@ -13,14 +13,14 @@ To kill Flask process:
 kill -9 ppid
 #ppid is the second field number from "ps aux | grep flask" command 
 
-In order to start flask on the vidal server: 
+In order to start flask on the vidal server: <br/>
 
-cd /var/www/cea
-source cea/bin/activate
-cd telemed_project
-flask run &
-#To log off safely
-exit
+cd /var/www/cea <br/>
+source cea/bin/activate <br/>
+cd telemed_project <br/>
+flask run & <br/>
+#To log off safely <br/>
+exit <br/>
 
 To test flask app on vidal server: 
 
